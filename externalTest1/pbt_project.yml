@@ -59,10 +59,7 @@ sqlSources:
       schema:
         entityType: ''
         providerType: bigquery
-        fields:
-        - name: string_output
-          dataType:
-            type: String
+        fields: []
       description: null
       author: avpreet@prophecy.io
       createdAt: '2025-08-11 09:33:37'
