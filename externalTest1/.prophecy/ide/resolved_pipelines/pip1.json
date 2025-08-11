@@ -51,6 +51,16 @@
         } ],
         "outputs" : [ {
           "id" : "HhmWE4o0hi2gg50Y8BHua$$wBX4VAh0SWvDwyaVHQaAh",
+          "schema" : {
+            "entityType" : "",
+            "providerType" : "bigquery",
+            "fields" : [ {
+              "name" : "string_output",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
           "slug" : "out"
         } ],
         "isCustomOutputSchema" : false
