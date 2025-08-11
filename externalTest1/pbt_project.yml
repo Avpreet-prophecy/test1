@@ -1,6 +1,6 @@
 name: normal_bigquery_test1
 description: ''
-version: 0.0.1
+version: 1.0.0
 author: avpreet@prophecy.io
 language: sql
 buildSystem: ''
