@@ -1,0 +1,62 @@
+{
+  "id" : "pip1",
+  "metainfo" : {
+    "label" : "pip1",
+    "autoLayout" : false,
+    "version" : 1,
+    "configuration" : {
+      "schema" : {
+        "type" : "record",
+        "fields" : [ ]
+      }
+    },
+    "schedule" : {
+      "cron" : "* 0 2 * * * *",
+      "timeZone" : "GMT",
+      "emailOnSuccess" : false,
+      "emailOnFailure" : false,
+      "emailOnStart" : false,
+      "emails" : [ "email@gmail.com" ],
+      "enabled" : false
+    },
+    "sensorSchedule" : {
+      "enabled" : false,
+      "isDefaultView" : false,
+      "triggers" : { }
+    },
+    "isTranspiledPipeline" : false
+  },
+  "processes" : {
+    "2mccYT6bELy1kB3Kl-D-8$$zABB-zOPTMxsPfNOVVwsY" : {
+      "id" : "2mccYT6bELy1kB3Kl-D-8$$zABB-zOPTMxsPfNOVVwsY",
+      "component" : "Dataset",
+      "metadata" : {
+        "label" : "avDest1",
+        "x" : -640,
+        "y" : -360,
+        "phase" : 0
+      },
+      "properties" : {
+        "table" : {
+          "name" : "avDest1",
+          "sourceType" : "Source",
+          "sourceName" : "prophecy_databricks_qa.avpreetTables",
+          "alias" : ""
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "TMnKg6dXdB8LcyRpgFkBc$$dYhUn_GNjC2LLUYsfikeH",
+          "slug" : "in"
+        } ],
+        "outputs" : [ {
+          "id" : "HhmWE4o0hi2gg50Y8BHua$$wBX4VAh0SWvDwyaVHQaAh",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    }
+  },
+  "connections" : [ ],
+  "component" : "Pipeline"
+}

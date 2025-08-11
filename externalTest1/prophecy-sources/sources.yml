@@ -1,0 +1,13 @@
+---
+version: 2
+sources:
+- name: "prophecy_databricks_qa.avpreetTables"
+  database: "prophecy-databricks-qa"
+  schema: "avpreetTables"
+  tables:
+  - name: "avDest1"
+    columns:
+    - name: "string_output"
+      dataType:
+        type: "String"
+    type: "table"
