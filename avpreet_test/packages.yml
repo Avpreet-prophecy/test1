@@ -6,6 +6,6 @@ packages:
 - revision: "0.0.4"
   git: "https://github.com/prophecy-io/databricks-sql-spatial"
   subdirectory: ""
-- revision: "external_git_check/1"
+- revision: "external_git_check/2"
   git: "https://github.com/Avpreet-prophecy/test1"
   subdirectory: "model_only"
