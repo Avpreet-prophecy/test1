@@ -27,31 +27,32 @@
     "isTranspiledPipeline" : false
   },
   "processes" : {
-    "aPe9xRTSwUv4wMDSw5Pki$$gMJPaBYLENI7Tpd8ljEu3" : {
-      "id" : "aPe9xRTSwUv4wMDSw5Pki$$gMJPaBYLENI7Tpd8ljEu3",
+    "C9sDiaK4MZIV_EIS-bJ8o" : {
+      "id" : "C9sDiaK4MZIV_EIS-bJ8o",
       "component" : "Dataset",
       "metadata" : {
-        "label" : "numeric_values_unknown_format",
-        "x" : -540,
-        "y" : -600,
+        "label" : "dummy",
+        "x" : -900,
+        "y" : -900,
         "phase" : 0
       },
       "properties" : {
-        "table" : {
-          "name" : "s1",
-          "sourceType" : "Seed"
-        },
         "writeOptions" : {
           "writeMode" : "overwrite"
+        },
+        "table" : {
+          "name" : "dummy",
+          "sourceType" : "Seed",
+          "alias" : ""
         }
       },
       "ports" : {
         "inputs" : [ {
-          "id" : "yZ5AT8A3TCv_NivHr1gkr$$J4hwII1Ev8V21VPBKstSU",
+          "id" : "2jgrp_D4u_yiZGOHgDrl_",
           "slug" : "in"
         } ],
         "outputs" : [ {
-          "id" : "MlGTOb-GittEvw3ep7HJE$$Gg8rcUnMiZx1euAmC1pwM",
+          "id" : "UOZ7JKFZrJEMrD1NPxTEK",
           "schema" : {
             "entityType" : "",
             "providerType" : "Databricks",
@@ -88,7 +89,7 @@
         "modelName" : "pip1__find_duplicates_in_m1"
       },
       "visualMetaInfo" : {
-        "visualProcessIds" : [ "find_duplicates_in_m1_FYa-W29ErNHgbKNpfdHmv$$e-Mx-R9IuHCr3-Syz6MDt", "_7UJXzhNn8QlXylOWYqpL$$Ia0axF8gj5CSrl8oW3vrd", "aPe9xRTSwUv4wMDSw5Pki$$gMJPaBYLENI7Tpd8ljEu3" ],
+        "visualProcessIds" : [ "find_duplicates_in_m1_FYa-W29ErNHgbKNpfdHmv$$e-Mx-R9IuHCr3-Syz6MDt", "_7UJXzhNn8QlXylOWYqpL$$Ia0axF8gj5CSrl8oW3vrd", "C9sDiaK4MZIV_EIS-bJ8o" ],
         "type" : "ephemeral",
         "isTemporaryTable" : true
       },
@@ -150,19 +151,39 @@
             "entityType" : "",
             "providerType" : "Databricks",
             "fields" : [ {
-              "name" : "a",
+              "name" : "@id",
               "dataType" : {
-                "type" : "Integer"
+                "type" : "String"
               }
             }, {
-              "name" : "b",
+              "name" : "price",
               "dataType" : {
-                "type" : "Integer"
+                "type" : "Double"
               }
             }, {
-              "name" : "c",
+              "name" : "publish_date",
               "dataType" : {
-                "type" : "Integer"
+                "type" : "Date"
+              }
+            }, {
+              "name" : "description",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "author",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "title",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "genre",
+              "dataType" : {
+                "type" : "String"
               }
             } ]
           },
@@ -173,9 +194,9 @@
     }
   },
   "connections" : [ {
-    "id" : "kdmv0KAKEdP4gNMojThil",
-    "source" : "aPe9xRTSwUv4wMDSw5Pki$$gMJPaBYLENI7Tpd8ljEu3",
-    "sourcePort" : "MlGTOb-GittEvw3ep7HJE$$Gg8rcUnMiZx1euAmC1pwM",
+    "id" : "JuqK_6Ep1eHTaZ19K1XSu",
+    "source" : "C9sDiaK4MZIV_EIS-bJ8o",
+    "sourcePort" : "UOZ7JKFZrJEMrD1NPxTEK",
     "target" : "_7UJXzhNn8QlXylOWYqpL$$Ia0axF8gj5CSrl8oW3vrd",
     "targetPort" : "pip1__find_duplicates_in_m1_in_0"
   } ],

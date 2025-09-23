@@ -23,34 +23,7 @@ functions:
   airflowFunctions: {}
   businessRules: {}
 subgraphs: {}
-sqlModels:
-  .prophecy/metadata/sqlmodels/model1:
-    name: model1
-    schema:
-      entityType: ''
-      providerType: Databricks
-      fields:
-      - name: a
-        dataType:
-          type: Integer
-      - name: b
-        dataType:
-          type: Integer
-      - name: c
-        dataType:
-          type: Integer
-    description: null
-    author: abhisheks+e2etests@prophecy.io
-    files:
-    - models/model1.sql
-    - .prophecy/ide/models/model1.json
-    sqlDependencies:
-      models: []
-      datasets: []
-      seeds: []
-      sources: []
-      snapshots: []
-    createdAt: '2025-09-23 07:47:18'
+sqlModels: {}
 sqlSnapshots: {}
 sqlTests: {}
 sqlMacros:
@@ -73,8 +46,8 @@ sqlMacros:
     - .prophecy/ide/macros/prophecy_tmp_source.json
     createdAt: '2025-09-23 07:43:19'
 sqlSeeds:
-  .prophecy/metadata/sqlseeds/s1:
-    name: s1
+  .prophecy/metadata/sqlseeds/dummy:
+    name: dummy
     schema:
       entityType: ''
       providerType: Databricks
@@ -91,8 +64,8 @@ sqlSeeds:
     description: null
     author: abhisheks+e2etests@prophecy.io
     files:
-    - seeds/s1.csv
-    createdAt: '2025-09-23 07:44:44'
+    - seeds/dummy.csv
+    createdAt: '2025-09-23 09:12:41'
 sqlSources: {}
 sqlUnreferencedSources: {}
 sqlPipeline:
@@ -130,8 +103,8 @@ sqlOrchestratorPipelines:
     author: abhisheks+e2etests@prophecy.io
     files:
     - models/pip1/schema.yml
-    - models/pip1/pip1__parse_person_details.sql
     - models/pip1/pip1__find_duplicates_in_m1.sql
+    - models/pip1/pip1__parse_person_details.sql
     - .prophecy/ide/pipelines/pip1.json
     - pipelines/pip1.py
     createdAt: '2025-09-23 07:43:19'
