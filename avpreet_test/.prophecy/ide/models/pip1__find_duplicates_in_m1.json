@@ -62,13 +62,13 @@
           "path" : "out",
           "id" : "out",
           "language" : "sql",
-          "content" : "{{ DatabricksSqlBasics.FindDuplicates('numeric_values_unknown_format',[],'','unique','','','','allCols',['a','b','c'],[]) }}"
+          "content" : "{{ DatabricksSqlBasics.FindDuplicates('dummy',[],'','unique','','','','allCols',['a','b','c'],[]) }}"
         } ]
       },
       "ports" : {
         "inputs" : [ {
           "id" : "BOGy-0jnJdGaAKw_u5r17$$zI7c9wHUekKWkOos-ihBV",
-          "slug" : "numeric_values_unknown_format"
+          "slug" : "dummy"
         } ],
         "outputs" : [ {
           "id" : "FYa-W29ErNHgbKNpfdHmv$$e-Mx-R9IuHCr3-Syz6MDt",
@@ -78,28 +78,29 @@
         "autoUpdateOnRun" : false
       }
     },
-    "aPe9xRTSwUv4wMDSw5Pki$$gMJPaBYLENI7Tpd8ljEu3" : {
-      "id" : "aPe9xRTSwUv4wMDSw5Pki$$gMJPaBYLENI7Tpd8ljEu3",
+    "C9sDiaK4MZIV_EIS-bJ8o" : {
+      "id" : "C9sDiaK4MZIV_EIS-bJ8o",
       "component" : "Source",
       "metadata" : {
-        "label" : "numeric_values_unknown_format",
-        "x" : -540,
-        "y" : -600,
+        "label" : "dummy",
+        "x" : -900,
+        "y" : -900,
         "phase" : 0
       },
       "properties" : {
-        "table" : {
-          "name" : "s1",
-          "sourceType" : "Seed"
-        },
         "writeOptions" : {
           "writeMode" : "overwrite"
+        },
+        "table" : {
+          "name" : "dummy",
+          "sourceType" : "Seed",
+          "alias" : ""
         }
       },
       "ports" : {
         "inputs" : [ ],
         "outputs" : [ {
-          "id" : "MlGTOb-GittEvw3ep7HJE$$Gg8rcUnMiZx1euAmC1pwM",
+          "id" : "UOZ7JKFZrJEMrD1NPxTEK",
           "slug" : "out"
         } ],
         "isCustomOutputSchema" : false,
@@ -114,9 +115,9 @@
     "target" : "find_duplicates_in_m1_FYa-W29ErNHgbKNpfdHmv$$e-Mx-R9IuHCr3-Syz6MDt",
     "targetPort" : "input_port_1"
   }, {
-    "id" : "kdmv0KAKEdP4gNMojThil",
-    "source" : "aPe9xRTSwUv4wMDSw5Pki$$gMJPaBYLENI7Tpd8ljEu3",
-    "sourcePort" : "MlGTOb-GittEvw3ep7HJE$$Gg8rcUnMiZx1euAmC1pwM",
+    "id" : "JuqK_6Ep1eHTaZ19K1XSu",
+    "source" : "C9sDiaK4MZIV_EIS-bJ8o",
+    "sourcePort" : "UOZ7JKFZrJEMrD1NPxTEK",
     "target" : "_7UJXzhNn8QlXylOWYqpL$$Ia0axF8gj5CSrl8oW3vrd",
     "targetPort" : "BOGy-0jnJdGaAKw_u5r17$$zI7c9wHUekKWkOos-ihBV"
   } ],

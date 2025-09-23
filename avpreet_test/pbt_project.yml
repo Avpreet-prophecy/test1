@@ -1,6 +1,6 @@
 name: external_git_whitelisted_sql
 description: ''
-version: 0.0.1
+version: 0.1.0
 author: abhisheks+e2etests@prophecy.io
 language: sql
 buildSystem: ''
@@ -23,34 +23,7 @@ functions:
   airflowFunctions: {}
   businessRules: {}
 subgraphs: {}
-sqlModels:
-  .prophecy/metadata/sqlmodels/model1:
-    name: model1
-    schema:
-      entityType: ''
-      providerType: Databricks
-      fields:
-      - name: a
-        dataType:
-          type: Integer
-      - name: b
-        dataType:
-          type: Integer
-      - name: c
-        dataType:
-          type: Integer
-    description: null
-    author: abhisheks+e2etests@prophecy.io
-    files:
-    - models/model1.sql
-    - .prophecy/ide/models/model1.json
-    sqlDependencies:
-      models: []
-      datasets: []
-      seeds: []
-      sources: []
-      snapshots: []
-    createdAt: '2025-09-23 07:47:18'
+sqlModels: {}
 sqlSnapshots: {}
 sqlTests: {}
 sqlMacros:
@@ -73,8 +46,8 @@ sqlMacros:
     - .prophecy/ide/macros/prophecy_tmp_source.json
     createdAt: '2025-09-23 07:43:19'
 sqlSeeds:
-  .prophecy/metadata/sqlseeds/s1:
-    name: s1
+  .prophecy/metadata/sqlseeds/dummy:
+    name: dummy
     schema:
       entityType: ''
       providerType: Databricks
@@ -91,8 +64,8 @@ sqlSeeds:
     description: null
     author: abhisheks+e2etests@prophecy.io
     files:
-    - seeds/s1.csv
-    createdAt: '2025-09-23 07:44:44'
+    - seeds/dummy.csv
+    createdAt: '2025-09-23 09:12:41'
 sqlSources: {}
 sqlUnreferencedSources: {}
 sqlPipeline:

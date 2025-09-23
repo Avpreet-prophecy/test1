@@ -6,11 +6,11 @@
   })
 }}
 
-WITH numeric_values_unknown_format AS (
+WITH dummy AS (
 
   SELECT * 
   
-  FROM {{ ref('s1')}}
+  FROM {{ ref('dummy')}}
 
 ),
 
@@ -18,7 +18,7 @@ find_duplicates_in_m1 AS (
 
   {{
     DatabricksSqlBasics.FindDuplicates(
-      'numeric_values_unknown_format', 
+      'dummy', 
       [], 
       '', 
       'unique', 
