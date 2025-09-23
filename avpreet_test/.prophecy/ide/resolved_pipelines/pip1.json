@@ -128,69 +128,6 @@
         } ],
         "isCustomOutputSchema" : false
       }
-    },
-    "G6JkYY8E6FIsF9FLGPxm-$$IoRmHy1T7eSkfD299IqkC" : {
-      "id" : "G6JkYY8E6FIsF9FLGPxm-$$IoRmHy1T7eSkfD299IqkC",
-      "component" : "Model",
-      "metadata" : {
-        "label" : "model1_1",
-        "x" : -520,
-        "y" : -880
-      },
-      "properties" : {
-        "modelName" : "model1"
-      },
-      "ports" : {
-        "inputs" : [ {
-          "id" : "we2Fsb8x6wDMS-1hLNiBM$$_caF0M_M95_qV72VMgq4v",
-          "slug" : "in0"
-        } ],
-        "outputs" : [ {
-          "id" : "zHe76FejhapkQzl9Eb18Z$$gxeifylq_LsZDuJ7p9kfV",
-          "schema" : {
-            "entityType" : "",
-            "providerType" : "Databricks",
-            "fields" : [ {
-              "name" : "@id",
-              "dataType" : {
-                "type" : "String"
-              }
-            }, {
-              "name" : "price",
-              "dataType" : {
-                "type" : "Double"
-              }
-            }, {
-              "name" : "publish_date",
-              "dataType" : {
-                "type" : "Date"
-              }
-            }, {
-              "name" : "description",
-              "dataType" : {
-                "type" : "String"
-              }
-            }, {
-              "name" : "author",
-              "dataType" : {
-                "type" : "String"
-              }
-            }, {
-              "name" : "title",
-              "dataType" : {
-                "type" : "String"
-              }
-            }, {
-              "name" : "genre",
-              "dataType" : {
-                "type" : "String"
-              }
-            } ]
-          },
-          "slug" : "out"
-        } ],
-        "isCustomOutputSchema" : false
-      }
     }
   },
   "connections" : [ {

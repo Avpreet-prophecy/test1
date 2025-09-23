@@ -18,5 +18,4 @@ with DAG(Schedule = Schedule, SensorSchedule = SensorSchedule):
         component = "Model", 
         modelName = "pip1__parse_person_details"
     )
-    model1_1 = Task(task_id = "model1_1", component = "Model", modelName = "model1")
     dummy.out >> pip1__find_duplicates_in_m1.in_0
