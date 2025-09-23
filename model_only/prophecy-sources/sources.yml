@@ -1,0 +1,35 @@
+---
+version: 2
+sources:
+- name: "qa_team.avpreettables"
+  database: "qa_team"
+  schema: "avpreettables"
+  config:
+    enabled: true
+  tables:
+  - name: "customers"
+    quoting:
+      identifier: true
+    columns:
+    - name: "@id"
+      dataType:
+        type: "String"
+    - name: "price"
+      dataType:
+        type: "Double"
+    - name: "publish_date"
+      dataType:
+        type: "Date"
+    - name: "description"
+      dataType:
+        type: "String"
+    - name: "author"
+      dataType:
+        type: "String"
+    - name: "title"
+      dataType:
+        type: "String"
+    - name: "genre"
+      dataType:
+        type: "String"
+    type: "table"

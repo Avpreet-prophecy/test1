@@ -1,0 +1,151 @@
+{
+  "id" : "model1",
+  "metainfo" : {
+    "label" : "model1",
+    "autoLayout" : false,
+    "staleState" : "none",
+    "sourceSuggestions" : {
+      "sources" : [ ]
+    },
+    "version" : 3
+  },
+  "processes" : {
+    "model1##uLm77nj8" : {
+      "id" : "model1##uLm77nj8",
+      "component" : "TargetModel",
+      "metadata" : {
+        "label" : "model1",
+        "x" : 20,
+        "y" : 20,
+        "phase" : 0,
+        "macroDependencies" : [ ]
+      },
+      "properties" : {
+        "customQueryDisabled" : true,
+        "customQuery" : false,
+        "incrementalEditorDisabled" : true,
+        "query" : "SELECT * \n\nFROM customers\n",
+        "isModel" : true,
+        "incrementalKey" : false,
+        "incremental" : {
+          "expression" : "true"
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "yRKykJYo",
+          "slug" : "customers"
+        } ],
+        "outputs" : [ {
+          "id" : "j1rxF58f",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "dEwZZiVWO_ZRhzzjxpr9a" : {
+      "id" : "dEwZZiVWO_ZRhzzjxpr9a",
+      "component" : "Source",
+      "metadata" : {
+        "label" : "customers",
+        "slug" : "customers",
+        "x" : -480,
+        "y" : -200,
+        "phase" : 0
+      },
+      "properties" : {
+        "table" : {
+          "name" : "customers",
+          "sourceType" : "Source",
+          "sourceName" : "qa_team.avpreettables",
+          "alias" : "",
+          "additionalProperties" : null
+        }
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "rxE-HHkh6BDxN9PmytICH",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "_ZGFlqaZVr0xxewrKG8cP$$0uUoAiawAB41LX8EGtJMq" : {
+      "id" : "_ZGFlqaZVr0xxewrKG8cP$$0uUoAiawAB41LX8EGtJMq",
+      "component" : "SQLStatement",
+      "metadata" : {
+        "label" : "duplicate_finder",
+        "slug" : "duplicate_finder",
+        "x" : -180,
+        "y" : -280,
+        "phase" : 0,
+        "macroDependencies" : [ "DatabricksSqlBasics.FindDuplicates" ],
+        "isLabelGrayed" : false
+      },
+      "properties" : {
+        "fileTabs" : [ {
+          "path" : "out",
+          "id" : "out",
+          "language" : "sql",
+          "content" : "{{ DatabricksSqlBasics.FindDuplicates('s1',[],'','unique','','','','allCols',['a','b','c'],[]) }}"
+        } ]
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "Zf2_mNOE7h_81HB6Kpygs$$xLwuFBdRpEpN5UW9YnFx6",
+          "slug" : "s1"
+        } ],
+        "outputs" : [ {
+          "id" : "FTnkCr1c6OoPw8JPoYr1-$$Sw-WL1yCH3xeZlj1xzyCA",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "s3HXvEoP5hR9aAqvgnOSL" : {
+      "id" : "s3HXvEoP5hR9aAqvgnOSL",
+      "component" : "Seed",
+      "metadata" : {
+        "label" : "s1",
+        "slug" : "s1",
+        "x" : -600,
+        "y" : -340,
+        "phase" : 0
+      },
+      "properties" : {
+        "table" : {
+          "name" : "s1",
+          "sourceType" : "Seed",
+          "alias" : ""
+        }
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "XmaD8dfKQ-TgZFz3I9E6k",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    }
+  },
+  "connections" : [ {
+    "id" : "iIlP9y4B3H4aD1dXxq5z1",
+    "source" : "dEwZZiVWO_ZRhzzjxpr9a",
+    "sourcePort" : "rxE-HHkh6BDxN9PmytICH",
+    "target" : "model1##uLm77nj8",
+    "targetPort" : "yRKykJYo"
+  }, {
+    "id" : "WmZHH46aSeczvyxxiigJp",
+    "source" : "s3HXvEoP5hR9aAqvgnOSL",
+    "sourcePort" : "XmaD8dfKQ-TgZFz3I9E6k",
+    "target" : "_ZGFlqaZVr0xxewrKG8cP$$0uUoAiawAB41LX8EGtJMq",
+    "targetPort" : "Zf2_mNOE7h_81HB6Kpygs$$xLwuFBdRpEpN5UW9YnFx6"
+  } ],
+  "component" : "Model"
+}
