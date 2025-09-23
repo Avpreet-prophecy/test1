@@ -1,6 +1,6 @@
 name: external_git_check
 description: ''
-version: '1'
+version: '2'
 author: abhisheks+e2etests@prophecy.io
 language: sql
 buildSystem: ''
@@ -156,3 +156,14 @@ flags:
   shouldAddDefaultDependenciesIfAbsent: false
 pipelineConfigurations: {}
 projectConfigurations: {}
+sqlOrchestratorPipelines:
+  .prophecy/metadata/sqlorchestratorpipeline/pip1:
+    name: pip1
+    schema: null
+    description: null
+    author: abhisheks+e2etests@prophecy.io
+    files:
+    - .prophecy/ide/pipelines/pip1.json
+    - pipelines/pip1.py
+    createdAt: '2025-09-23 09:25:48'
+sqlBusinessApps: {}

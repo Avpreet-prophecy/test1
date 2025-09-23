@@ -1,0 +1,105 @@
+{
+  "id" : "pip1",
+  "metainfo" : {
+    "label" : "pip1",
+    "autoLayout" : false,
+    "version" : 1,
+    "configuration" : {
+      "schema" : {
+        "type" : "record",
+        "fields" : [ ]
+      }
+    },
+    "schedule" : {
+      "cron" : "* 0 2 * * * *",
+      "timeZone" : "GMT",
+      "emailOnSuccess" : false,
+      "emailOnFailure" : false,
+      "emailOnStart" : false,
+      "emails" : [ "email@gmail.com" ],
+      "enabled" : false
+    },
+    "sensorSchedule" : {
+      "enabled" : false,
+      "isDefaultView" : false,
+      "triggers" : { }
+    },
+    "isTranspiledPipeline" : false
+  },
+  "processes" : {
+    "wAZ6CJ1ygM07papRINl-3" : {
+      "id" : "wAZ6CJ1ygM07papRINl-3",
+      "component" : "Dataset",
+      "metadata" : {
+        "label" : "customers",
+        "x" : -540,
+        "y" : -300,
+        "phase" : 0
+      },
+      "properties" : {
+        "writeOptions" : {
+          "writeMode" : "overwrite"
+        },
+        "table" : {
+          "name" : "customers",
+          "sourceType" : "Table",
+          "sourceName" : "qa_team.avpreettables",
+          "alias" : ""
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "2k5qJiFXWikBAzTs0V_9p",
+          "slug" : "in"
+        } ],
+        "outputs" : [ {
+          "id" : "q9zuBvq88PpvhwaBthFMj",
+          "schema" : {
+            "entityType" : "",
+            "providerType" : "databricks",
+            "fields" : [ {
+              "name" : "@id",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "price",
+              "dataType" : {
+                "type" : "Double"
+              }
+            }, {
+              "name" : "publish_date",
+              "dataType" : {
+                "type" : "Date"
+              }
+            }, {
+              "name" : "description",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "author",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "title",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "genre",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    }
+  },
+  "connections" : [ ],
+  "component" : "Pipeline"
+}
