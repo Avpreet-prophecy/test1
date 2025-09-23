@@ -103,8 +103,8 @@ sqlOrchestratorPipelines:
     author: abhisheks+e2etests@prophecy.io
     files:
     - models/pip1/schema.yml
-    - models/pip1/pip1__find_duplicates_in_m1.sql
     - models/pip1/pip1__parse_person_details.sql
+    - models/pip1/pip1__find_duplicates_in_m1.sql
     - .prophecy/ide/pipelines/pip1.json
     - pipelines/pip1.py
     createdAt: '2025-09-23 07:43:19'
