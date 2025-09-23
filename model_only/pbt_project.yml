@@ -82,6 +82,7 @@ sqlMacros:
     author: abhisheks+e2etests@prophecy.io
     files:
     - macros/prophecy_tmp_source.sql
+    - .prophecy/ide/macros/prophecy_tmp_source.json
     createdAt: '2025-09-23 08:09:10'
 sqlSeeds:
   .prophecy/metadata/sqlseeds/s1:
