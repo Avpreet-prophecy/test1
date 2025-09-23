@@ -1,0 +1,142 @@
+{
+  "id" : "pip1__parse_person_details",
+  "metainfo" : {
+    "label" : "pip1__parse_person_details",
+    "autoLayout" : true,
+    "staleState" : "none",
+    "sourceSuggestions" : {
+      "sources" : [ ]
+    },
+    "graphConfig" : {
+      "entityConfig" : {
+        "materialized" : "ephemeral",
+        "database" : "\"qa_team\"",
+        "schema" : "\"qa_database\"",
+        "type" : "ModelConfig"
+      }
+    },
+    "version" : 3
+  },
+  "processes" : {
+    "parse_person_details_5kRIFzbcmPHou6MTagTvq$$gz6FnflJMigyIWXWRAFyS" : {
+      "id" : "parse_person_details_5kRIFzbcmPHou6MTagTvq$$gz6FnflJMigyIWXWRAFyS",
+      "component" : "TargetModel",
+      "metadata" : {
+        "label" : "parse_person_details"
+      },
+      "properties" : {
+        "customQueryDisabled" : true,
+        "customQuery" : false,
+        "incrementalEditorDisabled" : true,
+        "query" : "\nSELECT *\n\nFROM parse_person_details\n\n",
+        "isModel" : true,
+        "incrementalKey" : false,
+        "incremental" : {
+          "expression" : "true"
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "input_port_0",
+          "slug" : "input_port_0"
+        } ],
+        "outputs" : [ {
+          "id" : "output_port_0",
+          "slug" : "output_port_0"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "be5Bu4vnrRU47yfXM6hmM$$29hj-oyZOQzwYygHbIGhI" : {
+      "id" : "be5Bu4vnrRU47yfXM6hmM$$29hj-oyZOQzwYygHbIGhI",
+      "component" : "JSONParse",
+      "metadata" : {
+        "label" : "parse_person_details",
+        "x" : -260,
+        "y" : -400,
+        "phase" : 0
+      },
+      "properties" : {
+        "columnName" : "person_details",
+        "relation_name" : [ "random_person_details" ],
+        "_oldMacroProperties" : {
+          "macroName" : "JSONParse",
+          "projectName" : "DatabricksSqlBasics",
+          "parameters" : [ {
+            "name" : "relation_name",
+            "value" : "['random_person_details']"
+          }, {
+            "name" : "columnName",
+            "value" : "person_details"
+          }, {
+            "name" : "parsingMethod",
+            "value" : "parseFromSampleRecord"
+          }, {
+            "name" : "sampleRecord",
+            "value" : "{\n  \"root\": {\n    \"person\": {\n      \"id\": 1,\n      \"name\": {\n        \"first\": \"John\",\n        \"last\": \"Doe\"\n      },\n      \"address\": {\n        \"street\": \"Main St\",\n        \"city\": \"Springfield\",\n        \"zip\": 12345\n      }\n    }\n  }\n}"
+          }, {
+            "name" : "sampleSchema",
+            "value" : null
+          } ]
+        },
+        "parsingMethod" : "parseFromSampleRecord",
+        "sampleSchema" : null,
+        "sampleRecord" : "{\n  \"root\": {\n    \"person\": {\n      \"id\": 1,\n      \"name\": {\n        \"first\": \"John\",\n        \"last\": \"Doe\"\n      },\n      \"address\": {\n        \"street\": \"Main St\",\n        \"city\": \"Springfield\",\n        \"zip\": 12345\n      }\n    }\n  }\n}"
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "XDmqM_Zaoz7jpFPc3VHK-$$O79D6KhSuM4DsWwbXo145",
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "5kRIFzbcmPHou6MTagTvq$$gz6FnflJMigyIWXWRAFyS",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "rk45Jpy7762V8etMXIDgK$$V4VAFb-7Vxkq-NfgWicKC" : {
+      "id" : "rk45Jpy7762V8etMXIDgK$$V4VAFb-7Vxkq-NfgWicKC",
+      "component" : "SQLStatement",
+      "metadata" : {
+        "label" : "random_person_details",
+        "x" : -540,
+        "y" : -420,
+        "phase" : 0
+      },
+      "properties" : {
+        "fileTabs" : [ {
+          "path" : "out",
+          "id" : "out",
+          "language" : "sql",
+          "content" : "SELECT\n  id,\n  user_id,\n  order_date,\n  status,\n  to_json(\n    named_struct(\n      'root', named_struct(\n        'person', named_struct(\n          'id',       id,\n          'name',\n            element_at(\n              array(\n                named_struct('first','John','last','Doe'),\n                named_struct('first','Jane','last','Smith'),\n                named_struct('first','Alice','last','Johnson'),\n                named_struct('first','Bob','last','Brown'),\n                named_struct('first','Eva','last','Williams')\n              ),\n              cast(floor(rand() * 5) + 1 as int)\n            ),\n          'address',\n            element_at(\n              array(\n                named_struct('street','Main St','city','Springfield','zip',12345),\n                named_struct('street','Elm St','city','Rivertown','zip',54321),\n                named_struct('street','Oak St','city','Mapleton','zip',67890),\n                named_struct('street','Pine St','city','Laketown','zip',13579),\n                named_struct('street','Maple Ave','city','Hillview','zip',24680)\n              ),\n              cast(floor(rand() * 5) + 1 as int)\n            )\n        )\n      )\n    )\n  ) AS person_details\nFROM (VALUES\n  (1,  1,  '2018-01-01','returned'),\n  (2,  3,  '2018-01-02','completed'),\n  (3,  94, '2018-01-04','completed'),\n  (4,  50, '2018-01-05','completed'),\n  (5,  64, '2018-01-05','completed'),\n  (6,  54, '2018-01-07','completed'),\n  (7,  88, '2018-01-09','completed'),\n  (8,  2,  '2018-01-11','returned'),\n  (9,  53, '2018-01-12','completed'),\n  (10, 7,  '2018-01-14','completed'),\n  (11, 99, '2018-01-14','completed')\n) AS t(id, user_id, order_date, status)"
+        } ]
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "y5P9odh0M1l4I7AFENb9b$$clr9mlW0_w4Uv2B4Rt-o2",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    }
+  },
+  "connections" : [ {
+    "id" : "conn_be5Bu4vnrRU47yfXM6hmM$$29hj-oyZOQzwYygHbIGhI_parse_person_details_5kRIFzbcmPHou6MTagTvq$$gz6FnflJMigyIWXWRAFyS",
+    "source" : "be5Bu4vnrRU47yfXM6hmM$$29hj-oyZOQzwYygHbIGhI",
+    "sourcePort" : "5kRIFzbcmPHou6MTagTvq$$gz6FnflJMigyIWXWRAFyS",
+    "target" : "parse_person_details_5kRIFzbcmPHou6MTagTvq$$gz6FnflJMigyIWXWRAFyS",
+    "targetPort" : "input_port_0"
+  }, {
+    "id" : "9nFDvqQ6tcRhBXwAdEUZF",
+    "source" : "rk45Jpy7762V8etMXIDgK$$V4VAFb-7Vxkq-NfgWicKC",
+    "sourcePort" : "y5P9odh0M1l4I7AFENb9b$$clr9mlW0_w4Uv2B4Rt-o2",
+    "target" : "be5Bu4vnrRU47yfXM6hmM$$29hj-oyZOQzwYygHbIGhI",
+    "targetPort" : "XDmqM_Zaoz7jpFPc3VHK-$$O79D6KhSuM4DsWwbXo145"
+  } ],
+  "component" : "Model"
+}

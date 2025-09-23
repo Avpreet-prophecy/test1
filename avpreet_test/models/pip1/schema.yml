@@ -1,0 +1,9 @@
+---
+version: 2
+models:
+- name: "pip1__find_duplicates_in_m1"
+  tags:
+  - "prophecy_temp"
+- name: "pip1__parse_person_details"
+  tags:
+  - "prophecy_temp"

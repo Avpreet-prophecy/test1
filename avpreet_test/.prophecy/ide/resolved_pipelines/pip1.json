@@ -1,0 +1,183 @@
+{
+  "id" : "pip1",
+  "metainfo" : {
+    "label" : "pip1",
+    "autoLayout" : false,
+    "version" : 1,
+    "configuration" : {
+      "schema" : {
+        "type" : "record",
+        "fields" : [ ]
+      }
+    },
+    "schedule" : {
+      "cron" : "* 0 2 * * * *",
+      "timeZone" : "GMT",
+      "emailOnSuccess" : false,
+      "emailOnFailure" : false,
+      "emailOnStart" : false,
+      "emails" : [ "email@gmail.com" ],
+      "enabled" : false
+    },
+    "sensorSchedule" : {
+      "enabled" : false,
+      "isDefaultView" : false,
+      "triggers" : { }
+    },
+    "isTranspiledPipeline" : false
+  },
+  "processes" : {
+    "aPe9xRTSwUv4wMDSw5Pki$$gMJPaBYLENI7Tpd8ljEu3" : {
+      "id" : "aPe9xRTSwUv4wMDSw5Pki$$gMJPaBYLENI7Tpd8ljEu3",
+      "component" : "Dataset",
+      "metadata" : {
+        "label" : "numeric_values_unknown_format",
+        "x" : -540,
+        "y" : -600,
+        "phase" : 0
+      },
+      "properties" : {
+        "table" : {
+          "name" : "s1",
+          "sourceType" : "Seed"
+        },
+        "writeOptions" : {
+          "writeMode" : "overwrite"
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "yZ5AT8A3TCv_NivHr1gkr$$J4hwII1Ev8V21VPBKstSU",
+          "slug" : "in"
+        } ],
+        "outputs" : [ {
+          "id" : "MlGTOb-GittEvw3ep7HJE$$Gg8rcUnMiZx1euAmC1pwM",
+          "schema" : {
+            "entityType" : "",
+            "providerType" : "Databricks",
+            "fields" : [ {
+              "name" : "a",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "b",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "c",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            } ]
+          },
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "_7UJXzhNn8QlXylOWYqpL$$Ia0axF8gj5CSrl8oW3vrd" : {
+      "id" : "_7UJXzhNn8QlXylOWYqpL$$Ia0axF8gj5CSrl8oW3vrd",
+      "component" : "Model",
+      "metadata" : {
+        "label" : "pip1__find_duplicates_in_m1",
+        "phase" : 0
+      },
+      "properties" : {
+        "modelName" : "pip1__find_duplicates_in_m1"
+      },
+      "visualMetaInfo" : {
+        "visualProcessIds" : [ "find_duplicates_in_m1_FYa-W29ErNHgbKNpfdHmv$$e-Mx-R9IuHCr3-Syz6MDt", "_7UJXzhNn8QlXylOWYqpL$$Ia0axF8gj5CSrl8oW3vrd", "aPe9xRTSwUv4wMDSw5Pki$$gMJPaBYLENI7Tpd8ljEu3" ],
+        "type" : "ephemeral",
+        "isTemporaryTable" : true
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "pip1__find_duplicates_in_m1_in_0",
+          "slug" : "in_0"
+        } ],
+        "outputs" : [ {
+          "id" : "pip1__find_duplicates_in_m1_out_0",
+          "slug" : "out_0"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "be5Bu4vnrRU47yfXM6hmM$$29hj-oyZOQzwYygHbIGhI" : {
+      "id" : "be5Bu4vnrRU47yfXM6hmM$$29hj-oyZOQzwYygHbIGhI",
+      "component" : "Model",
+      "metadata" : {
+        "label" : "pip1__parse_person_details",
+        "phase" : 0
+      },
+      "properties" : {
+        "modelName" : "pip1__parse_person_details"
+      },
+      "visualMetaInfo" : {
+        "visualProcessIds" : [ "parse_person_details_5kRIFzbcmPHou6MTagTvq$$gz6FnflJMigyIWXWRAFyS", "be5Bu4vnrRU47yfXM6hmM$$29hj-oyZOQzwYygHbIGhI", "rk45Jpy7762V8etMXIDgK$$V4VAFb-7Vxkq-NfgWicKC" ],
+        "type" : "ephemeral",
+        "isTemporaryTable" : true
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "pip1__parse_person_details_out_0",
+          "slug" : "out_0"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "G6JkYY8E6FIsF9FLGPxm-$$IoRmHy1T7eSkfD299IqkC" : {
+      "id" : "G6JkYY8E6FIsF9FLGPxm-$$IoRmHy1T7eSkfD299IqkC",
+      "component" : "Model",
+      "metadata" : {
+        "label" : "model1_1",
+        "x" : -520,
+        "y" : -880
+      },
+      "properties" : {
+        "modelName" : "model1"
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "we2Fsb8x6wDMS-1hLNiBM$$_caF0M_M95_qV72VMgq4v",
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "zHe76FejhapkQzl9Eb18Z$$gxeifylq_LsZDuJ7p9kfV",
+          "schema" : {
+            "entityType" : "",
+            "providerType" : "Databricks",
+            "fields" : [ {
+              "name" : "a",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "b",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "c",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            } ]
+          },
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    }
+  },
+  "connections" : [ {
+    "id" : "kdmv0KAKEdP4gNMojThil",
+    "source" : "aPe9xRTSwUv4wMDSw5Pki$$gMJPaBYLENI7Tpd8ljEu3",
+    "sourcePort" : "MlGTOb-GittEvw3ep7HJE$$Gg8rcUnMiZx1euAmC1pwM",
+    "target" : "_7UJXzhNn8QlXylOWYqpL$$Ia0axF8gj5CSrl8oW3vrd",
+    "targetPort" : "pip1__find_duplicates_in_m1_in_0"
+  } ],
+  "component" : "Pipeline"
+}

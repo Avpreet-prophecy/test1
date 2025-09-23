@@ -1,0 +1,124 @@
+{
+  "id" : "pip1__find_duplicates_in_m1",
+  "metainfo" : {
+    "label" : "pip1__find_duplicates_in_m1",
+    "autoLayout" : true,
+    "staleState" : "none",
+    "sourceSuggestions" : {
+      "sources" : [ ]
+    },
+    "graphConfig" : {
+      "entityConfig" : {
+        "materialized" : "ephemeral",
+        "database" : "\"qa_team\"",
+        "schema" : "\"qa_database\"",
+        "type" : "ModelConfig"
+      }
+    },
+    "version" : 3
+  },
+  "processes" : {
+    "find_duplicates_in_m1_FYa-W29ErNHgbKNpfdHmv$$e-Mx-R9IuHCr3-Syz6MDt" : {
+      "id" : "find_duplicates_in_m1_FYa-W29ErNHgbKNpfdHmv$$e-Mx-R9IuHCr3-Syz6MDt",
+      "component" : "TargetModel",
+      "metadata" : {
+        "label" : "find_duplicates_in_m1"
+      },
+      "properties" : {
+        "customQueryDisabled" : true,
+        "customQuery" : false,
+        "incrementalEditorDisabled" : true,
+        "query" : "\nSELECT *\n\nFROM find_duplicates_in_m1\n\n",
+        "isModel" : true,
+        "incrementalKey" : false,
+        "incremental" : {
+          "expression" : "true"
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "input_port_1",
+          "slug" : "input_port_1"
+        } ],
+        "outputs" : [ {
+          "id" : "output_port_1",
+          "slug" : "output_port_1"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "_7UJXzhNn8QlXylOWYqpL$$Ia0axF8gj5CSrl8oW3vrd" : {
+      "id" : "_7UJXzhNn8QlXylOWYqpL$$Ia0axF8gj5CSrl8oW3vrd",
+      "component" : "SQLStatement",
+      "metadata" : {
+        "label" : "find_duplicates_in_m1",
+        "x" : -260,
+        "y" : -600,
+        "phase" : 0
+      },
+      "properties" : {
+        "fileTabs" : [ {
+          "path" : "out",
+          "id" : "out",
+          "language" : "sql",
+          "content" : "{{ DatabricksSqlBasics.FindDuplicates('numeric_values_unknown_format',[],'','unique','','','','allCols',['a','b','c'],[]) }}"
+        } ]
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "BOGy-0jnJdGaAKw_u5r17$$zI7c9wHUekKWkOos-ihBV",
+          "slug" : "numeric_values_unknown_format"
+        } ],
+        "outputs" : [ {
+          "id" : "FYa-W29ErNHgbKNpfdHmv$$e-Mx-R9IuHCr3-Syz6MDt",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "aPe9xRTSwUv4wMDSw5Pki$$gMJPaBYLENI7Tpd8ljEu3" : {
+      "id" : "aPe9xRTSwUv4wMDSw5Pki$$gMJPaBYLENI7Tpd8ljEu3",
+      "component" : "Source",
+      "metadata" : {
+        "label" : "numeric_values_unknown_format",
+        "x" : -540,
+        "y" : -600,
+        "phase" : 0
+      },
+      "properties" : {
+        "table" : {
+          "name" : "s1",
+          "sourceType" : "Seed"
+        },
+        "writeOptions" : {
+          "writeMode" : "overwrite"
+        }
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "MlGTOb-GittEvw3ep7HJE$$Gg8rcUnMiZx1euAmC1pwM",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    }
+  },
+  "connections" : [ {
+    "id" : "conn__7UJXzhNn8QlXylOWYqpL$$Ia0axF8gj5CSrl8oW3vrd_find_duplicates_in_m1_FYa-W29ErNHgbKNpfdHmv$$e-Mx-R9IuHCr3-Syz6MDt",
+    "source" : "_7UJXzhNn8QlXylOWYqpL$$Ia0axF8gj5CSrl8oW3vrd",
+    "sourcePort" : "FYa-W29ErNHgbKNpfdHmv$$e-Mx-R9IuHCr3-Syz6MDt",
+    "target" : "find_duplicates_in_m1_FYa-W29ErNHgbKNpfdHmv$$e-Mx-R9IuHCr3-Syz6MDt",
+    "targetPort" : "input_port_1"
+  }, {
+    "id" : "kdmv0KAKEdP4gNMojThil",
+    "source" : "aPe9xRTSwUv4wMDSw5Pki$$gMJPaBYLENI7Tpd8ljEu3",
+    "sourcePort" : "MlGTOb-GittEvw3ep7HJE$$Gg8rcUnMiZx1euAmC1pwM",
+    "target" : "_7UJXzhNn8QlXylOWYqpL$$Ia0axF8gj5CSrl8oW3vrd",
+    "targetPort" : "BOGy-0jnJdGaAKw_u5r17$$zI7c9wHUekKWkOos-ihBV"
+  } ],
+  "component" : "Model"
+}

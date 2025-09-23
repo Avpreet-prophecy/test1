@@ -1,0 +1,438 @@
+{
+  "id" : "pip1",
+  "metainfo" : {
+    "label" : "pip1",
+    "autoLayout" : false,
+    "version" : 1,
+    "configuration" : {
+      "schema" : {
+        "type" : "record",
+        "fields" : [ ]
+      }
+    },
+    "schedule" : {
+      "cron" : "* 0 2 * * * *",
+      "timeZone" : "GMT",
+      "emailOnSuccess" : false,
+      "emailOnFailure" : false,
+      "emailOnStart" : false,
+      "emails" : [ "email@gmail.com" ],
+      "enabled" : false
+    },
+    "sensorSchedule" : {
+      "enabled" : false,
+      "isDefaultView" : false,
+      "triggers" : { }
+    },
+    "isTranspiledPipeline" : false
+  },
+  "processes" : {
+    "aPe9xRTSwUv4wMDSw5Pki$$gMJPaBYLENI7Tpd8ljEu3" : {
+      "id" : "aPe9xRTSwUv4wMDSw5Pki$$gMJPaBYLENI7Tpd8ljEu3",
+      "component" : "Dataset",
+      "metadata" : {
+        "label" : "numeric_values_unknown_format",
+        "x" : -540,
+        "y" : -600,
+        "phase" : 0
+      },
+      "properties" : {
+        "table" : {
+          "name" : "s1",
+          "sourceType" : "Seed"
+        },
+        "writeOptions" : {
+          "writeMode" : "overwrite"
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "yZ5AT8A3TCv_NivHr1gkr$$J4hwII1Ev8V21VPBKstSU",
+          "slug" : "in"
+        } ],
+        "outputs" : [ {
+          "id" : "MlGTOb-GittEvw3ep7HJE$$Gg8rcUnMiZx1euAmC1pwM",
+          "schema" : {
+            "entityType" : "",
+            "providerType" : "Databricks",
+            "fields" : [ {
+              "name" : "a",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "b",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "c",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            } ]
+          },
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "_7UJXzhNn8QlXylOWYqpL$$Ia0axF8gj5CSrl8oW3vrd" : {
+      "id" : "_7UJXzhNn8QlXylOWYqpL$$Ia0axF8gj5CSrl8oW3vrd",
+      "component" : "SQLStatement",
+      "metadata" : {
+        "label" : "find_duplicates_in_m1",
+        "x" : -260,
+        "y" : -600,
+        "phase" : 0
+      },
+      "properties" : {
+        "fileTabs" : [ {
+          "path" : "out",
+          "id" : "out",
+          "language" : "sql",
+          "content" : "{{ DatabricksSqlBasics.FindDuplicates('numeric_values_unknown_format',[],'','unique','','','','allCols',['a','b','c'],[]) }}"
+        } ]
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "BOGy-0jnJdGaAKw_u5r17$$zI7c9wHUekKWkOos-ihBV",
+          "schema" : {
+            "entityType" : "",
+            "providerType" : "Databricks",
+            "fields" : [ {
+              "name" : "a",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "b",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "c",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            } ]
+          },
+          "slug" : "numeric_values_unknown_format"
+        } ],
+        "outputs" : [ {
+          "id" : "FYa-W29ErNHgbKNpfdHmv$$e-Mx-R9IuHCr3-Syz6MDt",
+          "schema" : {
+            "entityType" : "",
+            "providerType" : "Databricks",
+            "fields" : [ {
+              "name" : "a",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "b",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "c",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            } ]
+          },
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "rk45Jpy7762V8etMXIDgK$$V4VAFb-7Vxkq-NfgWicKC" : {
+      "id" : "rk45Jpy7762V8etMXIDgK$$V4VAFb-7Vxkq-NfgWicKC",
+      "component" : "SQLStatement",
+      "metadata" : {
+        "label" : "random_person_details",
+        "x" : -540,
+        "y" : -420,
+        "phase" : 0
+      },
+      "properties" : {
+        "fileTabs" : [ {
+          "path" : "out",
+          "id" : "out",
+          "language" : "sql",
+          "content" : "SELECT\n  id,\n  user_id,\n  order_date,\n  status,\n  to_json(\n    named_struct(\n      'root', named_struct(\n        'person', named_struct(\n          'id',       id,\n          'name',\n            element_at(\n              array(\n                named_struct('first','John','last','Doe'),\n                named_struct('first','Jane','last','Smith'),\n                named_struct('first','Alice','last','Johnson'),\n                named_struct('first','Bob','last','Brown'),\n                named_struct('first','Eva','last','Williams')\n              ),\n              cast(floor(rand() * 5) + 1 as int)\n            ),\n          'address',\n            element_at(\n              array(\n                named_struct('street','Main St','city','Springfield','zip',12345),\n                named_struct('street','Elm St','city','Rivertown','zip',54321),\n                named_struct('street','Oak St','city','Mapleton','zip',67890),\n                named_struct('street','Pine St','city','Laketown','zip',13579),\n                named_struct('street','Maple Ave','city','Hillview','zip',24680)\n              ),\n              cast(floor(rand() * 5) + 1 as int)\n            )\n        )\n      )\n    )\n  ) AS person_details\nFROM (VALUES\n  (1,  1,  '2018-01-01','returned'),\n  (2,  3,  '2018-01-02','completed'),\n  (3,  94, '2018-01-04','completed'),\n  (4,  50, '2018-01-05','completed'),\n  (5,  64, '2018-01-05','completed'),\n  (6,  54, '2018-01-07','completed'),\n  (7,  88, '2018-01-09','completed'),\n  (8,  2,  '2018-01-11','returned'),\n  (9,  53, '2018-01-12','completed'),\n  (10, 7,  '2018-01-14','completed'),\n  (11, 99, '2018-01-14','completed')\n) AS t(id, user_id, order_date, status)"
+        } ]
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "y5P9odh0M1l4I7AFENb9b$$clr9mlW0_w4Uv2B4Rt-o2",
+          "schema" : {
+            "entityType" : "",
+            "providerType" : "Databricks",
+            "fields" : [ {
+              "name" : "id",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "user_id",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "order_date",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "status",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "person_details",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "be5Bu4vnrRU47yfXM6hmM$$29hj-oyZOQzwYygHbIGhI" : {
+      "id" : "be5Bu4vnrRU47yfXM6hmM$$29hj-oyZOQzwYygHbIGhI",
+      "component" : "JSONParse",
+      "metadata" : {
+        "label" : "parse_person_details",
+        "x" : -260,
+        "y" : -400,
+        "phase" : 0
+      },
+      "properties" : {
+        "columnName" : "person_details",
+        "relation_name" : [ "random_person_details" ],
+        "_oldMacroProperties" : {
+          "macroName" : "JSONParse",
+          "projectName" : "DatabricksSqlBasics",
+          "parameters" : [ {
+            "name" : "relation_name",
+            "value" : "['random_person_details']"
+          }, {
+            "name" : "columnName",
+            "value" : "person_details"
+          }, {
+            "name" : "parsingMethod",
+            "value" : "parseFromSampleRecord"
+          }, {
+            "name" : "sampleRecord",
+            "value" : "{\n  \"root\": {\n    \"person\": {\n      \"id\": 1,\n      \"name\": {\n        \"first\": \"John\",\n        \"last\": \"Doe\"\n      },\n      \"address\": {\n        \"street\": \"Main St\",\n        \"city\": \"Springfield\",\n        \"zip\": 12345\n      }\n    }\n  }\n}"
+          }, {
+            "name" : "sampleSchema",
+            "value" : null
+          } ]
+        },
+        "parsingMethod" : "parseFromSampleRecord",
+        "sampleSchema" : null,
+        "sampleRecord" : "{\n  \"root\": {\n    \"person\": {\n      \"id\": 1,\n      \"name\": {\n        \"first\": \"John\",\n        \"last\": \"Doe\"\n      },\n      \"address\": {\n        \"street\": \"Main St\",\n        \"city\": \"Springfield\",\n        \"zip\": 12345\n      }\n    }\n  }\n}"
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "XDmqM_Zaoz7jpFPc3VHK-$$O79D6KhSuM4DsWwbXo145",
+          "schema" : {
+            "entityType" : "",
+            "providerType" : "Databricks",
+            "fields" : [ {
+              "name" : "id",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "user_id",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "order_date",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "status",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "person_details",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "5kRIFzbcmPHou6MTagTvq$$gz6FnflJMigyIWXWRAFyS",
+          "schema" : {
+            "entityType" : "",
+            "providerType" : "Databricks",
+            "fields" : [ {
+              "name" : "id",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "user_id",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "order_date",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "status",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "person_details",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "person_details_parsed",
+              "dataType" : {
+                "type" : "Struct",
+                "fields" : [ {
+                  "name" : "root",
+                  "dataType" : {
+                    "type" : "Struct",
+                    "fields" : [ {
+                      "name" : "person",
+                      "dataType" : {
+                        "type" : "Struct",
+                        "fields" : [ {
+                          "name" : "address",
+                          "dataType" : {
+                            "type" : "Struct",
+                            "fields" : [ {
+                              "name" : "city",
+                              "dataType" : {
+                                "type" : "String"
+                              }
+                            }, {
+                              "name" : "street",
+                              "dataType" : {
+                                "type" : "String"
+                              }
+                            }, {
+                              "name" : "zip",
+                              "dataType" : {
+                                "type" : "Bigint"
+                              }
+                            } ]
+                          }
+                        }, {
+                          "name" : "id",
+                          "dataType" : {
+                            "type" : "Bigint"
+                          }
+                        }, {
+                          "name" : "name",
+                          "dataType" : {
+                            "type" : "Struct",
+                            "fields" : [ {
+                              "name" : "first",
+                              "dataType" : {
+                                "type" : "String"
+                              }
+                            }, {
+                              "name" : "last",
+                              "dataType" : {
+                                "type" : "String"
+                              }
+                            } ]
+                          }
+                        } ]
+                      }
+                    } ]
+                  }
+                } ]
+              }
+            } ]
+          },
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      },
+      "componentInfo" : {
+        "gemId" : "JSONParse_DatabricksSqlBasics",
+        "name" : "JSONParse",
+        "projectName" : "DatabricksSqlBasics",
+        "sourceProjectName" : "DatabricksSqlBasics",
+        "sourceProjectVersion" : "0.0.12"
+      }
+    },
+    "G6JkYY8E6FIsF9FLGPxm-$$IoRmHy1T7eSkfD299IqkC" : {
+      "id" : "G6JkYY8E6FIsF9FLGPxm-$$IoRmHy1T7eSkfD299IqkC",
+      "component" : "Model",
+      "metadata" : {
+        "label" : "model1_1",
+        "x" : -520,
+        "y" : -880
+      },
+      "properties" : {
+        "modelName" : "model1"
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "we2Fsb8x6wDMS-1hLNiBM$$_caF0M_M95_qV72VMgq4v",
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "zHe76FejhapkQzl9Eb18Z$$gxeifylq_LsZDuJ7p9kfV",
+          "schema" : {
+            "entityType" : "",
+            "providerType" : "Databricks",
+            "fields" : [ {
+              "name" : "a",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "b",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "c",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            } ]
+          },
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    }
+  },
+  "connections" : [ {
+    "id" : "9nFDvqQ6tcRhBXwAdEUZF",
+    "source" : "rk45Jpy7762V8etMXIDgK$$V4VAFb-7Vxkq-NfgWicKC",
+    "sourcePort" : "y5P9odh0M1l4I7AFENb9b$$clr9mlW0_w4Uv2B4Rt-o2",
+    "target" : "be5Bu4vnrRU47yfXM6hmM$$29hj-oyZOQzwYygHbIGhI",
+    "targetPort" : "XDmqM_Zaoz7jpFPc3VHK-$$O79D6KhSuM4DsWwbXo145"
+  }, {
+    "id" : "kdmv0KAKEdP4gNMojThil",
+    "source" : "aPe9xRTSwUv4wMDSw5Pki$$gMJPaBYLENI7Tpd8ljEu3",
+    "sourcePort" : "MlGTOb-GittEvw3ep7HJE$$Gg8rcUnMiZx1euAmC1pwM",
+    "target" : "_7UJXzhNn8QlXylOWYqpL$$Ia0axF8gj5CSrl8oW3vrd",
+    "targetPort" : "BOGy-0jnJdGaAKw_u5r17$$zI7c9wHUekKWkOos-ihBV"
+  } ],
+  "component" : "Pipeline"
+}
