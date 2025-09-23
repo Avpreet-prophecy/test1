@@ -1,0 +1,55 @@
+---
+version: 2
+sources:
+- name: "avpreet_random_prophecy_io_team.dummy"
+  database: "avpreet_random_prophecy_io_team"
+  schema: "dummy"
+  tables:
+  - name: "crocs"
+    columns:
+    - name: "Observation ID"
+      dataType:
+        type: "BigInt"
+    - name: "Common Name"
+      dataType:
+        type: "String"
+    - name: "Scientific Name"
+      dataType:
+        type: "String"
+    - name: "Family"
+      dataType:
+        type: "String"
+    - name: "Genus"
+      dataType:
+        type: "String"
+    - name: "Observed Length (m)"
+      dataType:
+        type: "Double"
+    - name: "Observed Weight (kg)"
+      dataType:
+        type: "Double"
+    - name: "Age Class"
+      dataType:
+        type: "String"
+    - name: "Sex"
+      dataType:
+        type: "String"
+    - name: "Date of Observation"
+      dataType:
+        type: "String"
+    - name: "Country/Region"
+      dataType:
+        type: "String"
+    - name: "Habitat Type"
+      dataType:
+        type: "String"
+    - name: "Conservation Status"
+      dataType:
+        type: "String"
+    - name: "Observer Name"
+      dataType:
+        type: "String"
+    - name: "Notes"
+      dataType:
+        type: "String"
+    type: "table"

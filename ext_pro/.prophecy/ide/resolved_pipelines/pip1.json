@@ -1,0 +1,60 @@
+{
+  "id" : "pip1",
+  "metainfo" : {
+    "label" : "pip1",
+    "autoLayout" : false,
+    "version" : 1,
+    "configuration" : {
+      "schema" : {
+        "type" : "record",
+        "fields" : [ ]
+      }
+    },
+    "schedule" : {
+      "cron" : "* 0 2 * * * *",
+      "timeZone" : "GMT",
+      "emailOnSuccess" : false,
+      "emailOnFailure" : false,
+      "emailOnStart" : false,
+      "emails" : [ "email@gmail.com" ],
+      "enabled" : false
+    },
+    "sensorSchedule" : {
+      "enabled" : false,
+      "isDefaultView" : false,
+      "triggers" : { }
+    },
+    "isTranspiledPipeline" : false
+  },
+  "processes" : {
+    "WfYC7I2Gp73_KeKE38z1h$$rH6LNk9_rcgI-WRHWMmV5" : {
+      "id" : "WfYC7I2Gp73_KeKE38z1h$$rH6LNk9_rcgI-WRHWMmV5",
+      "component" : "Model",
+      "metadata" : {
+        "label" : "pip1__Reformat_1",
+        "phase" : 0
+      },
+      "properties" : {
+        "modelName" : "pip1__Reformat_1"
+      },
+      "visualMetaInfo" : {
+        "visualProcessIds" : [ "Reformat_1_c7iJa6yaWS-k1w7gZ2CdV$$h8cCE8ExEK-KdvwWGuR24", "WfYC7I2Gp73_KeKE38z1h$$rH6LNk9_rcgI-WRHWMmV5", "SLO6Yy5TbOoBd-0iNwDRG$$CzL1WpABUstwfidqW1t_2" ],
+        "type" : "ephemeral",
+        "isTemporaryTable" : true
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "pip1__Reformat_1_in_0",
+          "slug" : "in_0"
+        } ],
+        "outputs" : [ {
+          "id" : "pip1__Reformat_1_out_0",
+          "slug" : "out_0"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    }
+  },
+  "connections" : [ ],
+  "component" : "Pipeline"
+}

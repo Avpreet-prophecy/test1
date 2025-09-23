@@ -1,0 +1,119 @@
+{
+  "id" : "pip1__Reformat_1",
+  "metainfo" : {
+    "label" : "pip1__Reformat_1",
+    "autoLayout" : true,
+    "staleState" : "none",
+    "sourceSuggestions" : {
+      "sources" : [ ]
+    },
+    "graphConfig" : {
+      "entityConfig" : {
+        "materialized" : "ephemeral",
+        "database" : "\"avpreet_random_prophecy_io_team\"",
+        "schema" : "\"schema\"",
+        "type" : "ModelConfig"
+      }
+    },
+    "version" : 3
+  },
+  "processes" : {
+    "Reformat_1_c7iJa6yaWS-k1w7gZ2CdV$$h8cCE8ExEK-KdvwWGuR24" : {
+      "id" : "Reformat_1_c7iJa6yaWS-k1w7gZ2CdV$$h8cCE8ExEK-KdvwWGuR24",
+      "component" : "TargetModel",
+      "metadata" : {
+        "label" : "Reformat_1"
+      },
+      "properties" : {
+        "customQueryDisabled" : true,
+        "customQuery" : false,
+        "incrementalEditorDisabled" : true,
+        "query" : "\nSELECT *\n\nFROM Reformat_1\n\n",
+        "isModel" : true,
+        "incrementalKey" : false,
+        "incremental" : {
+          "expression" : "true"
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "input_port_0",
+          "slug" : "input_port_0"
+        } ],
+        "outputs" : [ {
+          "id" : "output_port_0",
+          "slug" : "output_port_0"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "WfYC7I2Gp73_KeKE38z1h$$rH6LNk9_rcgI-WRHWMmV5" : {
+      "id" : "WfYC7I2Gp73_KeKE38z1h$$rH6LNk9_rcgI-WRHWMmV5",
+      "component" : "Reformat",
+      "metadata" : {
+        "label" : "Reformat_1",
+        "x" : -380,
+        "y" : -180,
+        "phase" : 0
+      },
+      "properties" : {
+        "columnsSelector" : [ ],
+        "expressions" : [ ]
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "SuH10q8mCacnuiF-ZFg56$$BKPhSAuGK6ipF-HVbCypR",
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "c7iJa6yaWS-k1w7gZ2CdV$$h8cCE8ExEK-KdvwWGuR24",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "SLO6Yy5TbOoBd-0iNwDRG$$CzL1WpABUstwfidqW1t_2" : {
+      "id" : "SLO6Yy5TbOoBd-0iNwDRG$$CzL1WpABUstwfidqW1t_2",
+      "component" : "Source",
+      "metadata" : {
+        "label" : "crocs",
+        "x" : -560,
+        "y" : -280,
+        "phase" : 0
+      },
+      "properties" : {
+        "table" : {
+          "name" : "crocs",
+          "sourceType" : "Source",
+          "sourceName" : "avpreet_random_prophecy_io_team.dummy",
+          "alias" : ""
+        }
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "QjEonY-wo9mEFKPsguDq9$$QX-lqqo0yPdQBXyzpWyZW",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    }
+  },
+  "connections" : [ {
+    "id" : "conn_WfYC7I2Gp73_KeKE38z1h$$rH6LNk9_rcgI-WRHWMmV5_Reformat_1_c7iJa6yaWS-k1w7gZ2CdV$$h8cCE8ExEK-KdvwWGuR24",
+    "source" : "WfYC7I2Gp73_KeKE38z1h$$rH6LNk9_rcgI-WRHWMmV5",
+    "sourcePort" : "c7iJa6yaWS-k1w7gZ2CdV$$h8cCE8ExEK-KdvwWGuR24",
+    "target" : "Reformat_1_c7iJa6yaWS-k1w7gZ2CdV$$h8cCE8ExEK-KdvwWGuR24",
+    "targetPort" : "input_port_0"
+  }, {
+    "id" : "gw2Dx9iqFAqlkXf71LUlG$$uRCBop1JkQ2ygKdDpH-ll",
+    "source" : "SLO6Yy5TbOoBd-0iNwDRG$$CzL1WpABUstwfidqW1t_2",
+    "sourcePort" : "QjEonY-wo9mEFKPsguDq9$$QX-lqqo0yPdQBXyzpWyZW",
+    "target" : "WfYC7I2Gp73_KeKE38z1h$$rH6LNk9_rcgI-WRHWMmV5",
+    "targetPort" : "SuH10q8mCacnuiF-ZFg56$$BKPhSAuGK6ipF-HVbCypR"
+  } ],
+  "component" : "Model"
+}

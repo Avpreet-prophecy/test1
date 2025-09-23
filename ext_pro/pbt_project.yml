@@ -1,0 +1,136 @@
+name: ext_pro
+description: ''
+version: 0.0.1
+author: avpreet+random@prophecy.io
+language: sql
+buildSystem: ''
+buildSystemDetails: null
+pipelines: {}
+datasets: {}
+templates: {}
+jobs: {}
+gemContainer:
+  languageVersion: ''
+  gemLibsVersion: ''
+  gems: {}
+  dependencies: null
+functions:
+  author: null
+  createdAt: '2025-09-23 13:39:13'
+  udfs: {}
+  udafs: {}
+  expressions: {}
+  airflowFunctions: {}
+  businessRules: {}
+subgraphs: {}
+sqlModels: {}
+sqlSnapshots: {}
+sqlTests: {}
+sqlMacros:
+  .prophecy/metadata/sqlmacros/generate_schema_name:
+    name: generate_schema_name
+    macroType: expression
+    description: null
+    author: avpreet+random@prophecy.io
+    files:
+    - macros/generate_schema_name.sql
+    - .prophecy/ide/macros/generate_schema_name.json
+    createdAt: '2025-09-23 13:39:17'
+  .prophecy/metadata/sqlmacros/prophecy_tmp_source:
+    name: prophecy_tmp_source
+    macroType: expression
+    description: null
+    author: avpreet+random@prophecy.io
+    files:
+    - macros/prophecy_tmp_source.sql
+    - .prophecy/ide/macros/prophecy_tmp_source.json
+    createdAt: '2025-09-23 13:39:48'
+sqlSeeds: {}
+sqlSources:
+  .prophecy/metadata/sqlsources/avpreet_random_prophecy_io_team_dummy:
+    name: avpreet_random_prophecy_io_team.dummy
+    description: null
+    author: avpreet+random@prophecy.io
+    files:
+    - prophecy-sources/sources.yml
+    createdAt: '2025-09-23 13:41:19'
+    tables:
+    - name: crocs
+      schema:
+        entityType: ''
+        providerType: ProphecyManaged
+        fields:
+        - name: Observation ID
+          dataType:
+            type: BigInt
+        - name: Common Name
+          dataType:
+            type: String
+        - name: Scientific Name
+          dataType:
+            type: String
+        - name: Family
+          dataType:
+            type: String
+        - name: Genus
+          dataType:
+            type: String
+        - name: Observed Length (m)
+          dataType:
+            type: Double
+        - name: Observed Weight (kg)
+          dataType:
+            type: Double
+        - name: Age Class
+          dataType:
+            type: String
+        - name: Sex
+          dataType:
+            type: String
+        - name: Date of Observation
+          dataType:
+            type: String
+        - name: Country/Region
+          dataType:
+            type: String
+        - name: Habitat Type
+          dataType:
+            type: String
+        - name: Conservation Status
+          dataType:
+            type: String
+        - name: Observer Name
+          dataType:
+            type: String
+        - name: Notes
+          dataType:
+            type: String
+      description: null
+      author: avpreet+random@prophecy.io
+      createdAt: '2025-09-23 13:41:19'
+      tableType: table
+sqlUnreferencedSources: {}
+sqlPipeline:
+  name: sqlPipeline
+  description: null
+  author: avpreet+random@prophecy.io
+  createdAt: '2025-09-23 13:39:13'
+dependencies: []
+projectDependencies: {}
+flags:
+  shouldAddDefaultDependenciesIfAbsent: false
+pipelineConfigurations: {}
+projectConfigurations: {}
+sqlOrchestratorPipelines:
+  .prophecy/metadata/sqlorchestratorpipeline/pip1:
+    name: pip1
+    schema: null
+    description: null
+    author: avpreet+random@prophecy.io
+    files:
+    - models/pip1/schema.yml
+    - models/pip1/pip1__Reformat_1.sql
+    - .prophecy/ide/pipelines/pip1.json
+    - pipelines/pip1.py
+    createdAt: '2025-09-23 13:39:48'
+sqlBusinessApps: {}
