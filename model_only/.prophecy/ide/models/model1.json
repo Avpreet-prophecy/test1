@@ -82,7 +82,7 @@
         "x" : -180,
         "y" : -280,
         "phase" : 0,
-        "macroDependencies" : [ "DatabricksSqlBasics.FindDuplicates" ],
+        "macroDependencies" : [ "prophecy_basics.FindDuplicates" ],
         "isLabelGrayed" : false
       },
       "properties" : {
@@ -90,7 +90,7 @@
           "path" : "out",
           "id" : "out",
           "language" : "sql",
-          "content" : "{{ DatabricksSqlBasics.FindDuplicates('s1',[],'','unique','','','','allCols',['a','b','c'],[]) }}"
+          "content" : "{{ prophecy_basics.FindDuplicates('s1',[],'','unique','','','','allCols',['a','b','c'],[]) }}"
         } ]
       },
       "ports" : {

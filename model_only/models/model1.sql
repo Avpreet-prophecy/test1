@@ -17,7 +17,7 @@ s1 AS (
 duplicate_finder AS (
 
   {{
-    DatabricksSqlBasics.FindDuplicates(
+    prophecy_basics.FindDuplicates(
       's1', 
       [], 
       '', 
