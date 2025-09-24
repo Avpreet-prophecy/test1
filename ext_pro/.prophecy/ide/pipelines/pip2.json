@@ -7,7 +7,19 @@
     "configuration" : {
       "schema" : {
         "type" : "record",
-        "fields" : [ ]
+        "fields" : [ {
+          "name" : "c_string",
+          "kind" : {
+            "type" : "string",
+            "value" : "'hey'"
+          }
+        }, {
+          "name" : "c_int",
+          "kind" : {
+            "type" : "string",
+            "value" : "'123'"
+          }
+        } ]
       }
     },
     "isTranspiledPipeline" : false
@@ -23,7 +35,7 @@
         "phase" : 0
       },
       "properties" : {
-        "columnsSelector" : [ ],
+        "columnsSelector" : [ "h5zJr4lU##AGE" ],
         "condition" : {
           "expression" : "AGE >= 21"
         }
@@ -120,7 +132,7 @@
         "phase" : 0
       },
       "properties" : {
-        "columnsSelector" : [ ],
+        "columnsSelector" : [ "BOjM2rjo##ID", "BOjM2rjo##Name", "BOjM2rjo##Age", "BOjM2rjo##Salary", "BOjM2rjo##Category" ],
         "expressions" : [ {
           "expression" : {
             "expression" : "ID"
@@ -420,7 +432,7 @@
         "phase" : 0
       },
       "properties" : {
-        "columnsSelector" : [ ],
+        "columnsSelector" : [ "iv2Bu21w##ID", "iv2Bu21w##NAME", "iv2Bu21w##AGE", "iv2Bu21w##SALARY", "iv2Bu21w##CATEGORY" ],
         "expressions" : [ {
           "expression" : {
             "expression" : "ID"

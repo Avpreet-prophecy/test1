@@ -7,7 +7,19 @@
     "configuration" : {
       "schema" : {
         "type" : "record",
-        "fields" : [ ]
+        "fields" : [ {
+          "name" : "c_string",
+          "kind" : {
+            "type" : "string",
+            "value" : "'hey'"
+          }
+        }, {
+          "name" : "c_int",
+          "kind" : {
+            "type" : "string",
+            "value" : "'123'"
+          }
+        } ]
       }
     },
     "isTranspiledPipeline" : false
