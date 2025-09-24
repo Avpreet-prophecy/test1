@@ -1,6 +1,6 @@
 ---
 version: 2
 models:
-- name: "pip2__category_avg_salary"
+- name: "pip2__final"
   tags:
   - "prophecy_temp"
