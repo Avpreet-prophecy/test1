@@ -178,6 +178,99 @@ sqlSources:
       author: avpreet+random@prophecy.io
       createdAt: '2025-09-24 02:18:06'
       tableType: table
+    - name: rides
+      schema:
+        entityType: ''
+        providerType: ProphecyManaged
+        fields:
+        - name: ride_id
+          dataType:
+            type: BigInt
+        - name: customer_id
+          dataType:
+            type: BigInt
+        - name: ride_date
+          dataType:
+            type: Date
+        - name: fare_amount
+          dataType:
+            type: Double
+      description: null
+      author: avpreet+random@prophecy.io
+      createdAt: '2025-09-24 02:24:26'
+      tableType: table
+    - name: uber_data
+      schema:
+        entityType: ''
+        providerType: ProphecyManaged
+        fields:
+        - name: Date
+          dataType:
+            type: Date
+        - name: Time
+          dataType:
+            type: Time
+        - name: Booking ID
+          dataType:
+            type: String
+        - name: Booking Status
+          dataType:
+            type: String
+        - name: Customer ID
+          dataType:
+            type: String
+        - name: Vehicle Type
+          dataType:
+            type: String
+        - name: Pickup Location
+          dataType:
+            type: String
+        - name: Drop Location
+          dataType:
+            type: String
+        - name: Avg VTAT
+          dataType:
+            type: String
+        - name: Avg CTAT
+          dataType:
+            type: String
+        - name: Cancelled Rides by Customer
+          dataType:
+            type: String
+        - name: Reason for cancelling by Customer
+          dataType:
+            type: String
+        - name: Cancelled Rides by Driver
+          dataType:
+            type: String
+        - name: Driver Cancellation Reason
+          dataType:
+            type: String
+        - name: Incomplete Rides
+          dataType:
+            type: String
+        - name: Incomplete Rides Reason
+          dataType:
+            type: String
+        - name: Booking Value
+          dataType:
+            type: String
+        - name: Ride Distance
+          dataType:
+            type: String
+        - name: Driver Ratings
+          dataType:
+            type: String
+        - name: Customer Rating
+          dataType:
+            type: String
+        - name: Payment Method
+          dataType:
+            type: String
+      description: null
+      author: avpreet+random@prophecy.io
+      createdAt: '2025-09-24 02:25:18'
+      tableType: table
 sqlUnreferencedSources: {}
 sqlPipeline:
   name: sqlPipeline
