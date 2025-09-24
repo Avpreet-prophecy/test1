@@ -45,7 +45,7 @@
       "component" : "Dataset",
       "metadata" : {
         "label" : "xlxs_file",
-        "x" : 80,
+        "x" : 20,
         "y" : 20,
         "phase" : 0
       },
@@ -146,8 +146,8 @@
       "component" : "Dataset",
       "metadata" : {
         "label" : "support_tickets",
-        "x" : -160,
-        "y" : -100,
+        "x" : 20,
+        "y" : 420,
         "phase" : 0
       },
       "properties" : {
@@ -197,8 +197,8 @@
       "component" : "Dataset",
       "metadata" : {
         "label" : "rides",
-        "x" : -160,
-        "y" : 40,
+        "x" : 20,
+        "y" : 620,
         "phase" : 0
       },
       "properties" : {

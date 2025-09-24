@@ -18,6 +18,8 @@
       "component" : "Reformat",
       "metadata" : {
         "label" : "final",
+        "x" : 1420,
+        "y" : 220,
         "phase" : 0
       },
       "properties" : {
@@ -62,10 +64,90 @@
       "ports" : {
         "inputs" : [ {
           "id" : "a2FrTrID",
+          "schema" : {
+            "entityType" : "",
+            "providerType" : "ProphecyManaged",
+            "fields" : [ {
+              "name" : "vehicle_type",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "total_bookings",
+              "dataType" : {
+                "type" : "BigInt"
+              }
+            }, {
+              "name" : "completed_rides",
+              "dataType" : {
+                "type" : "HugeInt"
+              }
+            }, {
+              "name" : "cancelled_by_customer",
+              "dataType" : {
+                "type" : "HugeInt"
+              }
+            }, {
+              "name" : "cancelled_by_driver",
+              "dataType" : {
+                "type" : "HugeInt"
+              }
+            }, {
+              "name" : "incomplete_rides",
+              "dataType" : {
+                "type" : "HugeInt"
+              }
+            }, {
+              "name" : "completion_rate",
+              "dataType" : {
+                "type" : "Double"
+              }
+            } ]
+          },
           "slug" : "completion_rate_ranking"
         } ],
         "outputs" : [ {
           "id" : "cKhj0dro",
+          "schema" : {
+            "entityType" : "",
+            "providerType" : "ProphecyManaged",
+            "fields" : [ {
+              "name" : "vehicle_type",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "total_bookings",
+              "dataType" : {
+                "type" : "BigInt"
+              }
+            }, {
+              "name" : "completed_rides",
+              "dataType" : {
+                "type" : "HugeInt"
+              }
+            }, {
+              "name" : "cancelled_by_customer",
+              "dataType" : {
+                "type" : "HugeInt"
+              }
+            }, {
+              "name" : "cancelled_by_driver",
+              "dataType" : {
+                "type" : "HugeInt"
+              }
+            }, {
+              "name" : "incomplete_rides",
+              "dataType" : {
+                "type" : "HugeInt"
+              }
+            }, {
+              "name" : "completion_rate",
+              "dataType" : {
+                "type" : "Double"
+              }
+            } ]
+          },
           "slug" : "out"
         } ],
         "isCustomOutputSchema" : false
@@ -76,6 +158,8 @@
       "component" : "Reformat",
       "metadata" : {
         "label" : "vehicle_type_completion",
+        "x" : 1020,
+        "y" : 220,
         "phase" : 0
       },
       "properties" : {
@@ -121,10 +205,85 @@
       "ports" : {
         "inputs" : [ {
           "id" : "L1IxWJ5A",
+          "schema" : {
+            "entityType" : "",
+            "providerType" : "ProphecyManaged",
+            "fields" : [ {
+              "name" : "vehicle_type",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "total_bookings",
+              "dataType" : {
+                "type" : "BigInt"
+              }
+            }, {
+              "name" : "completed_rides",
+              "dataType" : {
+                "type" : "HugeInt"
+              }
+            }, {
+              "name" : "cancelled_by_customer",
+              "dataType" : {
+                "type" : "HugeInt"
+              }
+            }, {
+              "name" : "cancelled_by_driver",
+              "dataType" : {
+                "type" : "HugeInt"
+              }
+            }, {
+              "name" : "incomplete_rides",
+              "dataType" : {
+                "type" : "HugeInt"
+              }
+            } ]
+          },
           "slug" : "vehicle_type_agg"
         } ],
         "outputs" : [ {
           "id" : "sGHunUGx",
+          "schema" : {
+            "entityType" : "",
+            "providerType" : "ProphecyManaged",
+            "fields" : [ {
+              "name" : "vehicle_type",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "total_bookings",
+              "dataType" : {
+                "type" : "BigInt"
+              }
+            }, {
+              "name" : "completed_rides",
+              "dataType" : {
+                "type" : "HugeInt"
+              }
+            }, {
+              "name" : "cancelled_by_customer",
+              "dataType" : {
+                "type" : "HugeInt"
+              }
+            }, {
+              "name" : "cancelled_by_driver",
+              "dataType" : {
+                "type" : "HugeInt"
+              }
+            }, {
+              "name" : "incomplete_rides",
+              "dataType" : {
+                "type" : "HugeInt"
+              }
+            }, {
+              "name" : "completion_rate",
+              "dataType" : {
+                "type" : "Double"
+              }
+            } ]
+          },
           "slug" : "out"
         } ],
         "isCustomOutputSchema" : false
@@ -135,6 +294,8 @@
       "component" : "Filter",
       "metadata" : {
         "label" : "valid_uber_bookings",
+        "x" : 420,
+        "y" : 220,
         "phase" : 0
       },
       "properties" : {
@@ -146,10 +307,230 @@
       "ports" : {
         "inputs" : [ {
           "id" : "wHUiNqXH",
+          "schema" : {
+            "entityType" : "",
+            "providerType" : "ProphecyManaged",
+            "fields" : [ {
+              "name" : "Date",
+              "dataType" : {
+                "type" : "Date"
+              }
+            }, {
+              "name" : "Time",
+              "dataType" : {
+                "type" : "Time"
+              }
+            }, {
+              "name" : "Booking ID",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Booking Status",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Customer ID",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Vehicle Type",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Pickup Location",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Drop Location",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Avg VTAT",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Avg CTAT",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Cancelled Rides by Customer",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Reason for cancelling by Customer",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Cancelled Rides by Driver",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Driver Cancellation Reason",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Incomplete Rides",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Incomplete Rides Reason",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Booking Value",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Ride Distance",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Driver Ratings",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Customer Rating",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Payment Method",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
           "slug" : "uber_data"
         } ],
         "outputs" : [ {
           "id" : "jLXPSLRI",
+          "schema" : {
+            "entityType" : "",
+            "providerType" : "ProphecyManaged",
+            "fields" : [ {
+              "name" : "Date",
+              "dataType" : {
+                "type" : "Date"
+              }
+            }, {
+              "name" : "Time",
+              "dataType" : {
+                "type" : "Time"
+              }
+            }, {
+              "name" : "Booking ID",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Booking Status",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Customer ID",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Vehicle Type",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Pickup Location",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Drop Location",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Avg VTAT",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Avg CTAT",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Cancelled Rides by Customer",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Reason for cancelling by Customer",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Cancelled Rides by Driver",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Driver Cancellation Reason",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Incomplete Rides",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Incomplete Rides Reason",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Booking Value",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Ride Distance",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Driver Ratings",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Customer Rating",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Payment Method",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
           "slug" : "out"
         } ],
         "isCustomOutputSchema" : false
@@ -160,6 +541,8 @@
       "component" : "Aggregate",
       "metadata" : {
         "label" : "vehicle_type_agg",
+        "x" : 820,
+        "y" : 220,
         "phase" : 0
       },
       "properties" : {
@@ -216,10 +599,155 @@
       "ports" : {
         "inputs" : [ {
           "id" : "tH6QLs7t",
+          "schema" : {
+            "entityType" : "",
+            "providerType" : "ProphecyManaged",
+            "fields" : [ {
+              "name" : "Date",
+              "dataType" : {
+                "type" : "Date"
+              }
+            }, {
+              "name" : "Time",
+              "dataType" : {
+                "type" : "Time"
+              }
+            }, {
+              "name" : "Booking ID",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Booking Status",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Customer ID",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Vehicle Type",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Pickup Location",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Drop Location",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Avg VTAT",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Avg CTAT",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Cancelled Rides by Customer",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Reason for cancelling by Customer",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Cancelled Rides by Driver",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Driver Cancellation Reason",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Incomplete Rides",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Incomplete Rides Reason",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Booking Value",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Ride Distance",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Driver Ratings",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Customer Rating",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Payment Method",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
           "slug" : "uber_data_clean"
         } ],
         "outputs" : [ {
           "id" : "o5nrYD5e",
+          "schema" : {
+            "entityType" : "",
+            "providerType" : "ProphecyManaged",
+            "fields" : [ {
+              "name" : "vehicle_type",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "total_bookings",
+              "dataType" : {
+                "type" : "BigInt"
+              }
+            }, {
+              "name" : "completed_rides",
+              "dataType" : {
+                "type" : "HugeInt"
+              }
+            }, {
+              "name" : "cancelled_by_customer",
+              "dataType" : {
+                "type" : "HugeInt"
+              }
+            }, {
+              "name" : "cancelled_by_driver",
+              "dataType" : {
+                "type" : "HugeInt"
+              }
+            }, {
+              "name" : "incomplete_rides",
+              "dataType" : {
+                "type" : "HugeInt"
+              }
+            } ]
+          },
           "slug" : "out"
         } ],
         "isCustomOutputSchema" : false
@@ -230,6 +758,8 @@
       "component" : "Dataset",
       "metadata" : {
         "label" : "uber_raw_data",
+        "x" : 20,
+        "y" : 220,
         "phase" : 0
       },
       "properties" : {
@@ -365,7 +895,7 @@
       "metadata" : {
         "label" : "Comment_1",
         "x" : 20,
-        "y" : 640,
+        "y" : 1020,
         "height" : 40.00004959106445,
         "width" : 219.99996948242188,
         "phase" : 0
@@ -384,6 +914,8 @@
       "component" : "Reformat",
       "metadata" : {
         "label" : "uber_data",
+        "x" : 220,
+        "y" : 220,
         "phase" : 0
       },
       "properties" : {
@@ -612,6 +1144,116 @@
         } ],
         "outputs" : [ {
           "id" : "oFA5TGFe",
+          "schema" : {
+            "entityType" : "",
+            "providerType" : "ProphecyManaged",
+            "fields" : [ {
+              "name" : "Date",
+              "dataType" : {
+                "type" : "Date"
+              }
+            }, {
+              "name" : "Time",
+              "dataType" : {
+                "type" : "Time"
+              }
+            }, {
+              "name" : "Booking ID",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Booking Status",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Customer ID",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Vehicle Type",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Pickup Location",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Drop Location",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Avg VTAT",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Avg CTAT",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Cancelled Rides by Customer",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Reason for cancelling by Customer",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Cancelled Rides by Driver",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Driver Cancellation Reason",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Incomplete Rides",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Incomplete Rides Reason",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Booking Value",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Ride Distance",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Driver Ratings",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Customer Rating",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Payment Method",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
           "slug" : "out"
         } ],
         "isCustomOutputSchema" : false
@@ -622,7 +1264,7 @@
       "component" : "Dataset",
       "metadata" : {
         "label" : "xlxs_file",
-        "x" : 80,
+        "x" : 20,
         "y" : 20,
         "phase" : 0
       },
@@ -723,8 +1365,8 @@
       "component" : "Dataset",
       "metadata" : {
         "label" : "support_tickets",
-        "x" : -160,
-        "y" : -100,
+        "x" : 20,
+        "y" : 420,
         "phase" : 0
       },
       "properties" : {
@@ -775,7 +1417,7 @@
       "metadata" : {
         "label" : "Comment_4",
         "x" : 20,
-        "y" : 1000,
+        "y" : 820,
         "height" : 108,
         "width" : 219.99990844726562,
         "phase" : 0
@@ -795,7 +1437,7 @@
       "metadata" : {
         "label" : "Comment_2",
         "x" : 20,
-        "y" : 220,
+        "y" : 1420,
         "height" : 72,
         "width" : 219.99996948242188,
         "phase" : 0
@@ -814,6 +1456,8 @@
       "component" : "OrderBy",
       "metadata" : {
         "label" : "completion_rate_ranking",
+        "x" : 1220,
+        "y" : 220,
         "phase" : 0
       },
       "properties" : {
@@ -828,10 +1472,90 @@
       "ports" : {
         "inputs" : [ {
           "id" : "ddAzQNpy",
+          "schema" : {
+            "entityType" : "",
+            "providerType" : "ProphecyManaged",
+            "fields" : [ {
+              "name" : "vehicle_type",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "total_bookings",
+              "dataType" : {
+                "type" : "BigInt"
+              }
+            }, {
+              "name" : "completed_rides",
+              "dataType" : {
+                "type" : "HugeInt"
+              }
+            }, {
+              "name" : "cancelled_by_customer",
+              "dataType" : {
+                "type" : "HugeInt"
+              }
+            }, {
+              "name" : "cancelled_by_driver",
+              "dataType" : {
+                "type" : "HugeInt"
+              }
+            }, {
+              "name" : "incomplete_rides",
+              "dataType" : {
+                "type" : "HugeInt"
+              }
+            }, {
+              "name" : "completion_rate",
+              "dataType" : {
+                "type" : "Double"
+              }
+            } ]
+          },
           "slug" : "vehicle_type_completion"
         } ],
         "outputs" : [ {
           "id" : "RwaPYnx2",
+          "schema" : {
+            "entityType" : "",
+            "providerType" : "ProphecyManaged",
+            "fields" : [ {
+              "name" : "vehicle_type",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "total_bookings",
+              "dataType" : {
+                "type" : "BigInt"
+              }
+            }, {
+              "name" : "completed_rides",
+              "dataType" : {
+                "type" : "HugeInt"
+              }
+            }, {
+              "name" : "cancelled_by_customer",
+              "dataType" : {
+                "type" : "HugeInt"
+              }
+            }, {
+              "name" : "cancelled_by_driver",
+              "dataType" : {
+                "type" : "HugeInt"
+              }
+            }, {
+              "name" : "incomplete_rides",
+              "dataType" : {
+                "type" : "HugeInt"
+              }
+            }, {
+              "name" : "completion_rate",
+              "dataType" : {
+                "type" : "Double"
+              }
+            } ]
+          },
           "slug" : "out"
         } ],
         "isCustomOutputSchema" : false
@@ -843,7 +1567,7 @@
       "metadata" : {
         "label" : "Comment_3",
         "x" : 20,
-        "y" : 820,
+        "y" : 1220,
         "height" : 99.9999771118164,
         "width" : 219.99996948242188,
         "phase" : 0
@@ -862,8 +1586,8 @@
       "component" : "Dataset",
       "metadata" : {
         "label" : "rides",
-        "x" : -160,
-        "y" : 40,
+        "x" : 20,
+        "y" : 620,
         "phase" : 0
       },
       "properties" : {
@@ -916,6 +1640,8 @@
       "component" : "Reformat",
       "metadata" : {
         "label" : "uber_data_clean",
+        "x" : 620,
+        "y" : 220,
         "phase" : 0
       },
       "properties" : {
@@ -1030,10 +1756,230 @@
       "ports" : {
         "inputs" : [ {
           "id" : "UL1ngCv1",
+          "schema" : {
+            "entityType" : "",
+            "providerType" : "ProphecyManaged",
+            "fields" : [ {
+              "name" : "Date",
+              "dataType" : {
+                "type" : "Date"
+              }
+            }, {
+              "name" : "Time",
+              "dataType" : {
+                "type" : "Time"
+              }
+            }, {
+              "name" : "Booking ID",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Booking Status",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Customer ID",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Vehicle Type",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Pickup Location",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Drop Location",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Avg VTAT",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Avg CTAT",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Cancelled Rides by Customer",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Reason for cancelling by Customer",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Cancelled Rides by Driver",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Driver Cancellation Reason",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Incomplete Rides",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Incomplete Rides Reason",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Booking Value",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Ride Distance",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Driver Ratings",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Customer Rating",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Payment Method",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
           "slug" : "valid_uber_bookings"
         } ],
         "outputs" : [ {
           "id" : "WiU7dn7W",
+          "schema" : {
+            "entityType" : "",
+            "providerType" : "ProphecyManaged",
+            "fields" : [ {
+              "name" : "Date",
+              "dataType" : {
+                "type" : "Date"
+              }
+            }, {
+              "name" : "Time",
+              "dataType" : {
+                "type" : "Time"
+              }
+            }, {
+              "name" : "Booking ID",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Booking Status",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Customer ID",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Vehicle Type",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Pickup Location",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Drop Location",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Avg VTAT",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Avg CTAT",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Cancelled Rides by Customer",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Reason for cancelling by Customer",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Cancelled Rides by Driver",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Driver Cancellation Reason",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Incomplete Rides",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Incomplete Rides Reason",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Booking Value",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Ride Distance",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Driver Ratings",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Customer Rating",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Payment Method",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
           "slug" : "out"
         } ],
         "isCustomOutputSchema" : false
