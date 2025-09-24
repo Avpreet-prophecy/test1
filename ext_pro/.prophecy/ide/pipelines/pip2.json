@@ -1,0 +1,137 @@
+{
+  "id" : "pip2",
+  "metainfo" : {
+    "label" : "pip2",
+    "autoLayout" : false,
+    "version" : 1,
+    "configuration" : {
+      "schema" : {
+        "type" : "record",
+        "fields" : [ ]
+      }
+    },
+    "schedule" : {
+      "cron" : "* 0 2 * * * *",
+      "timeZone" : "GMT",
+      "emailOnSuccess" : false,
+      "emailOnFailure" : false,
+      "emailOnStart" : false,
+      "emails" : [ "email@gmail.com" ],
+      "enabled" : false
+    },
+    "sensorSchedule" : {
+      "enabled" : false,
+      "isDefaultView" : false,
+      "triggers" : { }
+    },
+    "isTranspiledPipeline" : false
+  },
+  "processes" : {
+    "e7bUqYgCJvwsLqyJ2b0IB$$x3djPCSpGT59eGxChebn-" : {
+      "id" : "e7bUqYgCJvwsLqyJ2b0IB$$x3djPCSpGT59eGxChebn-",
+      "component" : "Dataset",
+      "metadata" : {
+        "label" : "xlxs_file",
+        "x" : -560,
+        "y" : -280,
+        "phase" : 0
+      },
+      "properties" : {
+        "table" : {
+          "name" : "xlxs_file",
+          "sourceType" : "Source",
+          "sourceName" : "avpreet_random_prophecy_io_team.dummy",
+          "alias" : ""
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "GY0h3ZW__bp2puclsWLxw$$yEwDu4tL4DZsArQsWsRp9",
+          "slug" : "in"
+        } ],
+        "outputs" : [ {
+          "id" : "qo-T_r5-MvdzMJ1p3ztDj$$tARj3-WKa_V42dZstP9Zn",
+          "schema" : {
+            "entityType" : "",
+            "providerType" : "ProphecyManaged",
+            "fields" : [ {
+              "name" : "ID",
+              "dataType" : {
+                "type" : "BigInt"
+              }
+            }, {
+              "name" : "Name",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "About",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Age",
+              "dataType" : {
+                "type" : "BigInt"
+              }
+            }, {
+              "name" : "Salary",
+              "dataType" : {
+                "type" : "Double"
+              }
+            }, {
+              "name" : "JoinDate",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Email",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Address",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "RelationIds",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "IP",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Comments",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Phone",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Feedback",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Category",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    }
+  },
+  "connections" : [ ],
+  "component" : "Pipeline"
+}

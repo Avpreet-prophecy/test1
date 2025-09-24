@@ -320,6 +320,112 @@
         } ],
         "isCustomOutputSchema" : false
       }
+    },
+    "MG--LqVsHtJxdIEZjN3h7$$zGBUcGyaus6ER56CwAJfI" : {
+      "id" : "MG--LqVsHtJxdIEZjN3h7$$zGBUcGyaus6ER56CwAJfI",
+      "component" : "OrchestrationTarget",
+      "kind" : "SFTPTarget",
+      "metadata" : {
+        "label" : "OrchestrationTarget_1",
+        "x" : -980,
+        "y" : -420,
+        "phase" : 0
+      },
+      "properties" : {
+        "connector" : {
+          "kind" : "sftp",
+          "type" : "connector",
+          "properties" : { }
+        },
+        "properties" : { },
+        "format" : {
+          "properties" : {
+            "allowLazyQuotes" : false,
+            "allowEmptyColumnNames" : true,
+            "separator" : ",",
+            "nullValue" : "",
+            "encoding" : "UTF-8",
+            "header" : true
+          },
+          "kind" : "csv",
+          "category" : "file"
+        },
+        "isNew" : true
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "Qudj4fhepKzN0zAshA15O$$ACioEXsWsoGGZSdiCqvPf",
+          "slug" : "in"
+        } ],
+        "outputs" : [ ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "xTza5Efs3OopOaY7dUM5C$$vm3Y_0Sb_5AZe3bae3WzG" : {
+      "id" : "xTza5Efs3OopOaY7dUM5C$$vm3Y_0Sb_5AZe3bae3WzG",
+      "component" : "OrchestrationSource",
+      "kind" : "OnedriveSource",
+      "metadata" : {
+        "label" : "OrchestrationSource_1",
+        "x" : -840,
+        "y" : -420,
+        "phase" : 0
+      },
+      "properties" : {
+        "connector" : {
+          "kind" : "onedrive",
+          "properties" : { },
+          "type" : "connector"
+        },
+        "properties" : { },
+        "format" : {
+          "properties" : {
+            "allowLazyQuotes" : false,
+            "allowEmptyColumnNames" : true,
+            "separator" : ",",
+            "nullValue" : "",
+            "encoding" : "UTF-8",
+            "header" : true
+          },
+          "kind" : "csv",
+          "category" : "file"
+        },
+        "isNew" : true
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "X__3jS5rzuqbBVHk4DlLq$$xpQ5IfszXB6K5RdzBWCbj",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "CrxsWYE7JjC6KVd6HjU90$$5ZVW-gIZ462LmEuylmsEB" : {
+      "id" : "CrxsWYE7JjC6KVd6HjU90$$5ZVW-gIZ462LmEuylmsEB",
+      "component" : "Dataset",
+      "metadata" : {
+        "label" : "Table_1",
+        "x" : -1000,
+        "y" : -200,
+        "phase" : 0
+      },
+      "properties" : {
+        "writeOptions" : {
+          "writeMode" : "overwrite"
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "8GZ1NsFVvAekfTb4Fa7vJ$$yrCsi7btcHEIEfApj-igx",
+          "slug" : "in"
+        } ],
+        "outputs" : [ {
+          "id" : "5n7Ml8fYC7diOKfFuwEA6$$g0SrVoZinJFFgg2VDk0EM",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
     }
   },
   "connections" : [ {

@@ -53,3 +53,60 @@ sources:
       dataType:
         type: "String"
     type: "table"
+  - name: "support_tickets"
+    columns:
+    - name: "ticket_id"
+      dataType:
+        type: "BigInt"
+    - name: "customer_id"
+      dataType:
+        type: "BigInt"
+    - name: "issue_type"
+      dataType:
+        type: "String"
+    type: "table"
+  - name: "xlxs_file"
+    columns:
+    - name: "ID"
+      dataType:
+        type: "BigInt"
+    - name: "Name"
+      dataType:
+        type: "String"
+    - name: "About"
+      dataType:
+        type: "String"
+    - name: "Age"
+      dataType:
+        type: "BigInt"
+    - name: "Salary"
+      dataType:
+        type: "Double"
+    - name: "JoinDate"
+      dataType:
+        type: "String"
+    - name: "Email"
+      dataType:
+        type: "String"
+    - name: "Address"
+      dataType:
+        type: "String"
+    - name: "RelationIds"
+      dataType:
+        type: "String"
+    - name: "IP"
+      dataType:
+        type: "String"
+    - name: "Comments"
+      dataType:
+        type: "String"
+    - name: "Phone"
+      dataType:
+        type: "String"
+    - name: "Feedback"
+      dataType:
+        type: "String"
+    - name: "Category"
+      dataType:
+        type: "String"
+    type: "table"

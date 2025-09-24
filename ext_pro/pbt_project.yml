@@ -109,6 +109,75 @@ sqlSources:
       author: avpreet+random@prophecy.io
       createdAt: '2025-09-23 13:41:19'
       tableType: table
+    - name: support_tickets
+      schema:
+        entityType: ''
+        providerType: ProphecyManaged
+        fields:
+        - name: ticket_id
+          dataType:
+            type: BigInt
+        - name: customer_id
+          dataType:
+            type: BigInt
+        - name: issue_type
+          dataType:
+            type: String
+      description: null
+      author: avpreet+random@prophecy.io
+      createdAt: '2025-09-23 15:38:51'
+      tableType: table
+    - name: xlxs_file
+      schema:
+        entityType: ''
+        providerType: ProphecyManaged
+        fields:
+        - name: ID
+          dataType:
+            type: BigInt
+        - name: Name
+          dataType:
+            type: String
+        - name: About
+          dataType:
+            type: String
+        - name: Age
+          dataType:
+            type: BigInt
+        - name: Salary
+          dataType:
+            type: Double
+        - name: JoinDate
+          dataType:
+            type: String
+        - name: Email
+          dataType:
+            type: String
+        - name: Address
+          dataType:
+            type: String
+        - name: RelationIds
+          dataType:
+            type: String
+        - name: IP
+          dataType:
+            type: String
+        - name: Comments
+          dataType:
+            type: String
+        - name: Phone
+          dataType:
+            type: String
+        - name: Feedback
+          dataType:
+            type: String
+        - name: Category
+          dataType:
+            type: String
+      description: null
+      author: avpreet+random@prophecy.io
+      createdAt: '2025-09-24 02:18:06'
+      tableType: table
 sqlUnreferencedSources: {}
 sqlPipeline:
   name: sqlPipeline
@@ -133,4 +202,13 @@ sqlOrchestratorPipelines:
     - .prophecy/ide/pipelines/pip1.json
     - pipelines/pip1.py
     createdAt: '2025-09-23 13:39:48'
+  .prophecy/metadata/sqlorchestratorpipeline/pip2:
+    name: pip2
+    schema: null
+    description: null
+    author: avpreet+random@prophecy.io
+    files:
+    - .prophecy/ide/pipelines/pip2.json
+    - pipelines/pip2.py
+    createdAt: '2025-09-24 02:12:22'
 sqlBusinessApps: {}
