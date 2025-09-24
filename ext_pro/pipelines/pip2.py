@@ -1,6 +1,6 @@
 with DAG():
-    pip2__employee_annual_salary = Task(
-        task_id = "pip2__employee_annual_salary", 
+    pip2__age_21_and_above_employees = Task(
+        task_id = "pip2__age_21_and_above_employees", 
         component = "Model", 
-        modelName = "pip2__employee_annual_salary"
+        modelName = "pip2__age_21_and_above_employees"
     )

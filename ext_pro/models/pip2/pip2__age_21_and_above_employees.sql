@@ -39,8 +39,18 @@ employee_annual_salary AS (
   
   FROM selected_employee_columns
 
+),
+
+age_21_and_above_employees AS (
+
+  SELECT * 
+  
+  FROM employee_annual_salary
+  
+  WHERE AGE >= 21
+
 )
 
 SELECT *
 
-FROM employee_annual_salary
+FROM age_21_and_above_employees

@@ -1,6 +1,6 @@
 ---
 version: 2
 models:
-- name: "pip2__employee_annual_salary"
+- name: "pip2__age_21_and_above_employees"
   tags:
   - "prophecy_temp"
