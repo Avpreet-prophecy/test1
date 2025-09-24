@@ -1,6 +1,6 @@
 ---
 version: 2
 models:
-- name: "pip2__selected_employee_columns"
+- name: "pip2__employee_annual_salary"
   tags:
   - "prophecy_temp"

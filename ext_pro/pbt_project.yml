@@ -208,8 +208,8 @@ sqlOrchestratorPipelines:
     description: null
     author: avpreet+random@prophecy.io
     files:
-    - models/pip2/pip2__selected_employee_columns.sql
     - models/pip2/schema.yml
+    - models/pip2/pip2__employee_annual_salary.sql
     - .prophecy/ide/pipelines/pip2.json
     - pipelines/pip2.py
     createdAt: '2025-09-24 02:12:22'

@@ -13,8 +13,8 @@
     "isTranspiledPipeline" : false
   },
   "processes" : {
-    "e7bUqYgCJvwsLqyJ2b0IB$$x3djPCSpGT59eGxChebn-" : {
-      "id" : "e7bUqYgCJvwsLqyJ2b0IB$$x3djPCSpGT59eGxChebn-",
+    "xlxs_file##eWk999m3" : {
+      "id" : "xlxs_file##eWk999m3",
       "component" : "Dataset",
       "metadata" : {
         "label" : "xlxs_file",
@@ -32,7 +32,7 @@
       "ports" : {
         "inputs" : [ ],
         "outputs" : [ {
-          "id" : "xcFMYnSt",
+          "id" : "RctCbkdv",
           "schema" : {
             "entityType" : "",
             "providerType" : "ProphecyManaged",
@@ -111,7 +111,8 @@
           "slug" : "out"
         } ],
         "isCustomOutputSchema" : false
-      }
+      },
+      "index" : 0
     },
     "selected_employe##tovWxd9R" : {
       "id" : "selected_employe##tovWxd9R",
@@ -128,36 +129,36 @@
           "expression" : {
             "expression" : "ID"
           },
-          "_row_id" : "1335557803"
+          "_row_id" : "941754971"
         }, {
           "expression" : {
             "expression" : "Name"
           },
           "alias" : "NAME",
-          "_row_id" : "902009974"
+          "_row_id" : "2041182348"
         }, {
           "expression" : {
             "expression" : "Age"
           },
           "alias" : "AGE",
-          "_row_id" : "67628661"
+          "_row_id" : "449705985"
         }, {
           "expression" : {
             "expression" : "Salary"
           },
           "alias" : "SALARY",
-          "_row_id" : "664534120"
+          "_row_id" : "844511736"
         }, {
           "expression" : {
             "expression" : "Category"
           },
           "alias" : "CATEGORY",
-          "_row_id" : "2010174455"
+          "_row_id" : "1150886206"
         } ]
       },
       "ports" : {
         "inputs" : [ {
-          "id" : "wivJZteJ",
+          "id" : "ezpCJQR8",
           "schema" : {
             "entityType" : "",
             "providerType" : "ProphecyManaged",
@@ -236,7 +237,7 @@
           "slug" : "xlxs_file"
         } ],
         "outputs" : [ {
-          "id" : "qH54myuP",
+          "id" : "BmWteDEN",
           "schema" : {
             "entityType" : "",
             "providerType" : "ProphecyManaged",
@@ -271,14 +272,141 @@
         } ],
         "isCustomOutputSchema" : false
       }
+    },
+    "employee_annual_##mnF8Bamo" : {
+      "id" : "employee_annual_##mnF8Bamo",
+      "component" : "Reformat",
+      "metadata" : {
+        "label" : "employee_annual_salary",
+        "x" : -160,
+        "y" : -280,
+        "phase" : 0
+      },
+      "properties" : {
+        "columnsSelector" : [ ],
+        "expressions" : [ {
+          "expression" : {
+            "expression" : "ID"
+          },
+          "_row_id" : "773817246"
+        }, {
+          "expression" : {
+            "expression" : "NAME"
+          },
+          "_row_id" : "1158357679"
+        }, {
+          "expression" : {
+            "expression" : "AGE"
+          },
+          "_row_id" : "578079747"
+        }, {
+          "expression" : {
+            "expression" : "SALARY"
+          },
+          "_row_id" : "1925308018"
+        }, {
+          "expression" : {
+            "expression" : "CATEGORY"
+          },
+          "_row_id" : "2028551806"
+        }, {
+          "expression" : {
+            "expression" : "SALARY * 12"
+          },
+          "alias" : "ANNUALSALARY",
+          "_row_id" : "547672314"
+        } ]
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "Yv4qMMGJ",
+          "schema" : {
+            "entityType" : "",
+            "providerType" : "ProphecyManaged",
+            "fields" : [ {
+              "name" : "ID",
+              "dataType" : {
+                "type" : "BigInt"
+              }
+            }, {
+              "name" : "NAME",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "AGE",
+              "dataType" : {
+                "type" : "BigInt"
+              }
+            }, {
+              "name" : "SALARY",
+              "dataType" : {
+                "type" : "Double"
+              }
+            }, {
+              "name" : "CATEGORY",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
+          "slug" : "selected_employee_columns"
+        } ],
+        "outputs" : [ {
+          "id" : "MTNKniHC",
+          "schema" : {
+            "entityType" : "",
+            "providerType" : "ProphecyManaged",
+            "fields" : [ {
+              "name" : "ID",
+              "dataType" : {
+                "type" : "BigInt"
+              }
+            }, {
+              "name" : "NAME",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "AGE",
+              "dataType" : {
+                "type" : "BigInt"
+              }
+            }, {
+              "name" : "SALARY",
+              "dataType" : {
+                "type" : "Double"
+              }
+            }, {
+              "name" : "CATEGORY",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "ANNUALSALARY",
+              "dataType" : {
+                "type" : "Double"
+              }
+            } ]
+          },
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
     }
   },
   "connections" : [ {
-    "id" : "gWwl0w5X",
-    "source" : "e7bUqYgCJvwsLqyJ2b0IB$$x3djPCSpGT59eGxChebn-",
-    "sourcePort" : "xcFMYnSt",
+    "id" : "XM7FFylP",
+    "source" : "xlxs_file##eWk999m3",
+    "sourcePort" : "RctCbkdv",
     "target" : "selected_employe##tovWxd9R",
-    "targetPort" : "wivJZteJ"
+    "targetPort" : "ezpCJQR8"
+  }, {
+    "id" : "NOgPPH1P",
+    "source" : "selected_employe##tovWxd9R",
+    "sourcePort" : "BmWteDEN",
+    "target" : "employee_annual_##mnF8Bamo",
+    "targetPort" : "Yv4qMMGJ"
   } ],
   "component" : "Pipeline"
 }

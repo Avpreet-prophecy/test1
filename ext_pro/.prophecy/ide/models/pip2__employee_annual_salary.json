@@ -1,7 +1,7 @@
 {
-  "id" : "pip2__selected_employee_columns",
+  "id" : "pip2__employee_annual_salary",
   "metainfo" : {
-    "label" : "pip2__selected_employee_columns",
+    "label" : "pip2__employee_annual_salary",
     "autoLayout" : true,
     "staleState" : "none",
     "sourceSuggestions" : {
@@ -18,17 +18,17 @@
     "version" : 3
   },
   "processes" : {
-    "selected_employee_columns_qH54myuP" : {
-      "id" : "selected_employee_columns_qH54myuP",
+    "employee_annual_salary_MTNKniHC" : {
+      "id" : "employee_annual_salary_MTNKniHC",
       "component" : "TargetModel",
       "metadata" : {
-        "label" : "selected_employee_columns"
+        "label" : "employee_annual_salary"
       },
       "properties" : {
         "customQueryDisabled" : true,
         "customQuery" : false,
         "incrementalEditorDisabled" : true,
-        "query" : "\nSELECT *\n\nFROM selected_employee_columns\n\n",
+        "query" : "\nSELECT *\n\nFROM employee_annual_salary\n\n",
         "isModel" : true,
         "incrementalKey" : false,
         "incremental" : {
@@ -43,6 +43,63 @@
         "outputs" : [ {
           "id" : "output_port_0",
           "slug" : "output_port_0"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "employee_annual_##mnF8Bamo" : {
+      "id" : "employee_annual_##mnF8Bamo",
+      "component" : "Reformat",
+      "metadata" : {
+        "label" : "employee_annual_salary",
+        "x" : -160,
+        "y" : -280,
+        "phase" : 0
+      },
+      "properties" : {
+        "columnsSelector" : [ ],
+        "expressions" : [ {
+          "expression" : {
+            "expression" : "ID"
+          },
+          "_row_id" : "773817246"
+        }, {
+          "expression" : {
+            "expression" : "NAME"
+          },
+          "_row_id" : "1158357679"
+        }, {
+          "expression" : {
+            "expression" : "AGE"
+          },
+          "_row_id" : "578079747"
+        }, {
+          "expression" : {
+            "expression" : "SALARY"
+          },
+          "_row_id" : "1925308018"
+        }, {
+          "expression" : {
+            "expression" : "CATEGORY"
+          },
+          "_row_id" : "2028551806"
+        }, {
+          "expression" : {
+            "expression" : "SALARY * 12"
+          },
+          "alias" : "ANNUALSALARY",
+          "_row_id" : "547672314"
+        } ]
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "Yv4qMMGJ",
+          "slug" : "selected_employee_columns"
+        } ],
+        "outputs" : [ {
+          "id" : "MTNKniHC",
+          "slug" : "out"
         } ],
         "isCustomOutputSchema" : false,
         "autoUpdateOnRun" : false
@@ -63,48 +120,48 @@
           "expression" : {
             "expression" : "ID"
           },
-          "_row_id" : "1335557803"
+          "_row_id" : "941754971"
         }, {
           "expression" : {
             "expression" : "Name"
           },
           "alias" : "NAME",
-          "_row_id" : "902009974"
+          "_row_id" : "2041182348"
         }, {
           "expression" : {
             "expression" : "Age"
           },
           "alias" : "AGE",
-          "_row_id" : "67628661"
+          "_row_id" : "449705985"
         }, {
           "expression" : {
             "expression" : "Salary"
           },
           "alias" : "SALARY",
-          "_row_id" : "664534120"
+          "_row_id" : "844511736"
         }, {
           "expression" : {
             "expression" : "Category"
           },
           "alias" : "CATEGORY",
-          "_row_id" : "2010174455"
+          "_row_id" : "1150886206"
         } ]
       },
       "ports" : {
         "inputs" : [ {
-          "id" : "wivJZteJ",
+          "id" : "ezpCJQR8",
           "slug" : "xlxs_file"
         } ],
         "outputs" : [ {
-          "id" : "qH54myuP",
+          "id" : "BmWteDEN",
           "slug" : "out"
         } ],
         "isCustomOutputSchema" : false,
         "autoUpdateOnRun" : false
       }
     },
-    "e7bUqYgCJvwsLqyJ2b0IB$$x3djPCSpGT59eGxChebn-" : {
-      "id" : "e7bUqYgCJvwsLqyJ2b0IB$$x3djPCSpGT59eGxChebn-",
+    "xlxs_file##eWk999m3" : {
+      "id" : "xlxs_file##eWk999m3",
       "component" : "Source",
       "metadata" : {
         "label" : "xlxs_file",
@@ -122,7 +179,7 @@
       "ports" : {
         "inputs" : [ ],
         "outputs" : [ {
-          "id" : "xcFMYnSt",
+          "id" : "RctCbkdv",
           "slug" : "out"
         } ],
         "isCustomOutputSchema" : false,
@@ -131,17 +188,23 @@
     }
   },
   "connections" : [ {
-    "id" : "conn_selected_employe##tovWxd9R_selected_employee_columns_qH54myuP",
-    "source" : "selected_employe##tovWxd9R",
-    "sourcePort" : "qH54myuP",
-    "target" : "selected_employee_columns_qH54myuP",
+    "id" : "conn_employee_annual_##mnF8Bamo_employee_annual_salary_MTNKniHC",
+    "source" : "employee_annual_##mnF8Bamo",
+    "sourcePort" : "MTNKniHC",
+    "target" : "employee_annual_salary_MTNKniHC",
     "targetPort" : "input_port_0"
   }, {
-    "id" : "gWwl0w5X",
-    "source" : "e7bUqYgCJvwsLqyJ2b0IB$$x3djPCSpGT59eGxChebn-",
-    "sourcePort" : "xcFMYnSt",
+    "id" : "NOgPPH1P",
+    "source" : "selected_employe##tovWxd9R",
+    "sourcePort" : "BmWteDEN",
+    "target" : "employee_annual_##mnF8Bamo",
+    "targetPort" : "Yv4qMMGJ"
+  }, {
+    "id" : "XM7FFylP",
+    "source" : "xlxs_file##eWk999m3",
+    "sourcePort" : "RctCbkdv",
     "target" : "selected_employe##tovWxd9R",
-    "targetPort" : "wivJZteJ"
+    "targetPort" : "ezpCJQR8"
   } ],
   "component" : "Model"
 }
