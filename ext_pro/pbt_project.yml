@@ -271,6 +271,44 @@ sqlSources:
       author: avpreet+random@prophecy.io
       createdAt: '2025-09-24 02:25:18'
       tableType: table
+  .prophecy/metadata/sqlsources/avpreet_random_prophecy_io_team_main:
+    name: avpreet_random_prophecy_io_team.main
+    description: null
+    author: avpreet+random@prophecy.io
+    files:
+    - prophecy-sources/sources.yml
+    createdAt: '2025-09-24 02:32:10'
+    tables:
+    - name: dest1
+      schema:
+        entityType: ''
+        providerType: ProphecyManaged
+        fields:
+        - name: vehicle_type
+          dataType:
+            type: String
+        - name: total_bookings
+          dataType:
+            type: BigInt
+        - name: completed_rides
+          dataType:
+            type: HugeInt
+        - name: cancelled_by_customer
+          dataType:
+            type: HugeInt
+        - name: cancelled_by_driver
+          dataType:
+            type: HugeInt
+        - name: incomplete_rides
+          dataType:
+            type: HugeInt
+        - name: completion_rate
+          dataType:
+            type: Double
+      description: null
+      author: avpreet+random@prophecy.io
+      createdAt: '2025-09-24 02:32:10'
+      tableType: table
 sqlUnreferencedSources: {}
 sqlPipeline:
   name: sqlPipeline

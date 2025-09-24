@@ -191,3 +191,31 @@ sources:
       dataType:
         type: "String"
     type: "table"
+- name: "avpreet_random_prophecy_io_team.main"
+  database: "avpreet_random_prophecy_io_team"
+  schema: "main"
+  tables:
+  - name: "dest1"
+    columns:
+    - name: "vehicle_type"
+      dataType:
+        type: "String"
+    - name: "total_bookings"
+      dataType:
+        type: "BigInt"
+    - name: "completed_rides"
+      dataType:
+        type: "HugeInt"
+    - name: "cancelled_by_customer"
+      dataType:
+        type: "HugeInt"
+    - name: "cancelled_by_driver"
+      dataType:
+        type: "HugeInt"
+    - name: "incomplete_rides"
+      dataType:
+        type: "HugeInt"
+    - name: "completion_rate"
+      dataType:
+        type: "Double"
+    type: "table"

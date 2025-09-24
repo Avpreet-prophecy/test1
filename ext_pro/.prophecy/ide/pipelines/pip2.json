@@ -23,7 +23,7 @@
         "phase" : 0
       },
       "properties" : {
-        "columnsSelector" : [ ],
+        "columnsSelector" : [ "a2FrTrID##vehicle_type", "a2FrTrID##total_bookings", "a2FrTrID##completed_rides", "a2FrTrID##cancelled_by_customer", "a2FrTrID##cancelled_by_driver", "a2FrTrID##incomplete_rides", "a2FrTrID##completion_rate" ],
         "expressions" : [ {
           "expression" : {
             "expression" : "vehicle_type"
@@ -163,7 +163,7 @@
         "phase" : 0
       },
       "properties" : {
-        "columnsSelector" : [ ],
+        "columnsSelector" : [ "L1IxWJ5A##vehicle_type", "L1IxWJ5A##total_bookings", "L1IxWJ5A##completed_rides", "L1IxWJ5A##cancelled_by_customer", "L1IxWJ5A##cancelled_by_driver", "L1IxWJ5A##incomplete_rides" ],
         "expressions" : [ {
           "expression" : {
             "expression" : "vehicle_type"
@@ -588,7 +588,7 @@
           "expression" : ""
         },
         "activeTab" : "aggregate",
-        "columnsSelector" : [ ],
+        "columnsSelector" : [ "tH6QLs7t##Vehicle Type" ],
         "groupBy" : [ {
           "expression" : {
             "expression" : "\"Vehicle Type\""
@@ -919,7 +919,7 @@
         "phase" : 0
       },
       "properties" : {
-        "columnsSelector" : [ ],
+        "columnsSelector" : [ "wO9Rk8Fi##Date", "wO9Rk8Fi##Time", "wO9Rk8Fi##Booking ID", "wO9Rk8Fi##Booking Status", "wO9Rk8Fi##Customer ID", "wO9Rk8Fi##Vehicle Type", "wO9Rk8Fi##Pickup Location", "wO9Rk8Fi##Drop Location", "wO9Rk8Fi##Avg VTAT", "wO9Rk8Fi##Avg CTAT", "wO9Rk8Fi##Cancelled Rides by Customer", "wO9Rk8Fi##Reason for cancelling by Customer", "wO9Rk8Fi##Cancelled Rides by Driver", "wO9Rk8Fi##Driver Cancellation Reason", "wO9Rk8Fi##Incomplete Rides", "wO9Rk8Fi##Incomplete Rides Reason", "wO9Rk8Fi##Booking Value", "wO9Rk8Fi##Ride Distance", "wO9Rk8Fi##Driver Ratings", "wO9Rk8Fi##Customer Rating", "wO9Rk8Fi##Payment Method" ],
         "expressions" : [ {
           "expression" : {
             "expression" : "\"Date\""
@@ -1461,7 +1461,7 @@
         "phase" : 0
       },
       "properties" : {
-        "columnsSelector" : [ ],
+        "columnsSelector" : [ "ddAzQNpy##completion_rate" ],
         "orders" : [ {
           "expression" : {
             "expression" : "completion_rate"
@@ -1645,7 +1645,7 @@
         "phase" : 0
       },
       "properties" : {
-        "columnsSelector" : [ ],
+        "columnsSelector" : [ "UL1ngCv1##Date", "UL1ngCv1##Time", "UL1ngCv1##Booking ID", "UL1ngCv1##Booking Status", "UL1ngCv1##Customer ID", "UL1ngCv1##Vehicle Type", "UL1ngCv1##Pickup Location", "UL1ngCv1##Drop Location", "UL1ngCv1##Avg VTAT", "UL1ngCv1##Avg CTAT", "UL1ngCv1##Cancelled Rides by Customer", "UL1ngCv1##Reason for cancelling by Customer", "UL1ngCv1##Cancelled Rides by Driver", "UL1ngCv1##Driver Cancellation Reason", "UL1ngCv1##Incomplete Rides", "UL1ngCv1##Incomplete Rides Reason", "UL1ngCv1##Booking Value", "UL1ngCv1##Ride Distance", "UL1ngCv1##Driver Ratings", "UL1ngCv1##Customer Rating", "UL1ngCv1##Payment Method" ],
         "expressions" : [ {
           "expression" : {
             "expression" : "\"Date\""
@@ -1984,6 +1984,119 @@
         } ],
         "isCustomOutputSchema" : false
       }
+    },
+    "9CA44guNhK09cZ-7L6usw$$qQZHxSQFooJetKTDo1r8j" : {
+      "id" : "9CA44guNhK09cZ-7L6usw$$qQZHxSQFooJetKTDo1r8j",
+      "component" : "Dataset",
+      "metadata" : {
+        "label" : "ride_booking_performance",
+        "x" : 1720,
+        "y" : 260,
+        "phase" : 0
+      },
+      "properties" : {
+        "table" : {
+          "name" : "dest1",
+          "sourceType" : "Source",
+          "sourceName" : "avpreet_random_prophecy_io_team.main",
+          "alias" : ""
+        },
+        "writeOptions" : {
+          "writeMode" : "overwrite",
+          "entityConfig" : { }
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "rF5CqpG6_6bApkdd5VDr-$$a5sa7I9tl8cgM2KRlJzBx",
+          "schema" : {
+            "entityType" : "",
+            "providerType" : "ProphecyManaged",
+            "fields" : [ {
+              "name" : "vehicle_type",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "total_bookings",
+              "dataType" : {
+                "type" : "BigInt"
+              }
+            }, {
+              "name" : "completed_rides",
+              "dataType" : {
+                "type" : "HugeInt"
+              }
+            }, {
+              "name" : "cancelled_by_customer",
+              "dataType" : {
+                "type" : "HugeInt"
+              }
+            }, {
+              "name" : "cancelled_by_driver",
+              "dataType" : {
+                "type" : "HugeInt"
+              }
+            }, {
+              "name" : "incomplete_rides",
+              "dataType" : {
+                "type" : "HugeInt"
+              }
+            }, {
+              "name" : "completion_rate",
+              "dataType" : {
+                "type" : "Double"
+              }
+            } ]
+          },
+          "slug" : "in"
+        } ],
+        "outputs" : [ {
+          "id" : "b5YRMF-1UzZnccVRy1_Hr$$PPvwYfT0KNuy-Mgo-TsE8",
+          "schema" : {
+            "entityType" : "",
+            "providerType" : "ProphecyManaged",
+            "fields" : [ {
+              "name" : "vehicle_type",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "total_bookings",
+              "dataType" : {
+                "type" : "BigInt"
+              }
+            }, {
+              "name" : "completed_rides",
+              "dataType" : {
+                "type" : "HugeInt"
+              }
+            }, {
+              "name" : "cancelled_by_customer",
+              "dataType" : {
+                "type" : "HugeInt"
+              }
+            }, {
+              "name" : "cancelled_by_driver",
+              "dataType" : {
+                "type" : "HugeInt"
+              }
+            }, {
+              "name" : "incomplete_rides",
+              "dataType" : {
+                "type" : "HugeInt"
+              }
+            }, {
+              "name" : "completion_rate",
+              "dataType" : {
+                "type" : "Double"
+              }
+            } ]
+          },
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
     }
   },
   "connections" : [ {
@@ -2028,6 +2141,12 @@
     "sourcePort" : "RwaPYnx2",
     "target" : "final##kE0URTwo",
     "targetPort" : "a2FrTrID"
+  }, {
+    "id" : "qDwM80OAniv8ATkzaDqMB",
+    "source" : "final##kE0URTwo",
+    "sourcePort" : "cKhj0dro",
+    "target" : "9CA44guNhK09cZ-7L6usw$$qQZHxSQFooJetKTDo1r8j",
+    "targetPort" : "rF5CqpG6_6bApkdd5VDr-$$a5sa7I9tl8cgM2KRlJzBx"
   } ],
   "component" : "Pipeline"
 }

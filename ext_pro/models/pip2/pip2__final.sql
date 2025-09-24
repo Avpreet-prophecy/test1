@@ -1,8 +1,9 @@
 {{
   config({    
-    "materialized": "ephemeral",
+    "materialized": "table",
+    "alias": "dest1",
     "database": "avpreet_random_prophecy_io_team",
-    "schema": "schema"
+    "schema": "main"
   })
 }}
 

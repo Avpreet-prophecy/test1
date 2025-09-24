@@ -1,5 +1,4 @@
 with DAG():
-    pip2__final = Task(task_id = "pip2__final", component = "Model", modelName = "pip2__final")
     xlxs_file = Task(
         task_id = "xlxs_file", 
         component = "Dataset", 
@@ -16,3 +15,4 @@ with DAG():
         component = "Dataset", 
         table = {"name" : "rides", "sourceType" : "Source", "sourceName" : "avpreet_random_prophecy_io_team.dummy", "alias" : ""}
     )
+    pip2__final = Task(task_id = "pip2__final", component = "Model", modelName = "pip2__final")
