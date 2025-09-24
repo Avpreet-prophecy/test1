@@ -1,0 +1,298 @@
+{
+  "id" : "pip2__category_avg_salary",
+  "metainfo" : {
+    "label" : "pip2__category_avg_salary",
+    "autoLayout" : true,
+    "staleState" : "none",
+    "sourceSuggestions" : {
+      "sources" : [ ]
+    },
+    "graphConfig" : {
+      "entityConfig" : {
+        "materialized" : "ephemeral",
+        "database" : "\"avpreet_random_prophecy_io_team\"",
+        "schema" : "\"schema\"",
+        "type" : "ModelConfig"
+      }
+    },
+    "version" : 3
+  },
+  "processes" : {
+    "age_21_and_above##bufAyy4n" : {
+      "id" : "age_21_and_above##bufAyy4n",
+      "component" : "Filter",
+      "metadata" : {
+        "label" : "age_21_and_above_employees",
+        "x" : 760,
+        "y" : 20,
+        "phase" : 0
+      },
+      "properties" : {
+        "columnsSelector" : [ ],
+        "condition" : {
+          "expression" : "AGE >= 21"
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "g3tLtwLX",
+          "slug" : "employee_annual_salary"
+        } ],
+        "outputs" : [ {
+          "id" : "Cnl9xZqW",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "category_avg_sal##jsMiaDgA" : {
+      "id" : "category_avg_sal##jsMiaDgA",
+      "component" : "Aggregate",
+      "metadata" : {
+        "label" : "category_avg_salary",
+        "x" : 960,
+        "y" : 20,
+        "phase" : 0
+      },
+      "properties" : {
+        "aggregate" : [ {
+          "expression" : {
+            "expression" : "CATEGORY"
+          },
+          "_row_id" : "1420850064"
+        }, {
+          "expression" : {
+            "expression" : "AVG(SALARY)"
+          },
+          "alias" : "AVGSALARY",
+          "_row_id" : "1253739867"
+        } ],
+        "allowSelection" : true,
+        "condition" : {
+          "expression" : ""
+        },
+        "activeTab" : "aggregate",
+        "columnsSelector" : [ ],
+        "groupBy" : [ {
+          "expression" : {
+            "expression" : "CATEGORY"
+          },
+          "_row_id" : "680906903"
+        } ]
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "i6BaB3AA",
+          "slug" : "age_21_and_above_employees"
+        } ],
+        "outputs" : [ {
+          "id" : "ULOmOVKy",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "xlxs_file##gRV9UCZG" : {
+      "id" : "xlxs_file##gRV9UCZG",
+      "component" : "Source",
+      "metadata" : {
+        "label" : "xlxs_file",
+        "x" : 80,
+        "y" : 20,
+        "phase" : 0
+      },
+      "properties" : {
+        "table" : {
+          "name" : "xlxs_file",
+          "sourceType" : "Table",
+          "sourceName" : "avpreet_random_prophecy_io_team.dummy"
+        }
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "mhDgYvaT",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "employee_annual_##KBbdcUpQ" : {
+      "id" : "employee_annual_##KBbdcUpQ",
+      "component" : "Reformat",
+      "metadata" : {
+        "label" : "employee_annual_salary",
+        "x" : 560,
+        "y" : 20,
+        "phase" : 0
+      },
+      "properties" : {
+        "columnsSelector" : [ ],
+        "expressions" : [ {
+          "expression" : {
+            "expression" : "ID"
+          },
+          "_row_id" : "1715033703"
+        }, {
+          "expression" : {
+            "expression" : "NAME"
+          },
+          "_row_id" : "454380142"
+        }, {
+          "expression" : {
+            "expression" : "AGE"
+          },
+          "_row_id" : "1447788846"
+        }, {
+          "expression" : {
+            "expression" : "SALARY"
+          },
+          "_row_id" : "255727104"
+        }, {
+          "expression" : {
+            "expression" : "CATEGORY"
+          },
+          "_row_id" : "500437520"
+        }, {
+          "expression" : {
+            "expression" : "SALARY * 12"
+          },
+          "alias" : "ANNUALSALARY",
+          "_row_id" : "545146340"
+        } ]
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "QP2Vn9Ma",
+          "slug" : "selected_employee_columns"
+        } ],
+        "outputs" : [ {
+          "id" : "Z0l9vMN3",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "selected_employe##J0m2EXYv" : {
+      "id" : "selected_employe##J0m2EXYv",
+      "component" : "Reformat",
+      "metadata" : {
+        "label" : "selected_employee_columns",
+        "x" : 360,
+        "y" : 20,
+        "phase" : 0
+      },
+      "properties" : {
+        "columnsSelector" : [ ],
+        "expressions" : [ {
+          "expression" : {
+            "expression" : "ID"
+          },
+          "_row_id" : "246413047"
+        }, {
+          "expression" : {
+            "expression" : "Name"
+          },
+          "alias" : "NAME",
+          "_row_id" : "714113737"
+        }, {
+          "expression" : {
+            "expression" : "Age"
+          },
+          "alias" : "AGE",
+          "_row_id" : "1972349623"
+        }, {
+          "expression" : {
+            "expression" : "Salary"
+          },
+          "alias" : "SALARY",
+          "_row_id" : "1267213099"
+        }, {
+          "expression" : {
+            "expression" : "Category"
+          },
+          "alias" : "CATEGORY",
+          "_row_id" : "212409744"
+        } ]
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "Ixe0fPTI",
+          "slug" : "xlxs_file"
+        } ],
+        "outputs" : [ {
+          "id" : "YoeG2zde",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "category_avg_salary_ULOmOVKy" : {
+      "id" : "category_avg_salary_ULOmOVKy",
+      "component" : "TargetModel",
+      "metadata" : {
+        "label" : "category_avg_salary"
+      },
+      "properties" : {
+        "customQueryDisabled" : true,
+        "customQuery" : false,
+        "incrementalEditorDisabled" : true,
+        "query" : "\nSELECT *\n\nFROM category_avg_salary\n\n",
+        "isModel" : true,
+        "incrementalKey" : false,
+        "incremental" : {
+          "expression" : "true"
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "input_port_0",
+          "slug" : "input_port_0"
+        } ],
+        "outputs" : [ {
+          "id" : "output_port_0",
+          "slug" : "output_port_0"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    }
+  },
+  "connections" : [ {
+    "id" : "conn_category_avg_sal##jsMiaDgA_category_avg_salary_ULOmOVKy",
+    "source" : "category_avg_sal##jsMiaDgA",
+    "sourcePort" : "ULOmOVKy",
+    "target" : "category_avg_salary_ULOmOVKy",
+    "targetPort" : "input_port_0"
+  }, {
+    "id" : "nzXRhN57",
+    "source" : "age_21_and_above##bufAyy4n",
+    "sourcePort" : "Cnl9xZqW",
+    "target" : "category_avg_sal##jsMiaDgA",
+    "targetPort" : "i6BaB3AA"
+  }, {
+    "id" : "EUopeiJt",
+    "source" : "employee_annual_##KBbdcUpQ",
+    "sourcePort" : "Z0l9vMN3",
+    "target" : "age_21_and_above##bufAyy4n",
+    "targetPort" : "g3tLtwLX"
+  }, {
+    "id" : "IM97gCav",
+    "source" : "selected_employe##J0m2EXYv",
+    "sourcePort" : "YoeG2zde",
+    "target" : "employee_annual_##KBbdcUpQ",
+    "targetPort" : "QP2Vn9Ma"
+  }, {
+    "id" : "cl7t4SNp",
+    "source" : "xlxs_file##gRV9UCZG",
+    "sourcePort" : "mhDgYvaT",
+    "target" : "selected_employe##J0m2EXYv",
+    "targetPort" : "Ixe0fPTI"
+  } ],
+  "component" : "Model"
+}
