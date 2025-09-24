@@ -10,48 +10,32 @@
         "fields" : [ ]
       }
     },
-    "schedule" : {
-      "cron" : "* 0 2 * * * *",
-      "timeZone" : "GMT",
-      "emailOnSuccess" : false,
-      "emailOnFailure" : false,
-      "emailOnStart" : false,
-      "emails" : [ "email@gmail.com" ],
-      "enabled" : false
-    },
-    "sensorSchedule" : {
-      "enabled" : false,
-      "isDefaultView" : false,
-      "triggers" : { }
-    },
     "isTranspiledPipeline" : false
   },
   "processes" : {
-    "e7bUqYgCJvwsLqyJ2b0IB$$x3djPCSpGT59eGxChebn-" : {
-      "id" : "e7bUqYgCJvwsLqyJ2b0IB$$x3djPCSpGT59eGxChebn-",
-      "component" : "Dataset",
+    "selected_employe##tovWxd9R" : {
+      "id" : "selected_employe##tovWxd9R",
+      "component" : "Model",
       "metadata" : {
-        "label" : "xlxs_file",
-        "x" : -560,
-        "y" : -280,
+        "label" : "pip2__selected_employee_columns",
         "phase" : 0
       },
       "properties" : {
-        "table" : {
-          "name" : "xlxs_file",
-          "sourceType" : "Source",
-          "sourceName" : "avpreet_random_prophecy_io_team.dummy",
-          "alias" : ""
-        }
+        "modelName" : "pip2__selected_employee_columns"
+      },
+      "visualMetaInfo" : {
+        "visualProcessIds" : [ "selected_employee_columns_qH54myuP", "selected_employe##tovWxd9R", "e7bUqYgCJvwsLqyJ2b0IB$$x3djPCSpGT59eGxChebn-" ],
+        "type" : "ephemeral",
+        "isTemporaryTable" : true
       },
       "ports" : {
         "inputs" : [ {
-          "id" : "GY0h3ZW__bp2puclsWLxw$$yEwDu4tL4DZsArQsWsRp9",
-          "slug" : "in"
+          "id" : "pip2__selected_employee_columns_in_0",
+          "slug" : "in_0"
         } ],
         "outputs" : [ {
-          "id" : "qo-T_r5-MvdzMJ1p3ztDj$$tARj3-WKa_V42dZstP9Zn",
-          "slug" : "out"
+          "id" : "pip2__selected_employee_columns_out_0",
+          "slug" : "out_0"
         } ],
         "isCustomOutputSchema" : false
       }

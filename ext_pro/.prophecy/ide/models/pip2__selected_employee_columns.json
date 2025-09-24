@@ -1,0 +1,147 @@
+{
+  "id" : "pip2__selected_employee_columns",
+  "metainfo" : {
+    "label" : "pip2__selected_employee_columns",
+    "autoLayout" : true,
+    "staleState" : "none",
+    "sourceSuggestions" : {
+      "sources" : [ ]
+    },
+    "graphConfig" : {
+      "entityConfig" : {
+        "materialized" : "ephemeral",
+        "database" : "\"avpreet_random_prophecy_io_team\"",
+        "schema" : "\"schema\"",
+        "type" : "ModelConfig"
+      }
+    },
+    "version" : 3
+  },
+  "processes" : {
+    "selected_employee_columns_qH54myuP" : {
+      "id" : "selected_employee_columns_qH54myuP",
+      "component" : "TargetModel",
+      "metadata" : {
+        "label" : "selected_employee_columns"
+      },
+      "properties" : {
+        "customQueryDisabled" : true,
+        "customQuery" : false,
+        "incrementalEditorDisabled" : true,
+        "query" : "\nSELECT *\n\nFROM selected_employee_columns\n\n",
+        "isModel" : true,
+        "incrementalKey" : false,
+        "incremental" : {
+          "expression" : "true"
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "input_port_0",
+          "slug" : "input_port_0"
+        } ],
+        "outputs" : [ {
+          "id" : "output_port_0",
+          "slug" : "output_port_0"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "selected_employe##tovWxd9R" : {
+      "id" : "selected_employe##tovWxd9R",
+      "component" : "Reformat",
+      "metadata" : {
+        "label" : "selected_employee_columns",
+        "x" : -360,
+        "y" : -280,
+        "phase" : 0
+      },
+      "properties" : {
+        "columnsSelector" : [ ],
+        "expressions" : [ {
+          "expression" : {
+            "expression" : "ID"
+          },
+          "_row_id" : "1335557803"
+        }, {
+          "expression" : {
+            "expression" : "Name"
+          },
+          "alias" : "NAME",
+          "_row_id" : "902009974"
+        }, {
+          "expression" : {
+            "expression" : "Age"
+          },
+          "alias" : "AGE",
+          "_row_id" : "67628661"
+        }, {
+          "expression" : {
+            "expression" : "Salary"
+          },
+          "alias" : "SALARY",
+          "_row_id" : "664534120"
+        }, {
+          "expression" : {
+            "expression" : "Category"
+          },
+          "alias" : "CATEGORY",
+          "_row_id" : "2010174455"
+        } ]
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "wivJZteJ",
+          "slug" : "xlxs_file"
+        } ],
+        "outputs" : [ {
+          "id" : "qH54myuP",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "e7bUqYgCJvwsLqyJ2b0IB$$x3djPCSpGT59eGxChebn-" : {
+      "id" : "e7bUqYgCJvwsLqyJ2b0IB$$x3djPCSpGT59eGxChebn-",
+      "component" : "Source",
+      "metadata" : {
+        "label" : "xlxs_file",
+        "x" : -560,
+        "y" : -280,
+        "phase" : 0
+      },
+      "properties" : {
+        "table" : {
+          "name" : "xlxs_file",
+          "sourceType" : "Table",
+          "sourceName" : "avpreet_random_prophecy_io_team.dummy"
+        }
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "xcFMYnSt",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    }
+  },
+  "connections" : [ {
+    "id" : "conn_selected_employe##tovWxd9R_selected_employee_columns_qH54myuP",
+    "source" : "selected_employe##tovWxd9R",
+    "sourcePort" : "qH54myuP",
+    "target" : "selected_employee_columns_qH54myuP",
+    "targetPort" : "input_port_0"
+  }, {
+    "id" : "gWwl0w5X",
+    "source" : "e7bUqYgCJvwsLqyJ2b0IB$$x3djPCSpGT59eGxChebn-",
+    "sourcePort" : "xcFMYnSt",
+    "target" : "selected_employe##tovWxd9R",
+    "targetPort" : "wivJZteJ"
+  } ],
+  "component" : "Model"
+}

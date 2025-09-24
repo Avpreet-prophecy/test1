@@ -1,0 +1,6 @@
+---
+version: 2
+models:
+- name: "pip2__selected_employee_columns"
+  tags:
+  - "prophecy_temp"

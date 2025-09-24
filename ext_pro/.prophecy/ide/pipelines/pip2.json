@@ -10,20 +10,6 @@
         "fields" : [ ]
       }
     },
-    "schedule" : {
-      "cron" : "* 0 2 * * * *",
-      "timeZone" : "GMT",
-      "emailOnSuccess" : false,
-      "emailOnFailure" : false,
-      "emailOnStart" : false,
-      "emails" : [ "email@gmail.com" ],
-      "enabled" : false
-    },
-    "sensorSchedule" : {
-      "enabled" : false,
-      "isDefaultView" : false,
-      "triggers" : { }
-    },
     "isTranspiledPipeline" : false
   },
   "processes" : {
@@ -39,18 +25,14 @@
       "properties" : {
         "table" : {
           "name" : "xlxs_file",
-          "sourceType" : "Source",
-          "sourceName" : "avpreet_random_prophecy_io_team.dummy",
-          "alias" : ""
+          "sourceType" : "Table",
+          "sourceName" : "avpreet_random_prophecy_io_team.dummy"
         }
       },
       "ports" : {
-        "inputs" : [ {
-          "id" : "GY0h3ZW__bp2puclsWLxw$$yEwDu4tL4DZsArQsWsRp9",
-          "slug" : "in"
-        } ],
+        "inputs" : [ ],
         "outputs" : [ {
-          "id" : "qo-T_r5-MvdzMJ1p3ztDj$$tARj3-WKa_V42dZstP9Zn",
+          "id" : "xcFMYnSt",
           "schema" : {
             "entityType" : "",
             "providerType" : "ProphecyManaged",
@@ -130,8 +112,173 @@
         } ],
         "isCustomOutputSchema" : false
       }
+    },
+    "selected_employe##tovWxd9R" : {
+      "id" : "selected_employe##tovWxd9R",
+      "component" : "Reformat",
+      "metadata" : {
+        "label" : "selected_employee_columns",
+        "x" : -360,
+        "y" : -280,
+        "phase" : 0
+      },
+      "properties" : {
+        "columnsSelector" : [ ],
+        "expressions" : [ {
+          "expression" : {
+            "expression" : "ID"
+          },
+          "_row_id" : "1335557803"
+        }, {
+          "expression" : {
+            "expression" : "Name"
+          },
+          "alias" : "NAME",
+          "_row_id" : "902009974"
+        }, {
+          "expression" : {
+            "expression" : "Age"
+          },
+          "alias" : "AGE",
+          "_row_id" : "67628661"
+        }, {
+          "expression" : {
+            "expression" : "Salary"
+          },
+          "alias" : "SALARY",
+          "_row_id" : "664534120"
+        }, {
+          "expression" : {
+            "expression" : "Category"
+          },
+          "alias" : "CATEGORY",
+          "_row_id" : "2010174455"
+        } ]
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "wivJZteJ",
+          "schema" : {
+            "entityType" : "",
+            "providerType" : "ProphecyManaged",
+            "fields" : [ {
+              "name" : "ID",
+              "dataType" : {
+                "type" : "BigInt"
+              }
+            }, {
+              "name" : "Name",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "About",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Age",
+              "dataType" : {
+                "type" : "BigInt"
+              }
+            }, {
+              "name" : "Salary",
+              "dataType" : {
+                "type" : "Double"
+              }
+            }, {
+              "name" : "JoinDate",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Email",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Address",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "RelationIds",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "IP",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Comments",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Phone",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Feedback",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Category",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
+          "slug" : "xlxs_file"
+        } ],
+        "outputs" : [ {
+          "id" : "qH54myuP",
+          "schema" : {
+            "entityType" : "",
+            "providerType" : "ProphecyManaged",
+            "fields" : [ {
+              "name" : "ID",
+              "dataType" : {
+                "type" : "BigInt"
+              }
+            }, {
+              "name" : "NAME",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "AGE",
+              "dataType" : {
+                "type" : "BigInt"
+              }
+            }, {
+              "name" : "SALARY",
+              "dataType" : {
+                "type" : "Double"
+              }
+            }, {
+              "name" : "CATEGORY",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
     }
   },
-  "connections" : [ ],
+  "connections" : [ {
+    "id" : "gWwl0w5X",
+    "source" : "e7bUqYgCJvwsLqyJ2b0IB$$x3djPCSpGT59eGxChebn-",
+    "sourcePort" : "xcFMYnSt",
+    "target" : "selected_employe##tovWxd9R",
+    "targetPort" : "wivJZteJ"
+  } ],
   "component" : "Pipeline"
 }
