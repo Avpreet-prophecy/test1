@@ -49,8 +49,20 @@ age_21_and_above_employees AS (
   
   WHERE AGE >= 21
 
+),
+
+category_avg_salary AS (
+
+  SELECT 
+    CATEGORY,
+    AVG(SALARY) AS AVGSALARY
+  
+  FROM age_21_and_above_employees
+  
+  GROUP BY CATEGORY
+
 )
 
 SELECT *
 
-FROM age_21_and_above_employees
+FROM category_avg_salary

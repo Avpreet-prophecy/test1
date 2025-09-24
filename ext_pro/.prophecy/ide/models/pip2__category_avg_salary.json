@@ -1,7 +1,7 @@
 {
-  "id" : "pip2__age_21_and_above_employees",
+  "id" : "pip2__category_avg_salary",
   "metainfo" : {
-    "label" : "pip2__age_21_and_above_employees",
+    "label" : "pip2__category_avg_salary",
     "autoLayout" : true,
     "staleState" : "none",
     "sourceSuggestions" : {
@@ -28,81 +28,74 @@
         "phase" : 0
       },
       "properties" : {
-        "columnsSelector" : [ "h5zJr4lU##AGE" ],
+        "columnsSelector" : [ ],
         "condition" : {
           "expression" : "AGE >= 21"
         }
       },
       "ports" : {
         "inputs" : [ {
-          "id" : "h5zJr4lU",
+          "id" : "g3tLtwLX",
           "slug" : "employee_annual_salary"
         } ],
         "outputs" : [ {
-          "id" : "Xb9sQ492",
+          "id" : "Cnl9xZqW",
           "slug" : "out"
         } ],
         "isCustomOutputSchema" : false,
         "autoUpdateOnRun" : false
       }
     },
-    "selected_employe##YilnLhbB" : {
-      "id" : "selected_employe##YilnLhbB",
-      "component" : "Reformat",
+    "category_avg_sal##jsMiaDgA" : {
+      "id" : "category_avg_sal##jsMiaDgA",
+      "component" : "Aggregate",
       "metadata" : {
-        "label" : "selected_employee_columns",
-        "x" : -360,
+        "label" : "category_avg_salary",
+        "x" : 240,
         "y" : -280,
         "phase" : 0
       },
       "properties" : {
-        "columnsSelector" : [ "BOjM2rjo##ID", "BOjM2rjo##Name", "BOjM2rjo##Age", "BOjM2rjo##Salary", "BOjM2rjo##Category" ],
-        "expressions" : [ {
+        "aggregate" : [ {
           "expression" : {
-            "expression" : "ID"
+            "expression" : "CATEGORY"
           },
-          "_row_id" : "261891352"
+          "_row_id" : "1420850064"
         }, {
           "expression" : {
-            "expression" : "Name"
+            "expression" : "AVG(SALARY)"
           },
-          "alias" : "NAME",
-          "_row_id" : "1765403285"
-        }, {
+          "alias" : "AVGSALARY",
+          "_row_id" : "1253739867"
+        } ],
+        "allowSelection" : true,
+        "condition" : {
+          "expression" : ""
+        },
+        "activeTab" : "aggregate",
+        "columnsSelector" : [ ],
+        "groupBy" : [ {
           "expression" : {
-            "expression" : "Age"
+            "expression" : "CATEGORY"
           },
-          "alias" : "AGE",
-          "_row_id" : "2027041470"
-        }, {
-          "expression" : {
-            "expression" : "Salary"
-          },
-          "alias" : "SALARY",
-          "_row_id" : "1011233452"
-        }, {
-          "expression" : {
-            "expression" : "Category"
-          },
-          "alias" : "CATEGORY",
-          "_row_id" : "1353513550"
+          "_row_id" : "680906903"
         } ]
       },
       "ports" : {
         "inputs" : [ {
-          "id" : "BOjM2rjo",
-          "slug" : "xlxs_file"
+          "id" : "i6BaB3AA",
+          "slug" : "age_21_and_above_employees"
         } ],
         "outputs" : [ {
-          "id" : "EOL51emn",
+          "id" : "ULOmOVKy",
           "slug" : "out"
         } ],
         "isCustomOutputSchema" : false,
         "autoUpdateOnRun" : false
       }
     },
-    "xlxs_file##KDbP9RQ1" : {
-      "id" : "xlxs_file##KDbP9RQ1",
+    "xlxs_file##gRV9UCZG" : {
+      "id" : "xlxs_file##gRV9UCZG",
       "component" : "Source",
       "metadata" : {
         "label" : "xlxs_file",
@@ -120,15 +113,15 @@
       "ports" : {
         "inputs" : [ ],
         "outputs" : [ {
-          "id" : "JZ16AmSs",
+          "id" : "mhDgYvaT",
           "slug" : "out"
         } ],
         "isCustomOutputSchema" : false,
         "autoUpdateOnRun" : false
       }
     },
-    "employee_annual_##mnF8Bamo" : {
-      "id" : "employee_annual_##mnF8Bamo",
+    "employee_annual_##KBbdcUpQ" : {
+      "id" : "employee_annual_##KBbdcUpQ",
       "component" : "Reformat",
       "metadata" : {
         "label" : "employee_annual_salary",
@@ -137,64 +130,119 @@
         "phase" : 0
       },
       "properties" : {
-        "columnsSelector" : [ "iv2Bu21w##ID", "iv2Bu21w##NAME", "iv2Bu21w##AGE", "iv2Bu21w##SALARY", "iv2Bu21w##CATEGORY" ],
+        "columnsSelector" : [ ],
         "expressions" : [ {
           "expression" : {
             "expression" : "ID"
           },
-          "_row_id" : "612657381"
+          "_row_id" : "1715033703"
         }, {
           "expression" : {
             "expression" : "NAME"
           },
-          "_row_id" : "1584344100"
+          "_row_id" : "454380142"
         }, {
           "expression" : {
             "expression" : "AGE"
           },
-          "_row_id" : "929765449"
+          "_row_id" : "1447788846"
         }, {
           "expression" : {
             "expression" : "SALARY"
           },
-          "_row_id" : "710787232"
+          "_row_id" : "255727104"
         }, {
           "expression" : {
             "expression" : "CATEGORY"
           },
-          "_row_id" : "1409609012"
+          "_row_id" : "500437520"
         }, {
           "expression" : {
             "expression" : "SALARY * 12"
           },
           "alias" : "ANNUALSALARY",
-          "_row_id" : "1057579291"
+          "_row_id" : "545146340"
         } ]
       },
       "ports" : {
         "inputs" : [ {
-          "id" : "iv2Bu21w",
+          "id" : "QP2Vn9Ma",
           "slug" : "selected_employee_columns"
         } ],
         "outputs" : [ {
-          "id" : "R3cAKYgj",
+          "id" : "Z0l9vMN3",
           "slug" : "out"
         } ],
         "isCustomOutputSchema" : false,
         "autoUpdateOnRun" : false
       }
     },
-    "age_21_and_above_employees_Xb9sQ492" : {
-      "id" : "age_21_and_above_employees_Xb9sQ492",
+    "selected_employe##J0m2EXYv" : {
+      "id" : "selected_employe##J0m2EXYv",
+      "component" : "Reformat",
+      "metadata" : {
+        "label" : "selected_employee_columns",
+        "x" : -360,
+        "y" : -280,
+        "phase" : 0
+      },
+      "properties" : {
+        "columnsSelector" : [ ],
+        "expressions" : [ {
+          "expression" : {
+            "expression" : "ID"
+          },
+          "_row_id" : "246413047"
+        }, {
+          "expression" : {
+            "expression" : "Name"
+          },
+          "alias" : "NAME",
+          "_row_id" : "714113737"
+        }, {
+          "expression" : {
+            "expression" : "Age"
+          },
+          "alias" : "AGE",
+          "_row_id" : "1972349623"
+        }, {
+          "expression" : {
+            "expression" : "Salary"
+          },
+          "alias" : "SALARY",
+          "_row_id" : "1267213099"
+        }, {
+          "expression" : {
+            "expression" : "Category"
+          },
+          "alias" : "CATEGORY",
+          "_row_id" : "212409744"
+        } ]
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "Ixe0fPTI",
+          "slug" : "xlxs_file"
+        } ],
+        "outputs" : [ {
+          "id" : "YoeG2zde",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "category_avg_salary_ULOmOVKy" : {
+      "id" : "category_avg_salary_ULOmOVKy",
       "component" : "TargetModel",
       "metadata" : {
-        "label" : "age_21_and_above_employees"
+        "label" : "category_avg_salary"
       },
       "properties" : {
         "customQueryDisabled" : true,
         "customQuery" : false,
         "incrementalEditorDisabled" : true,
-        "query" : "\nSELECT *\n\nFROM age_21_and_above_employees\n\n",
+        "query" : "\nSELECT *\n\nFROM category_avg_salary\n\n",
         "isModel" : true,
         "incrementalKey" : false,
         "incremental" : {
@@ -216,29 +264,35 @@
     }
   },
   "connections" : [ {
-    "id" : "conn_age_21_and_above##bufAyy4n_age_21_and_above_employees_Xb9sQ492",
-    "source" : "age_21_and_above##bufAyy4n",
-    "sourcePort" : "Xb9sQ492",
-    "target" : "age_21_and_above_employees_Xb9sQ492",
+    "id" : "conn_category_avg_sal##jsMiaDgA_category_avg_salary_ULOmOVKy",
+    "source" : "category_avg_sal##jsMiaDgA",
+    "sourcePort" : "ULOmOVKy",
+    "target" : "category_avg_salary_ULOmOVKy",
     "targetPort" : "input_port_0"
   }, {
-    "id" : "ywmho9QR",
-    "source" : "employee_annual_##mnF8Bamo",
-    "sourcePort" : "R3cAKYgj",
+    "id" : "nzXRhN57",
+    "source" : "age_21_and_above##bufAyy4n",
+    "sourcePort" : "Cnl9xZqW",
+    "target" : "category_avg_sal##jsMiaDgA",
+    "targetPort" : "i6BaB3AA"
+  }, {
+    "id" : "EUopeiJt",
+    "source" : "employee_annual_##KBbdcUpQ",
+    "sourcePort" : "Z0l9vMN3",
     "target" : "age_21_and_above##bufAyy4n",
-    "targetPort" : "h5zJr4lU"
+    "targetPort" : "g3tLtwLX"
   }, {
-    "id" : "ZIJe3Z74",
-    "source" : "selected_employe##YilnLhbB",
-    "sourcePort" : "EOL51emn",
-    "target" : "employee_annual_##mnF8Bamo",
-    "targetPort" : "iv2Bu21w"
+    "id" : "IM97gCav",
+    "source" : "selected_employe##J0m2EXYv",
+    "sourcePort" : "YoeG2zde",
+    "target" : "employee_annual_##KBbdcUpQ",
+    "targetPort" : "QP2Vn9Ma"
   }, {
-    "id" : "Df5UTP2O",
-    "source" : "xlxs_file##KDbP9RQ1",
-    "sourcePort" : "JZ16AmSs",
-    "target" : "selected_employe##YilnLhbB",
-    "targetPort" : "BOjM2rjo"
+    "id" : "cl7t4SNp",
+    "source" : "xlxs_file##gRV9UCZG",
+    "sourcePort" : "mhDgYvaT",
+    "target" : "selected_employe##J0m2EXYv",
+    "targetPort" : "Ixe0fPTI"
   } ],
   "component" : "Model"
 }
