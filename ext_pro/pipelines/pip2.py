@@ -1,24 +1,15 @@
 with DAG():
-    pip2__category_avg_salary = Task(
-        task_id = "pip2__category_avg_salary", 
-        component = "Model", 
-        modelName = "pip2__category_avg_salary"
+    pip2__final = Task(task_id = "pip2__final", component = "Model", modelName = "pip2__final")
+    xlxs_file = Task(
+        task_id = "xlxs_file", 
+        component = "Dataset", 
+        table = {"name" : "xlxs_file", "sourceType" : "Table", "sourceName" : "avpreet_random_prophecy_io_team.dummy"}
     )
     support_tickets = Task(
         task_id = "support_tickets", 
         component = "Dataset", 
         writeOptions = {"writeMode" : "overwrite"}, 
         table = {"name" : "support_tickets", "sourceName" : "avpreet_random_prophecy_io_team.dummy", "sourceType" : "Table"}
-    )
-    uber_data = Task(
-        task_id = "uber_data", 
-        component = "Dataset", 
-        table = {
-          "name": "uber_data", 
-          "sourceType": "Source", 
-          "sourceName": "avpreet_random_prophecy_io_team.dummy", 
-          "alias": ""
-        }
     )
     rides = Task(
         task_id = "rides", 

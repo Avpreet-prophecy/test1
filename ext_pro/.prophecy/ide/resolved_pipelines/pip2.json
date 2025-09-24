@@ -13,40 +13,141 @@
     "isTranspiledPipeline" : false
   },
   "processes" : {
-    "category_avg_sal##jsMiaDgA" : {
-      "id" : "category_avg_sal##jsMiaDgA",
+    "final##kE0URTwo" : {
+      "id" : "final##kE0URTwo",
       "component" : "Model",
       "metadata" : {
-        "label" : "pip2__category_avg_salary",
+        "label" : "pip2__final",
         "phase" : 0
       },
       "properties" : {
-        "modelName" : "pip2__category_avg_salary"
+        "modelName" : "pip2__final"
       },
       "visualMetaInfo" : {
-        "visualProcessIds" : [ "category_avg_salary_ULOmOVKy", "category_avg_sal##jsMiaDgA", "age_21_and_above##bufAyy4n", "employee_annual_##KBbdcUpQ", "selected_employe##J0m2EXYv", "xlxs_file##gRV9UCZG" ],
+        "visualProcessIds" : [ "final_cKhj0dro", "final##kE0URTwo", "completion_rate_##SsZTuike", "vehicle_type_com##Dpn1VBto", "vehicle_type_agg##WGGRtT2P", "uber_data_clean##PP2KYUEQ", "valid_uber_booki##Q44XxpSV", "uber_data##AepanOQ0", "uber_raw_data##rlN2g4tX" ],
         "type" : "ephemeral",
         "isTemporaryTable" : true
       },
       "ports" : {
         "inputs" : [ {
-          "id" : "pip2__category_avg_salary_in_0",
+          "id" : "pip2__final_in_0",
           "slug" : "in_0"
         } ],
         "outputs" : [ {
-          "id" : "pip2__category_avg_salary_out_0",
+          "id" : "pip2__final_out_0",
           "slug" : "out_0"
         } ],
         "isCustomOutputSchema" : false
       }
+    },
+    "xlxs_file##gRV9UCZG" : {
+      "id" : "xlxs_file##gRV9UCZG",
+      "component" : "Dataset",
+      "metadata" : {
+        "label" : "xlxs_file",
+        "x" : 80,
+        "y" : 20,
+        "phase" : 0
+      },
+      "properties" : {
+        "table" : {
+          "name" : "xlxs_file",
+          "sourceType" : "Table",
+          "sourceName" : "avpreet_random_prophecy_io_team.dummy"
+        }
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "mhDgYvaT",
+          "schema" : {
+            "entityType" : "",
+            "providerType" : "ProphecyManaged",
+            "fields" : [ {
+              "name" : "ID",
+              "dataType" : {
+                "type" : "BigInt"
+              }
+            }, {
+              "name" : "Name",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "About",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Age",
+              "dataType" : {
+                "type" : "BigInt"
+              }
+            }, {
+              "name" : "Salary",
+              "dataType" : {
+                "type" : "Double"
+              }
+            }, {
+              "name" : "JoinDate",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Email",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Address",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "RelationIds",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "IP",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Comments",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Phone",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Feedback",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Category",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      },
+      "index" : 0
     },
     "MqBDzDIveJRc4Ye5AA7A3$$BPEsaFLR2LfSgbTP8o2cj" : {
       "id" : "MqBDzDIveJRc4Ye5AA7A3$$BPEsaFLR2LfSgbTP8o2cj",
       "component" : "Dataset",
       "metadata" : {
         "label" : "support_tickets",
-        "x" : -160,
-        "y" : -100,
+        "x" : 80,
+        "y" : 420,
         "phase" : 0
       },
       "properties" : {
@@ -91,42 +192,13 @@
         "isCustomOutputSchema" : false
       }
     },
-    "Ll_lsj40SZjLnDaJTt2-E$$6p6Xy3D1G0gst10PNEK4N" : {
-      "id" : "Ll_lsj40SZjLnDaJTt2-E$$6p6Xy3D1G0gst10PNEK4N",
-      "component" : "Dataset",
-      "metadata" : {
-        "label" : "uber_data",
-        "x" : -700,
-        "y" : -420,
-        "phase" : 0
-      },
-      "properties" : {
-        "table" : {
-          "name" : "uber_data",
-          "sourceType" : "Source",
-          "sourceName" : "avpreet_random_prophecy_io_team.dummy",
-          "alias" : ""
-        }
-      },
-      "ports" : {
-        "inputs" : [ {
-          "id" : "vMTJSXpqieQU8Y6HEb_j0$$ZITATGqSJOcvkuCTq0y62",
-          "slug" : "in"
-        } ],
-        "outputs" : [ {
-          "id" : "fU7Ec72ie2nUGCLtUFOKV$$ehIQxBoU8b5qRMI9DJUfY",
-          "slug" : "out"
-        } ],
-        "isCustomOutputSchema" : false
-      }
-    },
     "RRidHXR4AjMBkWPS3HiRa$$KBdpO3pDjwnh2jxofgg9f" : {
       "id" : "RRidHXR4AjMBkWPS3HiRa$$KBdpO3pDjwnh2jxofgg9f",
       "component" : "Dataset",
       "metadata" : {
         "label" : "rides",
-        "x" : -160,
-        "y" : 40,
+        "x" : 80,
+        "y" : 620,
         "phase" : 0
       },
       "properties" : {
