@@ -13,26 +13,24 @@
     "isTranspiledPipeline" : false
   },
   "processes" : {
-    "xlxs_file##KDbP9RQ1" : {
-      "id" : "xlxs_file##KDbP9RQ1",
-      "component" : "Dataset",
+    "age_21_and_above##bufAyy4n" : {
+      "id" : "age_21_and_above##bufAyy4n",
+      "component" : "Filter",
       "metadata" : {
-        "label" : "xlxs_file",
-        "x" : -560,
+        "label" : "age_21_and_above_employees",
+        "x" : 40,
         "y" : -280,
         "phase" : 0
       },
       "properties" : {
-        "table" : {
-          "name" : "xlxs_file",
-          "sourceType" : "Table",
-          "sourceName" : "avpreet_random_prophecy_io_team.dummy"
+        "columnsSelector" : [ ],
+        "condition" : {
+          "expression" : "AGE >= 21"
         }
       },
       "ports" : {
-        "inputs" : [ ],
-        "outputs" : [ {
-          "id" : "JZ16AmSs",
+        "inputs" : [ {
+          "id" : "h5zJr4lU",
           "schema" : {
             "entityType" : "",
             "providerType" : "ProphecyManaged",
@@ -42,77 +40,75 @@
                 "type" : "BigInt"
               }
             }, {
-              "name" : "Name",
+              "name" : "NAME",
               "dataType" : {
                 "type" : "String"
               }
             }, {
-              "name" : "About",
-              "dataType" : {
-                "type" : "String"
-              }
-            }, {
-              "name" : "Age",
+              "name" : "AGE",
               "dataType" : {
                 "type" : "BigInt"
               }
             }, {
-              "name" : "Salary",
+              "name" : "SALARY",
               "dataType" : {
                 "type" : "Double"
               }
             }, {
-              "name" : "JoinDate",
+              "name" : "CATEGORY",
               "dataType" : {
                 "type" : "String"
               }
             }, {
-              "name" : "Email",
+              "name" : "ANNUALSALARY",
+              "dataType" : {
+                "type" : "Double"
+              }
+            } ]
+          },
+          "slug" : "employee_annual_salary"
+        } ],
+        "outputs" : [ {
+          "id" : "Xb9sQ492",
+          "schema" : {
+            "entityType" : "",
+            "providerType" : "ProphecyManaged",
+            "fields" : [ {
+              "name" : "ID",
+              "dataType" : {
+                "type" : "BigInt"
+              }
+            }, {
+              "name" : "NAME",
               "dataType" : {
                 "type" : "String"
               }
             }, {
-              "name" : "Address",
+              "name" : "AGE",
+              "dataType" : {
+                "type" : "BigInt"
+              }
+            }, {
+              "name" : "SALARY",
+              "dataType" : {
+                "type" : "Double"
+              }
+            }, {
+              "name" : "CATEGORY",
               "dataType" : {
                 "type" : "String"
               }
             }, {
-              "name" : "RelationIds",
+              "name" : "ANNUALSALARY",
               "dataType" : {
-                "type" : "String"
-              }
-            }, {
-              "name" : "IP",
-              "dataType" : {
-                "type" : "String"
-              }
-            }, {
-              "name" : "Comments",
-              "dataType" : {
-                "type" : "String"
-              }
-            }, {
-              "name" : "Phone",
-              "dataType" : {
-                "type" : "String"
-              }
-            }, {
-              "name" : "Feedback",
-              "dataType" : {
-                "type" : "String"
-              }
-            }, {
-              "name" : "Category",
-              "dataType" : {
-                "type" : "String"
+                "type" : "Double"
               }
             } ]
           },
           "slug" : "out"
         } ],
         "isCustomOutputSchema" : false
-      },
-      "index" : 0
+      }
     },
     "selected_employe##YilnLhbB" : {
       "id" : "selected_employe##YilnLhbB",
@@ -273,6 +269,147 @@
         "isCustomOutputSchema" : false
       }
     },
+    "XODB2S3LzxVLh6UV-LvoR$$pL9H_1ErIipQmIQ-JBIWD" : {
+      "id" : "XODB2S3LzxVLh6UV-LvoR$$pL9H_1ErIipQmIQ-JBIWD",
+      "component" : "Comment",
+      "metadata" : {
+        "label" : "Comment_1",
+        "x" : -760,
+        "y" : 20,
+        "height" : 40.00004959106445,
+        "width" : 219.99996948242188,
+        "phase" : 0
+      },
+      "properties" : {
+        "comment" : "Hey, My name is AVpreet",
+        "connectedNodes" : [ ]
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ ]
+      }
+    },
+    "xlxs_file##KDbP9RQ1" : {
+      "id" : "xlxs_file##KDbP9RQ1",
+      "component" : "Dataset",
+      "metadata" : {
+        "label" : "xlxs_file",
+        "x" : -560,
+        "y" : -280,
+        "phase" : 0
+      },
+      "properties" : {
+        "table" : {
+          "name" : "xlxs_file",
+          "sourceType" : "Table",
+          "sourceName" : "avpreet_random_prophecy_io_team.dummy"
+        }
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "JZ16AmSs",
+          "schema" : {
+            "entityType" : "",
+            "providerType" : "ProphecyManaged",
+            "fields" : [ {
+              "name" : "ID",
+              "dataType" : {
+                "type" : "BigInt"
+              }
+            }, {
+              "name" : "Name",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "About",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Age",
+              "dataType" : {
+                "type" : "BigInt"
+              }
+            }, {
+              "name" : "Salary",
+              "dataType" : {
+                "type" : "Double"
+              }
+            }, {
+              "name" : "JoinDate",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Email",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Address",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "RelationIds",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "IP",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Comments",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Phone",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Feedback",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Category",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      },
+      "index" : 0
+    },
+    "WubQpdnbRjCmGMOmEvOW6$$Ddw21SR3p8EF74B7bw8MY" : {
+      "id" : "WubQpdnbRjCmGMOmEvOW6$$Ddw21SR3p8EF74B7bw8MY",
+      "component" : "Comment",
+      "metadata" : {
+        "label" : "Comment_4",
+        "x" : -160,
+        "y" : 200,
+        "height" : 108,
+        "width" : 219.99990844726562,
+        "phase" : 0
+      },
+      "properties" : {
+        "comment" : "# I am in QA",
+        "connectedNodes" : [ ]
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ ]
+      }
+    },
     "employee_annual_##mnF8Bamo" : {
       "id" : "employee_annual_##mnF8Bamo",
       "component" : "Reformat",
@@ -394,101 +531,44 @@
         "isCustomOutputSchema" : false
       }
     },
-    "age_21_and_above##bufAyy4n" : {
-      "id" : "age_21_and_above##bufAyy4n",
-      "component" : "Filter",
+    "L-xoBu-XbIPnRRE6gjDvw$$-UQ2QCpiY1kHv9qK-5yqs" : {
+      "id" : "L-xoBu-XbIPnRRE6gjDvw$$-UQ2QCpiY1kHv9qK-5yqs",
+      "component" : "Comment",
       "metadata" : {
-        "label" : "age_21_and_above_employees",
-        "x" : 40,
-        "y" : -280,
+        "label" : "Comment_2",
+        "x" : -760,
+        "y" : 100,
+        "height" : 72,
+        "width" : 219.99996948242188,
         "phase" : 0
       },
       "properties" : {
-        "columnsSelector" : [ ],
-        "condition" : {
-          "expression" : "AGE >= 21"
-        }
+        "comment" : "![mostly blurred](https://picsum.photos/200/300/?blur)",
+        "connectedNodes" : [ ]
       },
       "ports" : {
-        "inputs" : [ {
-          "id" : "h5zJr4lU",
-          "schema" : {
-            "entityType" : "",
-            "providerType" : "ProphecyManaged",
-            "fields" : [ {
-              "name" : "ID",
-              "dataType" : {
-                "type" : "BigInt"
-              }
-            }, {
-              "name" : "NAME",
-              "dataType" : {
-                "type" : "String"
-              }
-            }, {
-              "name" : "AGE",
-              "dataType" : {
-                "type" : "BigInt"
-              }
-            }, {
-              "name" : "SALARY",
-              "dataType" : {
-                "type" : "Double"
-              }
-            }, {
-              "name" : "CATEGORY",
-              "dataType" : {
-                "type" : "String"
-              }
-            }, {
-              "name" : "ANNUALSALARY",
-              "dataType" : {
-                "type" : "Double"
-              }
-            } ]
-          },
-          "slug" : "employee_annual_salary"
-        } ],
-        "outputs" : [ {
-          "id" : "Xb9sQ492",
-          "schema" : {
-            "entityType" : "",
-            "providerType" : "ProphecyManaged",
-            "fields" : [ {
-              "name" : "ID",
-              "dataType" : {
-                "type" : "BigInt"
-              }
-            }, {
-              "name" : "NAME",
-              "dataType" : {
-                "type" : "String"
-              }
-            }, {
-              "name" : "AGE",
-              "dataType" : {
-                "type" : "BigInt"
-              }
-            }, {
-              "name" : "SALARY",
-              "dataType" : {
-                "type" : "Double"
-              }
-            }, {
-              "name" : "CATEGORY",
-              "dataType" : {
-                "type" : "String"
-              }
-            }, {
-              "name" : "ANNUALSALARY",
-              "dataType" : {
-                "type" : "Double"
-              }
-            } ]
-          },
-          "slug" : "out"
-        } ],
-        "isCustomOutputSchema" : false
+        "inputs" : [ ],
+        "outputs" : [ ]
+      }
+    },
+    "IlMbEGKY-W3j4lIj-sqKd$$PoYt6cecnoKdWdhXxgKwK" : {
+      "id" : "IlMbEGKY-W3j4lIj-sqKd$$PoYt6cecnoKdWdhXxgKwK",
+      "component" : "Comment",
+      "metadata" : {
+        "label" : "Comment_3",
+        "x" : -460,
+        "y" : 60,
+        "height" : 99.9999771118164,
+        "width" : 219.99996948242188,
+        "phase" : 0
+      },
+      "properties" : {
+        "comment" : "1. I like lakes\n2. and sunsets",
+        "connectedNodes" : [ ]
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ ]
       }
     }
   },
