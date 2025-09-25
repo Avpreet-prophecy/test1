@@ -1,0 +1,133 @@
+name: ext_25
+description: ''
+version: 0.0.1
+author: avpreet+random@prophecy.io
+language: sql
+buildSystem: ''
+buildSystemDetails: null
+pipelines: {}
+datasets: {}
+templates: {}
+jobs: {}
+gemContainer:
+  languageVersion: ''
+  gemLibsVersion: ''
+  gems: {}
+  dependencies: null
+functions:
+  author: null
+  createdAt: '2025-09-25 09:12:51'
+  udfs: {}
+  udafs: {}
+  expressions: {}
+  airflowFunctions: {}
+  businessRules: {}
+subgraphs: {}
+sqlModels: {}
+sqlSnapshots: {}
+sqlTests: {}
+sqlMacros:
+  .prophecy/metadata/sqlmacros/generate_schema_name:
+    name: generate_schema_name
+    macroType: expression
+    description: null
+    author: avpreet+random@prophecy.io
+    files:
+    - macros/generate_schema_name.sql
+    - .prophecy/ide/macros/generate_schema_name.json
+    createdAt: '2025-09-25 09:12:56'
+  .prophecy/metadata/sqlmacros/prophecy_tmp_source:
+    name: prophecy_tmp_source
+    macroType: expression
+    description: null
+    author: avpreet+random@prophecy.io
+    files:
+    - macros/prophecy_tmp_source.sql
+    - .prophecy/ide/macros/prophecy_tmp_source.json
+    createdAt: '2025-09-25 09:13:01'
+sqlSeeds: {}
+sqlSources:
+  .prophecy/metadata/sqlsources/avpreet_random_prophecy_io_team_dummy:
+    name: avpreet_random_prophecy_io_team.dummy
+    description: null
+    author: avpreet+random@prophecy.io
+    files:
+    - prophecy-sources/sources.yml
+    createdAt: '2025-09-25 09:51:18'
+    tables:
+    - name: xlxs_file
+      schema:
+        entityType: ''
+        providerType: ProphecyManaged
+        fields:
+        - name: ID
+          dataType:
+            type: BigInt
+        - name: Name
+          dataType:
+            type: String
+        - name: About
+          dataType:
+            type: String
+        - name: Age
+          dataType:
+            type: BigInt
+        - name: Salary
+          dataType:
+            type: Double
+        - name: JoinDate
+          dataType:
+            type: String
+        - name: Email
+          dataType:
+            type: String
+        - name: Address
+          dataType:
+            type: String
+        - name: RelationIds
+          dataType:
+            type: String
+        - name: IP
+          dataType:
+            type: String
+        - name: Comments
+          dataType:
+            type: String
+        - name: Phone
+          dataType:
+            type: String
+        - name: Feedback
+          dataType:
+            type: String
+        - name: Category
+          dataType:
+            type: String
+      description: null
+      author: avpreet+random@prophecy.io
+      createdAt: '2025-09-25 09:51:18'
+      tableType: table
+sqlUnreferencedSources: {}
+sqlPipeline:
+  name: sqlPipeline
+  description: null
+  author: avpreet+random@prophecy.io
+  createdAt: '2025-09-25 09:12:51'
+dependencies: []
+projectDependencies: {}
+flags:
+  shouldAddDefaultDependenciesIfAbsent: false
+pipelineConfigurations: {}
+projectConfigurations: {}
+sqlOrchestratorPipelines:
+  .prophecy/metadata/sqlorchestratorpipeline/p1:
+    name: p1
+    schema: null
+    description: null
+    author: avpreet+random@prophecy.io
+    files:
+    - models/p1/p1__Reformat_1.sql
+    - models/p1/schema.yml
+    - .prophecy/ide/pipelines/p1.json
+    - pipelines/p1.py
+    createdAt: '2025-09-25 09:13:01'
+sqlBusinessApps: {}
