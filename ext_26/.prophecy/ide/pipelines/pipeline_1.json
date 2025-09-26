@@ -321,6 +321,55 @@
         "isCustomOutputSchema" : false
       }
     },
+    "JCXX4owMGmrnQSAxWvnwB$$J5h_CbvvvdA24w4XPrVhn" : {
+      "id" : "JCXX4owMGmrnQSAxWvnwB$$J5h_CbvvvdA24w4XPrVhn",
+      "component" : "Dataset",
+      "metadata" : {
+        "label" : "support_tickets",
+        "x" : -560,
+        "y" : -420,
+        "phase" : 0
+      },
+      "properties" : {
+        "table" : {
+          "name" : "support_tickets",
+          "sourceType" : "Table",
+          "sourceName" : "avpreet_random_prophecy_io_team.dummy",
+          "alias" : ""
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "AR5bdKhVCHpeRsDa5BNN1$$xjFjwpwJw5obBN8rNoWr5",
+          "slug" : "in"
+        } ],
+        "outputs" : [ {
+          "id" : "TFcvFMoqk1rkIK90NeWw1$$Nl4SWfBi0_JjfIH8shEZz",
+          "schema" : {
+            "entityType" : "",
+            "providerType" : "ProphecyManaged",
+            "fields" : [ {
+              "name" : "ticket_id",
+              "dataType" : {
+                "type" : "BigInt"
+              }
+            }, {
+              "name" : "customer_id",
+              "dataType" : {
+                "type" : "BigInt"
+              }
+            }, {
+              "name" : "issue_type",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
     "pRIM1bZB7oxUlAk0hXkk3$$SMC3Qd5q2rHBqwewdDc1p" : {
       "id" : "pRIM1bZB7oxUlAk0hXkk3$$SMC3Qd5q2rHBqwewdDc1p",
       "component" : "Comment",

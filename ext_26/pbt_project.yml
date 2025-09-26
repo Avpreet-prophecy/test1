@@ -148,6 +148,24 @@ sqlSources:
       author: avpreet+random@prophecy.io
       createdAt: '2025-09-26 11:15:28'
       tableType: table
+    - name: support_tickets
+      schema:
+        entityType: ''
+        providerType: ProphecyManaged
+        fields:
+        - name: ticket_id
+          dataType:
+            type: BigInt
+        - name: customer_id
+          dataType:
+            type: BigInt
+        - name: issue_type
+          dataType:
+            type: String
+      description: null
+      author: avpreet+random@prophecy.io
+      createdAt: '2025-09-26 11:15:53'
+      tableType: table
 sqlUnreferencedSources: {}
 sqlPipeline:
   name: sqlPipeline

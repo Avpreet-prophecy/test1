@@ -86,3 +86,15 @@ sources:
       dataType:
         type: "String"
     type: "table"
+  - name: "support_tickets"
+    columns:
+    - name: "ticket_id"
+      dataType:
+        type: "BigInt"
+    - name: "customer_id"
+      dataType:
+        type: "BigInt"
+    - name: "issue_type"
+      dataType:
+        type: "String"
+    type: "table"

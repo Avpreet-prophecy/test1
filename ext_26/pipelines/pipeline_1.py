@@ -4,6 +4,16 @@ with DAG():
         component = "Dataset", 
         table = {"name" : "uber_data", "sourceType" : "Table", "sourceName" : "avpreet_random_prophecy_io_team.dummy", "alias" : ""}
     )
+    support_tickets = Task(
+        task_id = "support_tickets", 
+        component = "Dataset", 
+        table = {
+          "name": "support_tickets", 
+          "sourceType": "Table", 
+          "sourceName": "avpreet_random_prophecy_io_team.dummy", 
+          "alias": ""
+        }
+    )
     pipeline_1__customer_spend_rank = Task(
         task_id = "pipeline_1__customer_spend_rank", 
         component = "Model", 
