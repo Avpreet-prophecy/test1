@@ -13,28 +13,28 @@
     "isTranspiledPipeline" : false
   },
   "processes" : {
-    "rides_with_fare##oZuFHmVl" : {
-      "id" : "rides_with_fare##oZuFHmVl",
+    "rides_aggregatio##uPrPUUCv" : {
+      "id" : "rides_aggregatio##uPrPUUCv",
       "component" : "Model",
       "metadata" : {
-        "label" : "pipeline_1__rides_with_fare",
+        "label" : "pipeline_1__rides_aggregation_ordered",
         "phase" : 0
       },
       "properties" : {
-        "modelName" : "pipeline_1__rides_with_fare"
+        "modelName" : "pipeline_1__rides_aggregation_ordered"
       },
       "visualMetaInfo" : {
-        "visualProcessIds" : [ "rides_with_fare_kDasxaWW", "rides_with_fare##oZuFHmVl", "duw8GYA71d4SVPRC-tIJP$$hLilC543EUlEmcK0bM96b" ],
+        "visualProcessIds" : [ "rides_aggregation_ordered_Qz5VhOFq", "rides_aggregatio##uPrPUUCv", "rides_daily_aggr##xPVuaSMm", "rides_with_fare##oZuFHmVl", "rides##jem9sZqX" ],
         "type" : "ephemeral",
         "isTemporaryTable" : true
       },
       "ports" : {
         "inputs" : [ {
-          "id" : "pipeline_1__rides_with_fare_in_0",
+          "id" : "pipeline_1__rides_aggregation_ordered_in_0",
           "slug" : "in_0"
         } ],
         "outputs" : [ {
-          "id" : "pipeline_1__rides_with_fare_out_0",
+          "id" : "pipeline_1__rides_aggregation_ordered_out_0",
           "slug" : "out_0"
         } ],
         "isCustomOutputSchema" : false

@@ -13,8 +13,8 @@
     "isTranspiledPipeline" : false
   },
   "processes" : {
-    "duw8GYA71d4SVPRC-tIJP$$hLilC543EUlEmcK0bM96b" : {
-      "id" : "duw8GYA71d4SVPRC-tIJP$$hLilC543EUlEmcK0bM96b",
+    "rides##jem9sZqX" : {
+      "id" : "rides##jem9sZqX",
       "component" : "Dataset",
       "metadata" : {
         "label" : "rides",
@@ -32,7 +32,85 @@
       "ports" : {
         "inputs" : [ ],
         "outputs" : [ {
-          "id" : "iNkicvrd",
+          "id" : "A0nslGLW",
+          "schema" : {
+            "entityType" : "",
+            "providerType" : "ProphecyManaged",
+            "fields" : [ {
+              "name" : "ride_id",
+              "dataType" : {
+                "type" : "BigInt"
+              }
+            }, {
+              "name" : "customer_id",
+              "dataType" : {
+                "type" : "BigInt"
+              }
+            }, {
+              "name" : "ride_date",
+              "dataType" : {
+                "type" : "Date"
+              }
+            }, {
+              "name" : "fare_amount",
+              "dataType" : {
+                "type" : "Double"
+              }
+            } ]
+          },
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      },
+      "index" : 0
+    },
+    "rides_with_fare##oZuFHmVl" : {
+      "id" : "rides_with_fare##oZuFHmVl",
+      "component" : "Filter",
+      "metadata" : {
+        "label" : "rides_with_fare",
+        "x" : -360,
+        "y" : -280,
+        "phase" : 0
+      },
+      "properties" : {
+        "columnsSelector" : [ ],
+        "condition" : {
+          "expression" : "NOT fare_amount IS NULL"
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "btWRptTt",
+          "schema" : {
+            "entityType" : "",
+            "providerType" : "ProphecyManaged",
+            "fields" : [ {
+              "name" : "ride_id",
+              "dataType" : {
+                "type" : "BigInt"
+              }
+            }, {
+              "name" : "customer_id",
+              "dataType" : {
+                "type" : "BigInt"
+              }
+            }, {
+              "name" : "ride_date",
+              "dataType" : {
+                "type" : "Date"
+              }
+            }, {
+              "name" : "fare_amount",
+              "dataType" : {
+                "type" : "Double"
+              }
+            } ]
+          },
+          "slug" : "rides"
+        } ],
+        "outputs" : [ {
+          "id" : "bZX9Ed1I",
           "schema" : {
             "entityType" : "",
             "providerType" : "ProphecyManaged",
@@ -63,24 +141,56 @@
         "isCustomOutputSchema" : false
       }
     },
-    "rides_with_fare##oZuFHmVl" : {
-      "id" : "rides_with_fare##oZuFHmVl",
-      "component" : "Filter",
+    "rides_daily_aggr##xPVuaSMm" : {
+      "id" : "rides_daily_aggr##xPVuaSMm",
+      "component" : "Aggregate",
       "metadata" : {
-        "label" : "rides_with_fare",
-        "x" : -360,
+        "label" : "rides_daily_aggregation",
+        "x" : -160,
         "y" : -280,
         "phase" : 0
       },
       "properties" : {
-        "columnsSelector" : [ ],
+        "aggregate" : [ {
+          "expression" : {
+            "expression" : "ride_date"
+          },
+          "_row_id" : "1968094801"
+        }, {
+          "expression" : {
+            "expression" : "COUNT(DISTINCT ride_id)"
+          },
+          "alias" : "TOTAL_RIDES",
+          "_row_id" : "1443643821"
+        }, {
+          "expression" : {
+            "expression" : "SUM(fare_amount)"
+          },
+          "alias" : "TOTAL_REVENUE",
+          "_row_id" : "2066945751"
+        }, {
+          "expression" : {
+            "expression" : "AVG(fare_amount)"
+          },
+          "alias" : "AVG_FARE",
+          "_row_id" : "1842193564"
+        } ],
+        "allowSelection" : true,
         "condition" : {
-          "expression" : "NOT fare_amount IS NULL"
-        }
+          "expression" : ""
+        },
+        "activeTab" : "aggregate",
+        "columnsSelector" : [ ],
+        "groupBy" : [ {
+          "expression" : {
+            "expression" : "ride_date"
+          },
+          "_row_id" : "989654275"
+        } ]
       },
       "ports" : {
         "inputs" : [ {
-          "id" : "VqQLf9l0",
+          "id" : "FJvRVPbo",
           "schema" : {
             "entityType" : "",
             "providerType" : "ProphecyManaged",
@@ -106,10 +216,115 @@
               }
             } ]
           },
-          "slug" : "rides"
+          "slug" : "rides_with_fare"
         } ],
         "outputs" : [ {
-          "id" : "kDasxaWW",
+          "id" : "pz4d9iiw",
+          "schema" : {
+            "entityType" : "",
+            "providerType" : "ProphecyManaged",
+            "fields" : [ {
+              "name" : "ride_date",
+              "dataType" : {
+                "type" : "Date"
+              }
+            }, {
+              "name" : "TOTAL_RIDES",
+              "dataType" : {
+                "type" : "BigInt"
+              }
+            }, {
+              "name" : "TOTAL_REVENUE",
+              "dataType" : {
+                "type" : "Double"
+              }
+            }, {
+              "name" : "AVG_FARE",
+              "dataType" : {
+                "type" : "Double"
+              }
+            } ]
+          },
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "rides_aggregatio##uPrPUUCv" : {
+      "id" : "rides_aggregatio##uPrPUUCv",
+      "component" : "OrderBy",
+      "metadata" : {
+        "label" : "rides_aggregation_ordered",
+        "x" : 40,
+        "y" : -280,
+        "phase" : 0
+      },
+      "properties" : {
+        "columnsSelector" : [ ],
+        "orders" : [ {
+          "expression" : {
+            "expression" : "ride_date"
+          },
+          "sortType" : "asc"
+        } ]
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "ISAj4iaR",
+          "schema" : {
+            "entityType" : "",
+            "providerType" : "ProphecyManaged",
+            "fields" : [ {
+              "name" : "ride_date",
+              "dataType" : {
+                "type" : "Date"
+              }
+            }, {
+              "name" : "TOTAL_RIDES",
+              "dataType" : {
+                "type" : "BigInt"
+              }
+            }, {
+              "name" : "TOTAL_REVENUE",
+              "dataType" : {
+                "type" : "Double"
+              }
+            }, {
+              "name" : "AVG_FARE",
+              "dataType" : {
+                "type" : "Double"
+              }
+            } ]
+          },
+          "slug" : "rides_daily_aggregation"
+        } ],
+        "outputs" : [ {
+          "id" : "Qz5VhOFq",
+          "schema" : {
+            "entityType" : "",
+            "providerType" : "ProphecyManaged",
+            "fields" : [ {
+              "name" : "ride_date",
+              "dataType" : {
+                "type" : "Date"
+              }
+            }, {
+              "name" : "TOTAL_RIDES",
+              "dataType" : {
+                "type" : "BigInt"
+              }
+            }, {
+              "name" : "TOTAL_REVENUE",
+              "dataType" : {
+                "type" : "Double"
+              }
+            }, {
+              "name" : "AVG_FARE",
+              "dataType" : {
+                "type" : "Double"
+              }
+            } ]
+          },
           "slug" : "out"
         } ],
         "isCustomOutputSchema" : false
@@ -117,11 +332,23 @@
     }
   },
   "connections" : [ {
-    "id" : "fmqRrziR",
-    "source" : "duw8GYA71d4SVPRC-tIJP$$hLilC543EUlEmcK0bM96b",
-    "sourcePort" : "iNkicvrd",
+    "id" : "u1u57x0o",
+    "source" : "rides##jem9sZqX",
+    "sourcePort" : "A0nslGLW",
     "target" : "rides_with_fare##oZuFHmVl",
-    "targetPort" : "VqQLf9l0"
+    "targetPort" : "btWRptTt"
+  }, {
+    "id" : "PeNdQDnV",
+    "source" : "rides_with_fare##oZuFHmVl",
+    "sourcePort" : "bZX9Ed1I",
+    "target" : "rides_daily_aggr##xPVuaSMm",
+    "targetPort" : "FJvRVPbo"
+  }, {
+    "id" : "bTKHqN74",
+    "source" : "rides_daily_aggr##xPVuaSMm",
+    "sourcePort" : "pz4d9iiw",
+    "target" : "rides_aggregatio##uPrPUUCv",
+    "targetPort" : "ISAj4iaR"
   } ],
   "component" : "Pipeline"
 }

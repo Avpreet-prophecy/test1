@@ -1,6 +1,6 @@
 ---
 version: 2
 models:
-- name: "pipeline_1__rides_with_fare"
+- name: "pipeline_1__rides_aggregation_ordered"
   tags:
   - "prophecy_temp"
