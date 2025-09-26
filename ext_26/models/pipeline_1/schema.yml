@@ -1,6 +1,6 @@
 ---
 version: 2
 models:
-- name: "pipeline_1__rides_aggregation_ordered"
+- name: "pipeline_1__customer_spend_rank"
   tags:
   - "prophecy_temp"

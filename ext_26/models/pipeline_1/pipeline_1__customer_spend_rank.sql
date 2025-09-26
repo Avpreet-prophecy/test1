@@ -47,8 +47,31 @@ rides_aggregation_ordered AS (
   
   ORDER BY ride_date ASC
 
+),
+
+customer_total_revenue AS (
+
+  SELECT 
+    customer_id,
+    SUM(TOTAL_REVENUE) AS TOTAL_REVENUE
+  
+  FROM rides_aggregation_ordered
+  
+  GROUP BY customer_id
+
+),
+
+customer_spend_rank AS (
+
+  SELECT 
+    customer_id AS CUSTOMER_ID,
+    TOTAL_REVENUE,
+    RANK() OVER (ORDER BY TOTAL_REVENUE DESC) AS SPEND_RANK
+  
+  FROM customer_total_revenue
+
 )
 
 SELECT *
 
-FROM rides_aggregation_ordered
+FROM customer_spend_rank

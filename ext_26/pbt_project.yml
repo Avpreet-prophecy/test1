@@ -96,7 +96,7 @@ sqlOrchestratorPipelines:
     author: avpreet+random@prophecy.io
     files:
     - models/pipeline_1/schema.yml
-    - models/pipeline_1/pipeline_1__rides_aggregation_ordered.sql
+    - models/pipeline_1/pipeline_1__customer_spend_rank.sql
     - .prophecy/ide/pipelines/pipeline_1.json
     - pipelines/pipeline_1.py
     createdAt: '2025-09-26 10:27:21'

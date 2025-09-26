@@ -13,28 +13,28 @@
     "isTranspiledPipeline" : false
   },
   "processes" : {
-    "rides_aggregatio##uPrPUUCv" : {
-      "id" : "rides_aggregatio##uPrPUUCv",
+    "customer_spend_r##OEelBVrO" : {
+      "id" : "customer_spend_r##OEelBVrO",
       "component" : "Model",
       "metadata" : {
-        "label" : "pipeline_1__rides_aggregation_ordered",
+        "label" : "pipeline_1__customer_spend_rank",
         "phase" : 0
       },
       "properties" : {
-        "modelName" : "pipeline_1__rides_aggregation_ordered"
+        "modelName" : "pipeline_1__customer_spend_rank"
       },
       "visualMetaInfo" : {
-        "visualProcessIds" : [ "rides_aggregation_ordered_Qz5VhOFq", "rides_aggregatio##uPrPUUCv", "rides_daily_aggr##xPVuaSMm", "rides_with_fare##oZuFHmVl", "rides##jem9sZqX" ],
+        "visualProcessIds" : [ "customer_spend_rank_NmKp5DCt", "customer_spend_r##OEelBVrO", "customer_total_r##J6wzGchN", "rides_aggregatio##uPrPUUCv", "rides_daily_aggr##EdEUMVE5", "rides_with_fare##wfF8TOAf", "rides##rZ4nIzJ8" ],
         "type" : "ephemeral",
         "isTemporaryTable" : true
       },
       "ports" : {
         "inputs" : [ {
-          "id" : "pipeline_1__rides_aggregation_ordered_in_0",
+          "id" : "pipeline_1__customer_spend_rank_in_0",
           "slug" : "in_0"
         } ],
         "outputs" : [ {
-          "id" : "pipeline_1__rides_aggregation_ordered_out_0",
+          "id" : "pipeline_1__customer_spend_rank_out_0",
           "slug" : "out_0"
         } ],
         "isCustomOutputSchema" : false
