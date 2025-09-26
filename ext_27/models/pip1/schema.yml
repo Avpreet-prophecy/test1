@@ -1,0 +1,6 @@
+---
+version: 2
+models:
+- name: "pip1__rides_with_fare"
+  tags:
+  - "prophecy_temp"

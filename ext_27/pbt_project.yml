@@ -94,6 +94,8 @@ sqlOrchestratorPipelines:
     description: null
     author: avpreet+random@prophecy.io
     files:
+    - models/pip1/pip1__rides_with_fare.sql
+    - models/pip1/schema.yml
     - .prophecy/ide/pipelines/pip1.json
     - pipelines/pip1.py
     createdAt: '2025-09-26 10:42:50'

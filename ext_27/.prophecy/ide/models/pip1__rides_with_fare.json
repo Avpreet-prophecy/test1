@@ -1,0 +1,120 @@
+{
+  "id" : "pip1__rides_with_fare",
+  "metainfo" : {
+    "label" : "pip1__rides_with_fare",
+    "autoLayout" : true,
+    "staleState" : "none",
+    "sourceSuggestions" : {
+      "sources" : [ ]
+    },
+    "graphConfig" : {
+      "entityConfig" : {
+        "materialized" : "ephemeral",
+        "database" : "\"avpreet_random_prophecy_io_team\"",
+        "schema" : "\"main\"",
+        "type" : "ModelConfig"
+      }
+    },
+    "version" : 3
+  },
+  "processes" : {
+    "rides_with_fare_drBtYbBr" : {
+      "id" : "rides_with_fare_drBtYbBr",
+      "component" : "TargetModel",
+      "metadata" : {
+        "label" : "rides_with_fare"
+      },
+      "properties" : {
+        "customQueryDisabled" : true,
+        "customQuery" : false,
+        "incrementalEditorDisabled" : true,
+        "query" : "\nSELECT *\n\nFROM rides_with_fare\n\n",
+        "isModel" : true,
+        "incrementalKey" : false,
+        "incremental" : {
+          "expression" : "true"
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "input_port_0",
+          "slug" : "input_port_0"
+        } ],
+        "outputs" : [ {
+          "id" : "output_port_0",
+          "slug" : "output_port_0"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "rides_with_fare##rrV27xKP" : {
+      "id" : "rides_with_fare##rrV27xKP",
+      "component" : "Filter",
+      "metadata" : {
+        "label" : "rides_with_fare",
+        "x" : -360,
+        "y" : -140,
+        "phase" : 0
+      },
+      "properties" : {
+        "columnsSelector" : [ ],
+        "condition" : {
+          "expression" : "NOT fare_amount IS NULL"
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "rWJrijOZ",
+          "slug" : "rides"
+        } ],
+        "outputs" : [ {
+          "id" : "drBtYbBr",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "HpXRUjjnWg5n3Cy6oOKT4$$79tfsYSXV8vmCgds2-OuU" : {
+      "id" : "HpXRUjjnWg5n3Cy6oOKT4$$79tfsYSXV8vmCgds2-OuU",
+      "component" : "Source",
+      "metadata" : {
+        "label" : "rides",
+        "x" : -560,
+        "y" : -140,
+        "phase" : 0
+      },
+      "properties" : {
+        "table" : {
+          "name" : "rides",
+          "sourceType" : "Table",
+          "sourceName" : "avpreet_random_prophecy_io_team.dummy"
+        }
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "jygw3xDI",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    }
+  },
+  "connections" : [ {
+    "id" : "conn_rides_with_fare##rrV27xKP_rides_with_fare_drBtYbBr",
+    "source" : "rides_with_fare##rrV27xKP",
+    "sourcePort" : "drBtYbBr",
+    "target" : "rides_with_fare_drBtYbBr",
+    "targetPort" : "input_port_0"
+  }, {
+    "id" : "P0FpbHkV",
+    "source" : "HpXRUjjnWg5n3Cy6oOKT4$$79tfsYSXV8vmCgds2-OuU",
+    "sourcePort" : "jygw3xDI",
+    "target" : "rides_with_fare##rrV27xKP",
+    "targetPort" : "rWJrijOZ"
+  } ],
+  "component" : "Model"
+}
