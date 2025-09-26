@@ -1,0 +1,22 @@
+---
+version: 2
+sources:
+- name: "avpreet_random_prophecy_io_team.dummy"
+  database: "avpreet_random_prophecy_io_team"
+  schema: "dummy"
+  tables:
+  - name: "rides"
+    columns:
+    - name: "ride_id"
+      dataType:
+        type: "BigInt"
+    - name: "customer_id"
+      dataType:
+        type: "BigInt"
+    - name: "ride_date"
+      dataType:
+        type: "Date"
+    - name: "fare_amount"
+      dataType:
+        type: "Double"
+    type: "table"

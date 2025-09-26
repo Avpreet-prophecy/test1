@@ -43,9 +43,39 @@ sqlMacros:
     author: avpreet+random@prophecy.io
     files:
     - macros/prophecy_tmp_source.sql
+    - .prophecy/ide/macros/prophecy_tmp_source.json
     createdAt: '2025-09-26 10:27:21'
 sqlSeeds: {}
-sqlSources: {}
+sqlSources:
+  .prophecy/metadata/sqlsources/avpreet_random_prophecy_io_team_dummy:
+    name: avpreet_random_prophecy_io_team.dummy
+    description: null
+    author: avpreet+random@prophecy.io
+    files:
+    - prophecy-sources/sources.yml
+    createdAt: '2025-09-26 10:36:15'
+    tables:
+    - name: rides
+      schema:
+        entityType: ''
+        providerType: ProphecyManaged
+        fields:
+        - name: ride_id
+          dataType:
+            type: BigInt
+        - name: customer_id
+          dataType:
+            type: BigInt
+        - name: ride_date
+          dataType:
+            type: Date
+        - name: fare_amount
+          dataType:
+            type: Double
+      description: null
+      author: avpreet+random@prophecy.io
+      createdAt: '2025-09-26 10:36:15'
+      tableType: table
 sqlUnreferencedSources: {}
 sqlPipeline:
   name: sqlPipeline
