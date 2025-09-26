@@ -10,20 +10,6 @@
         "fields" : [ ]
       }
     },
-    "schedule" : {
-      "cron" : "* 0 2 * * * *",
-      "timeZone" : "GMT",
-      "emailOnSuccess" : false,
-      "emailOnFailure" : false,
-      "emailOnStart" : false,
-      "emails" : [ "email@gmail.com" ],
-      "enabled" : false
-    },
-    "sensorSchedule" : {
-      "enabled" : false,
-      "isDefaultView" : false,
-      "triggers" : { }
-    },
     "isTranspiledPipeline" : false
   },
   "processes" : {
@@ -40,17 +26,13 @@
         "table" : {
           "name" : "rides",
           "sourceType" : "Table",
-          "sourceName" : "avpreet_random_prophecy_io_team.dummy",
-          "alias" : ""
+          "sourceName" : "avpreet_random_prophecy_io_team.dummy"
         }
       },
       "ports" : {
-        "inputs" : [ {
-          "id" : "mJ0ipCQ5p7BIPQ-d-UHiB$$2Va__tid1pStoFNaqJWlJ",
-          "slug" : "in"
-        } ],
+        "inputs" : [ ],
         "outputs" : [ {
-          "id" : "GQH1h-4I9uKNfjx1KxWYp$$Lh88tGt5oF-jUQr-Iod5z",
+          "id" : "iNkicvrd",
           "schema" : {
             "entityType" : "",
             "providerType" : "ProphecyManaged",
@@ -80,8 +62,66 @@
         } ],
         "isCustomOutputSchema" : false
       }
+    },
+    "rides_with_fare##oZuFHmVl" : {
+      "id" : "rides_with_fare##oZuFHmVl",
+      "component" : "Filter",
+      "metadata" : {
+        "label" : "rides_with_fare",
+        "x" : -360,
+        "y" : -280,
+        "phase" : 0
+      },
+      "properties" : {
+        "columnsSelector" : [ ],
+        "condition" : {
+          "expression" : "NOT fare_amount IS NULL"
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "VqQLf9l0",
+          "schema" : {
+            "entityType" : "",
+            "providerType" : "ProphecyManaged",
+            "fields" : [ {
+              "name" : "ride_id",
+              "dataType" : {
+                "type" : "BigInt"
+              }
+            }, {
+              "name" : "customer_id",
+              "dataType" : {
+                "type" : "BigInt"
+              }
+            }, {
+              "name" : "ride_date",
+              "dataType" : {
+                "type" : "Date"
+              }
+            }, {
+              "name" : "fare_amount",
+              "dataType" : {
+                "type" : "Double"
+              }
+            } ]
+          },
+          "slug" : "rides"
+        } ],
+        "outputs" : [ {
+          "id" : "kDasxaWW",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
     }
   },
-  "connections" : [ ],
+  "connections" : [ {
+    "id" : "fmqRrziR",
+    "source" : "duw8GYA71d4SVPRC-tIJP$$hLilC543EUlEmcK0bM96b",
+    "sourcePort" : "iNkicvrd",
+    "target" : "rides_with_fare##oZuFHmVl",
+    "targetPort" : "VqQLf9l0"
+  } ],
   "component" : "Pipeline"
 }

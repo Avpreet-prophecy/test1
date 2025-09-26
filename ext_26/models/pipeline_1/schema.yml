@@ -1,0 +1,6 @@
+---
+version: 2
+models:
+- name: "pipeline_1__rides_with_fare"
+  tags:
+  - "prophecy_temp"
