@@ -4,3 +4,6 @@ models:
 - name: "pipeline_1__customer_spend_rank"
   tags:
   - "prophecy_temp"
+- name: "pipeline_1__total_tickets_per_customer"
+  tags:
+  - "prophecy_temp"

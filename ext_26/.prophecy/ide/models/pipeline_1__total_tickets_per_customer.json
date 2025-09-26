@@ -1,0 +1,140 @@
+{
+  "id" : "pipeline_1__total_tickets_per_customer",
+  "metainfo" : {
+    "label" : "pipeline_1__total_tickets_per_customer",
+    "autoLayout" : true,
+    "staleState" : "none",
+    "sourceSuggestions" : {
+      "sources" : [ ]
+    },
+    "graphConfig" : {
+      "entityConfig" : {
+        "materialized" : "ephemeral",
+        "database" : "\"avpreet_random_prophecy_io_team\"",
+        "schema" : "\"main\"",
+        "type" : "ModelConfig"
+      }
+    },
+    "version" : 3
+  },
+  "processes" : {
+    "total_tickets_per_customer_IxL9vtJZ" : {
+      "id" : "total_tickets_per_customer_IxL9vtJZ",
+      "component" : "TargetModel",
+      "metadata" : {
+        "label" : "total_tickets_per_customer"
+      },
+      "properties" : {
+        "customQueryDisabled" : true,
+        "customQuery" : false,
+        "incrementalEditorDisabled" : true,
+        "query" : "\nSELECT *\n\nFROM total_tickets_per_customer\n\n",
+        "isModel" : true,
+        "incrementalKey" : false,
+        "incremental" : {
+          "expression" : "true"
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "input_port_0",
+          "slug" : "input_port_0"
+        } ],
+        "outputs" : [ {
+          "id" : "output_port_0",
+          "slug" : "output_port_0"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "total_tickets_pe##mDm4QQQO" : {
+      "id" : "total_tickets_pe##mDm4QQQO",
+      "component" : "Aggregate",
+      "metadata" : {
+        "label" : "total_tickets_per_customer",
+        "x" : -360,
+        "y" : -420,
+        "phase" : 0
+      },
+      "properties" : {
+        "aggregate" : [ {
+          "expression" : {
+            "expression" : "customer_id"
+          },
+          "_row_id" : "1290309361"
+        }, {
+          "expression" : {
+            "expression" : "COUNT(DISTINCT ticket_id)"
+          },
+          "alias" : "TOTAL_TICKETS",
+          "_row_id" : "516563945"
+        } ],
+        "allowSelection" : true,
+        "condition" : {
+          "expression" : ""
+        },
+        "activeTab" : "aggregate",
+        "columnsSelector" : [ ],
+        "groupBy" : [ {
+          "expression" : {
+            "expression" : "customer_id"
+          },
+          "_row_id" : "807584615"
+        } ]
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "GWZ5skDW",
+          "slug" : "support_tickets"
+        } ],
+        "outputs" : [ {
+          "id" : "IxL9vtJZ",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "support_tickets##ubLR7AW4" : {
+      "id" : "support_tickets##ubLR7AW4",
+      "component" : "Source",
+      "metadata" : {
+        "label" : "support_tickets",
+        "x" : -560,
+        "y" : -420,
+        "phase" : 0
+      },
+      "properties" : {
+        "table" : {
+          "name" : "support_tickets",
+          "sourceType" : "Table",
+          "sourceName" : "avpreet_random_prophecy_io_team.dummy"
+        }
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "EIo6P2z1",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    }
+  },
+  "connections" : [ {
+    "id" : "conn_total_tickets_pe##mDm4QQQO_total_tickets_per_customer_IxL9vtJZ",
+    "source" : "total_tickets_pe##mDm4QQQO",
+    "sourcePort" : "IxL9vtJZ",
+    "target" : "total_tickets_per_customer_IxL9vtJZ",
+    "targetPort" : "input_port_0"
+  }, {
+    "id" : "OsvZM4bA",
+    "source" : "support_tickets##ubLR7AW4",
+    "sourcePort" : "EIo6P2z1",
+    "target" : "total_tickets_pe##mDm4QQQO",
+    "targetPort" : "GWZ5skDW"
+  } ],
+  "component" : "Model"
+}
