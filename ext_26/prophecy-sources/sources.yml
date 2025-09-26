@@ -20,3 +20,69 @@ sources:
       dataType:
         type: "Double"
     type: "table"
+  - name: "uber_data"
+    columns:
+    - name: "Date"
+      dataType:
+        type: "Date"
+    - name: "Time"
+      dataType:
+        type: "Time"
+    - name: "Booking ID"
+      dataType:
+        type: "String"
+    - name: "Booking Status"
+      dataType:
+        type: "String"
+    - name: "Customer ID"
+      dataType:
+        type: "String"
+    - name: "Vehicle Type"
+      dataType:
+        type: "String"
+    - name: "Pickup Location"
+      dataType:
+        type: "String"
+    - name: "Drop Location"
+      dataType:
+        type: "String"
+    - name: "Avg VTAT"
+      dataType:
+        type: "String"
+    - name: "Avg CTAT"
+      dataType:
+        type: "String"
+    - name: "Cancelled Rides by Customer"
+      dataType:
+        type: "String"
+    - name: "Reason for cancelling by Customer"
+      dataType:
+        type: "String"
+    - name: "Cancelled Rides by Driver"
+      dataType:
+        type: "String"
+    - name: "Driver Cancellation Reason"
+      dataType:
+        type: "String"
+    - name: "Incomplete Rides"
+      dataType:
+        type: "String"
+    - name: "Incomplete Rides Reason"
+      dataType:
+        type: "String"
+    - name: "Booking Value"
+      dataType:
+        type: "String"
+    - name: "Ride Distance"
+      dataType:
+        type: "String"
+    - name: "Driver Ratings"
+      dataType:
+        type: "String"
+    - name: "Customer Rating"
+      dataType:
+        type: "String"
+    - name: "Payment Method"
+      dataType:
+        type: "String"
+    type: "table"
