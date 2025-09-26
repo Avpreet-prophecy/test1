@@ -2,17 +2,12 @@ with DAG():
     uber_data = Task(
         task_id = "uber_data", 
         component = "Dataset", 
-        table = {"name" : "uber_data", "sourceType" : "Table", "sourceName" : "avpreet_random_prophecy_io_team.dummy", "alias" : ""}
+        table = {"name" : "uber_data", "sourceType" : "Table", "sourceName" : "avpreet_random_prophecy_io_team.dummy"}
     )
     support_tickets = Task(
         task_id = "support_tickets", 
         component = "Dataset", 
-        table = {
-          "name": "support_tickets", 
-          "sourceType": "Table", 
-          "sourceName": "avpreet_random_prophecy_io_team.dummy", 
-          "alias": ""
-        }
+        table = {"name" : "support_tickets", "sourceType" : "Table", "sourceName" : "avpreet_random_prophecy_io_team.dummy"}
     )
     pipeline_1__customer_spend_rank = Task(
         task_id = "pipeline_1__customer_spend_rank", 

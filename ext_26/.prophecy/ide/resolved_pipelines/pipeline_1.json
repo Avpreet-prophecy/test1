@@ -26,17 +26,13 @@
         "table" : {
           "name" : "uber_data",
           "sourceType" : "Table",
-          "sourceName" : "avpreet_random_prophecy_io_team.dummy",
-          "alias" : ""
+          "sourceName" : "avpreet_random_prophecy_io_team.dummy"
         }
       },
       "ports" : {
-        "inputs" : [ {
-          "id" : "cgJQ2mlVAs9-DNHqGNxh6$$ldsNE0HWGfyCIN3uURow5",
-          "slug" : "in"
-        } ],
+        "inputs" : [ ],
         "outputs" : [ {
-          "id" : "OxqUr250jXSfIz_pYg-MO$$y5YwCEasniM3PeHfusj9B",
+          "id" : "sE280hZY",
           "schema" : {
             "entityType" : "",
             "providerType" : "ProphecyManaged",
@@ -152,8 +148,8 @@
         "isCustomOutputSchema" : false
       }
     },
-    "JCXX4owMGmrnQSAxWvnwB$$J5h_CbvvvdA24w4XPrVhn" : {
-      "id" : "JCXX4owMGmrnQSAxWvnwB$$J5h_CbvvvdA24w4XPrVhn",
+    "support_tickets##tfnrBPE1" : {
+      "id" : "support_tickets##tfnrBPE1",
       "component" : "Dataset",
       "metadata" : {
         "label" : "support_tickets",
@@ -165,17 +161,13 @@
         "table" : {
           "name" : "support_tickets",
           "sourceType" : "Table",
-          "sourceName" : "avpreet_random_prophecy_io_team.dummy",
-          "alias" : ""
+          "sourceName" : "avpreet_random_prophecy_io_team.dummy"
         }
       },
       "ports" : {
-        "inputs" : [ {
-          "id" : "AR5bdKhVCHpeRsDa5BNN1$$xjFjwpwJw5obBN8rNoWr5",
-          "slug" : "in"
-        } ],
+        "inputs" : [ ],
         "outputs" : [ {
-          "id" : "TFcvFMoqk1rkIK90NeWw1$$Nl4SWfBi0_JjfIH8shEZz",
+          "id" : "JvGiw5uj",
           "schema" : {
             "entityType" : "",
             "providerType" : "ProphecyManaged",
@@ -199,10 +191,11 @@
           "slug" : "out"
         } ],
         "isCustomOutputSchema" : false
-      }
+      },
+      "index" : 7
     },
-    "customer_spend_r##OEelBVrO" : {
-      "id" : "customer_spend_r##OEelBVrO",
+    "customer_spend_r##OSbzPRRl" : {
+      "id" : "customer_spend_r##OSbzPRRl",
       "component" : "Model",
       "metadata" : {
         "label" : "pipeline_1__customer_spend_rank",
@@ -212,7 +205,7 @@
         "modelName" : "pipeline_1__customer_spend_rank"
       },
       "visualMetaInfo" : {
-        "visualProcessIds" : [ "customer_spend_rank_NmKp5DCt", "customer_spend_r##OEelBVrO", "customer_total_r##J6wzGchN", "rides_aggregatio##uPrPUUCv", "rides_daily_aggr##EdEUMVE5", "rides_with_fare##wfF8TOAf", "rides##rZ4nIzJ8" ],
+        "visualProcessIds" : [ "customer_spend_rank_Tj7n3yFt", "customer_spend_r##OSbzPRRl", "customer_total_r##hHi1MgUG", "rides_aggregatio##d5Bx8pjH", "rides_daily_aggr##JWaaFIRO", "rides_with_fare##V3GkcS3d", "rides##zHFlDJO8" ],
         "type" : "ephemeral",
         "isTemporaryTable" : true
       },
