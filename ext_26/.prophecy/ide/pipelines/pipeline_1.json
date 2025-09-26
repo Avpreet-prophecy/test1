@@ -13,98 +13,6 @@
     "isTranspiledPipeline" : false
   },
   "processes" : {
-    "customer_total_r##SMty8WfY" : {
-      "id" : "customer_total_r##SMty8WfY",
-      "component" : "Aggregate",
-      "metadata" : {
-        "label" : "customer_total_revenue",
-        "x" : 240,
-        "y" : -280,
-        "phase" : 0
-      },
-      "properties" : {
-        "aggregate" : [ {
-          "expression" : {
-            "expression" : "customer_id"
-          },
-          "_row_id" : "1237821317"
-        }, {
-          "expression" : {
-            "expression" : "SUM(TOTAL_REVENUE)"
-          },
-          "alias" : "TOTAL_REVENUE",
-          "_row_id" : "2113546342"
-        } ],
-        "allowSelection" : true,
-        "condition" : {
-          "expression" : ""
-        },
-        "activeTab" : "aggregate",
-        "columnsSelector" : [ ],
-        "groupBy" : [ {
-          "expression" : {
-            "expression" : "customer_id"
-          },
-          "_row_id" : "1386233398"
-        } ]
-      },
-      "ports" : {
-        "inputs" : [ {
-          "id" : "CWqfzoO8",
-          "schema" : {
-            "entityType" : "",
-            "providerType" : "ProphecyManaged",
-            "fields" : [ {
-              "name" : "ride_date",
-              "dataType" : {
-                "type" : "Date"
-              }
-            }, {
-              "name" : "TOTAL_RIDES",
-              "dataType" : {
-                "type" : "BigInt"
-              }
-            }, {
-              "name" : "TOTAL_REVENUE",
-              "dataType" : {
-                "type" : "Double"
-              }
-            }, {
-              "name" : "AVG_FARE",
-              "dataType" : {
-                "type" : "Double"
-              }
-            }, {
-              "name" : "customer_id",
-              "dataType" : {
-                "type" : "BigInt"
-              }
-            } ]
-          },
-          "slug" : "rides_aggregation_ordered"
-        } ],
-        "outputs" : [ {
-          "id" : "KnGjVlHz",
-          "schema" : {
-            "entityType" : "",
-            "providerType" : "ProphecyManaged",
-            "fields" : [ {
-              "name" : "customer_id",
-              "dataType" : {
-                "type" : "BigInt"
-              }
-            }, {
-              "name" : "TOTAL_REVENUE",
-              "dataType" : {
-                "type" : "Double"
-              }
-            } ]
-          },
-          "slug" : "out"
-        } ],
-        "isCustomOutputSchema" : false
-      }
-    },
     "Ec2AU13kgD276uYClFFG9$$x1QQbT72v8cvmm-QU25yg" : {
       "id" : "Ec2AU13kgD276uYClFFG9$$x1QQbT72v8cvmm-QU25yg",
       "component" : "Dataset",
@@ -124,7 +32,7 @@
       "ports" : {
         "inputs" : [ ],
         "outputs" : [ {
-          "id" : "NRDVO4jI",
+          "id" : "n3el1NGR",
           "schema" : {
             "entityType" : "",
             "providerType" : "ProphecyManaged",
@@ -240,8 +148,8 @@
         "isCustomOutputSchema" : false
       }
     },
-    "rides_with_fare##HSP0nAkr" : {
-      "id" : "rides_with_fare##HSP0nAkr",
+    "rides_with_fare##JBrIk1In" : {
+      "id" : "rides_with_fare##JBrIk1In",
       "component" : "Filter",
       "metadata" : {
         "label" : "rides_with_fare",
@@ -257,7 +165,7 @@
       },
       "ports" : {
         "inputs" : [ {
-          "id" : "itaQCyYb",
+          "id" : "fEMm03dS",
           "schema" : {
             "entityType" : "",
             "providerType" : "ProphecyManaged",
@@ -286,7 +194,7 @@
           "slug" : "rides"
         } ],
         "outputs" : [ {
-          "id" : "VXGuhCii",
+          "id" : "qArTHI6o",
           "schema" : {
             "entityType" : "",
             "providerType" : "ProphecyManaged",
@@ -317,8 +225,8 @@
         "isCustomOutputSchema" : false
       }
     },
-    "support_tickets##ubLR7AW4" : {
-      "id" : "support_tickets##ubLR7AW4",
+    "support_tickets##LZR6hSST" : {
+      "id" : "support_tickets##LZR6hSST",
       "component" : "Dataset",
       "metadata" : {
         "label" : "support_tickets",
@@ -336,7 +244,7 @@
       "ports" : {
         "inputs" : [ ],
         "outputs" : [ {
-          "id" : "EIo6P2z1",
+          "id" : "siqwqedz",
           "schema" : {
             "entityType" : "",
             "providerType" : "ProphecyManaged",
@@ -361,10 +269,199 @@
         } ],
         "isCustomOutputSchema" : false
       },
-      "index" : 5
+      "index" : 6
     },
-    "rides_aggregatio##ao8TIS06" : {
-      "id" : "rides_aggregatio##ao8TIS06",
+    "customer_tickets##BKJl97sG" : {
+      "id" : "customer_tickets##BKJl97sG",
+      "component" : "Join",
+      "metadata" : {
+        "label" : "customer_tickets_and_spend_rank",
+        "x" : 240,
+        "y" : -510,
+        "phase" : 0
+      },
+      "properties" : {
+        "conditions" : [ {
+          "alias" : "total_tickets_per_customer",
+          "expression" : {
+            "expression" : "customer_spend_rank.CUSTOMER_ID = total_tickets_per_customer.customer_id"
+          },
+          "joinType" : "INNER"
+        } ],
+        "allowSelection" : false,
+        "expressions" : [ {
+          "expression" : {
+            "expression" : "customer_spend_rank.CUSTOMER_ID"
+          },
+          "_row_id" : "686102166"
+        }, {
+          "expression" : {
+            "expression" : "customer_spend_rank.TOTAL_REVENUE"
+          },
+          "_row_id" : "1180670902"
+        }, {
+          "expression" : {
+            "expression" : "customer_spend_rank.SPEND_RANK"
+          },
+          "_row_id" : "251572388"
+        }, {
+          "expression" : {
+            "expression" : "total_tickets_per_customer.TOTAL_TICKETS"
+          },
+          "_row_id" : "881893928"
+        } ],
+        "activeTab" : "conditions",
+        "columnsSelector" : [ ],
+        "headAlias" : "customer_spend_rank"
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "VhIcrf67",
+          "schema" : {
+            "entityType" : "",
+            "providerType" : "ProphecyManaged",
+            "fields" : [ {
+              "name" : "CUSTOMER_ID",
+              "dataType" : {
+                "type" : "BigInt"
+              }
+            }, {
+              "name" : "TOTAL_REVENUE",
+              "dataType" : {
+                "type" : "Double"
+              }
+            }, {
+              "name" : "SPEND_RANK",
+              "dataType" : {
+                "type" : "BigInt"
+              }
+            } ]
+          },
+          "slug" : "customer_spend_rank"
+        }, {
+          "id" : "ovfirlTo",
+          "schema" : {
+            "entityType" : "",
+            "providerType" : "ProphecyManaged",
+            "fields" : [ {
+              "name" : "customer_id",
+              "dataType" : {
+                "type" : "BigInt"
+              }
+            }, {
+              "name" : "TOTAL_TICKETS",
+              "dataType" : {
+                "type" : "BigInt"
+              }
+            } ]
+          },
+          "slug" : "total_tickets_per_customer"
+        } ],
+        "outputs" : [ {
+          "id" : "p2DXC5sj",
+          "schema" : {
+            "entityType" : "",
+            "providerType" : "ProphecyManaged",
+            "fields" : [ {
+              "name" : "CUSTOMER_ID",
+              "dataType" : {
+                "type" : "BigInt"
+              }
+            }, {
+              "name" : "TOTAL_REVENUE",
+              "dataType" : {
+                "type" : "Double"
+              }
+            }, {
+              "name" : "SPEND_RANK",
+              "dataType" : {
+                "type" : "BigInt"
+              }
+            }, {
+              "name" : "TOTAL_TICKETS",
+              "dataType" : {
+                "type" : "BigInt"
+              }
+            } ]
+          },
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "rides##BTPw9mzY" : {
+      "id" : "rides##BTPw9mzY",
+      "component" : "Dataset",
+      "metadata" : {
+        "label" : "rides",
+        "x" : -560,
+        "y" : -280,
+        "phase" : 0
+      },
+      "properties" : {
+        "table" : {
+          "name" : "rides",
+          "sourceType" : "Table",
+          "sourceName" : "avpreet_random_prophecy_io_team.dummy"
+        }
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "iuAJeMom",
+          "schema" : {
+            "entityType" : "",
+            "providerType" : "ProphecyManaged",
+            "fields" : [ {
+              "name" : "ride_id",
+              "dataType" : {
+                "type" : "BigInt"
+              }
+            }, {
+              "name" : "customer_id",
+              "dataType" : {
+                "type" : "BigInt"
+              }
+            }, {
+              "name" : "ride_date",
+              "dataType" : {
+                "type" : "Date"
+              }
+            }, {
+              "name" : "fare_amount",
+              "dataType" : {
+                "type" : "Double"
+              }
+            } ]
+          },
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      },
+      "index" : 0
+    },
+    "pRIM1bZB7oxUlAk0hXkk3$$SMC3Qd5q2rHBqwewdDc1p" : {
+      "id" : "pRIM1bZB7oxUlAk0hXkk3$$SMC3Qd5q2rHBqwewdDc1p",
+      "component" : "Comment",
+      "metadata" : {
+        "label" : "Comment_1",
+        "x" : -400,
+        "y" : -840,
+        "height" : 72,
+        "width" : 220.0000457763672,
+        "phase" : 0
+      },
+      "properties" : {
+        "comment" : "![](https://picsum.photos/200/300)",
+        "connectedNodes" : [ ]
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ ]
+      }
+    },
+    "rides_aggregatio##BBTL2tRf" : {
+      "id" : "rides_aggregatio##BBTL2tRf",
       "component" : "OrderBy",
       "metadata" : {
         "label" : "rides_aggregation_ordered",
@@ -383,7 +480,7 @@
       },
       "ports" : {
         "inputs" : [ {
-          "id" : "OWt4USt7",
+          "id" : "mW0FqvMO",
           "schema" : {
             "entityType" : "",
             "providerType" : "ProphecyManaged",
@@ -417,7 +514,7 @@
           "slug" : "rides_daily_aggregation"
         } ],
         "outputs" : [ {
-          "id" : "xXcJlqOy",
+          "id" : "KIhSjK0H",
           "schema" : {
             "entityType" : "",
             "providerType" : "ProphecyManaged",
@@ -453,143 +550,88 @@
         "isCustomOutputSchema" : false
       }
     },
-    "pRIM1bZB7oxUlAk0hXkk3$$SMC3Qd5q2rHBqwewdDc1p" : {
-      "id" : "pRIM1bZB7oxUlAk0hXkk3$$SMC3Qd5q2rHBqwewdDc1p",
-      "component" : "Comment",
+    "customer_total_r##EwZ4dQle" : {
+      "id" : "customer_total_r##EwZ4dQle",
+      "component" : "Aggregate",
       "metadata" : {
-        "label" : "Comment_1",
-        "x" : -400,
-        "y" : -840,
-        "height" : 72,
-        "width" : 220.0000457763672,
-        "phase" : 0
-      },
-      "properties" : {
-        "comment" : "![](https://picsum.photos/200/300)",
-        "connectedNodes" : [ ]
-      },
-      "ports" : {
-        "inputs" : [ ],
-        "outputs" : [ ]
-      }
-    },
-    "customer_spend_r##R2W8YFZw" : {
-      "id" : "customer_spend_r##R2W8YFZw",
-      "component" : "Reformat",
-      "metadata" : {
-        "label" : "customer_spend_rank",
-        "x" : 440,
+        "label" : "customer_total_revenue",
+        "x" : 240,
         "y" : -280,
         "phase" : 0
       },
       "properties" : {
-        "columnsSelector" : [ ],
-        "expressions" : [ {
+        "aggregate" : [ {
           "expression" : {
             "expression" : "customer_id"
           },
-          "alias" : "CUSTOMER_ID",
-          "_row_id" : "416199273"
+          "_row_id" : "362600702"
         }, {
           "expression" : {
-            "expression" : "TOTAL_REVENUE"
+            "expression" : "SUM(TOTAL_REVENUE)"
           },
-          "_row_id" : "228399118"
-        }, {
+          "alias" : "TOTAL_REVENUE",
+          "_row_id" : "1679670875"
+        } ],
+        "allowSelection" : true,
+        "condition" : {
+          "expression" : ""
+        },
+        "activeTab" : "aggregate",
+        "columnsSelector" : [ ],
+        "groupBy" : [ {
           "expression" : {
-            "expression" : "RANK() OVER (ORDER BY TOTAL_REVENUE DESC)"
+            "expression" : "customer_id"
           },
-          "alias" : "SPEND_RANK",
-          "_row_id" : "1335009865"
+          "_row_id" : "170924669"
         } ]
       },
       "ports" : {
         "inputs" : [ {
-          "id" : "JWzGaX3U",
+          "id" : "A55bgbIH",
           "schema" : {
             "entityType" : "",
             "providerType" : "ProphecyManaged",
             "fields" : [ {
-              "name" : "customer_id",
-              "dataType" : {
-                "type" : "BigInt"
-              }
-            }, {
-              "name" : "TOTAL_REVENUE",
-              "dataType" : {
-                "type" : "Double"
-              }
-            } ]
-          },
-          "slug" : "customer_total_revenue"
-        } ],
-        "outputs" : [ {
-          "id" : "VWF8c1UM",
-          "schema" : {
-            "entityType" : "",
-            "providerType" : "ProphecyManaged",
-            "fields" : [ {
-              "name" : "CUSTOMER_ID",
-              "dataType" : {
-                "type" : "BigInt"
-              }
-            }, {
-              "name" : "TOTAL_REVENUE",
-              "dataType" : {
-                "type" : "Double"
-              }
-            }, {
-              "name" : "SPEND_RANK",
-              "dataType" : {
-                "type" : "BigInt"
-              }
-            } ]
-          },
-          "slug" : "out"
-        } ],
-        "isCustomOutputSchema" : false
-      }
-    },
-    "rides##n9zi6AWN" : {
-      "id" : "rides##n9zi6AWN",
-      "component" : "Dataset",
-      "metadata" : {
-        "label" : "rides",
-        "x" : -560,
-        "y" : -280,
-        "phase" : 0
-      },
-      "properties" : {
-        "table" : {
-          "name" : "rides",
-          "sourceType" : "Table",
-          "sourceName" : "avpreet_random_prophecy_io_team.dummy"
-        }
-      },
-      "ports" : {
-        "inputs" : [ ],
-        "outputs" : [ {
-          "id" : "GlQrU0ic",
-          "schema" : {
-            "entityType" : "",
-            "providerType" : "ProphecyManaged",
-            "fields" : [ {
-              "name" : "ride_id",
-              "dataType" : {
-                "type" : "BigInt"
-              }
-            }, {
-              "name" : "customer_id",
-              "dataType" : {
-                "type" : "BigInt"
-              }
-            }, {
               "name" : "ride_date",
               "dataType" : {
                 "type" : "Date"
               }
             }, {
-              "name" : "fare_amount",
+              "name" : "TOTAL_RIDES",
+              "dataType" : {
+                "type" : "BigInt"
+              }
+            }, {
+              "name" : "TOTAL_REVENUE",
+              "dataType" : {
+                "type" : "Double"
+              }
+            }, {
+              "name" : "AVG_FARE",
+              "dataType" : {
+                "type" : "Double"
+              }
+            }, {
+              "name" : "customer_id",
+              "dataType" : {
+                "type" : "BigInt"
+              }
+            } ]
+          },
+          "slug" : "rides_aggregation_ordered"
+        } ],
+        "outputs" : [ {
+          "id" : "ad5aKTz4",
+          "schema" : {
+            "entityType" : "",
+            "providerType" : "ProphecyManaged",
+            "fields" : [ {
+              "name" : "customer_id",
+              "dataType" : {
+                "type" : "BigInt"
+              }
+            }, {
+              "name" : "TOTAL_REVENUE",
               "dataType" : {
                 "type" : "Double"
               }
@@ -598,11 +640,10 @@
           "slug" : "out"
         } ],
         "isCustomOutputSchema" : false
-      },
-      "index" : 0
+      }
     },
-    "rides_daily_aggr##Q3aq0FdD" : {
-      "id" : "rides_daily_aggr##Q3aq0FdD",
+    "rides_daily_aggr##ZIsxZucD" : {
+      "id" : "rides_daily_aggr##ZIsxZucD",
       "component" : "Aggregate",
       "metadata" : {
         "label" : "rides_daily_aggregation",
@@ -615,31 +656,31 @@
           "expression" : {
             "expression" : "ride_date"
           },
-          "_row_id" : "1197491066"
+          "_row_id" : "490706765"
         }, {
           "expression" : {
             "expression" : "COUNT(DISTINCT ride_id)"
           },
           "alias" : "TOTAL_RIDES",
-          "_row_id" : "151370482"
+          "_row_id" : "1329120389"
         }, {
           "expression" : {
             "expression" : "SUM(fare_amount)"
           },
           "alias" : "TOTAL_REVENUE",
-          "_row_id" : "1540750178"
+          "_row_id" : "945582813"
         }, {
           "expression" : {
             "expression" : "AVG(fare_amount)"
           },
           "alias" : "AVG_FARE",
-          "_row_id" : "1045141717"
+          "_row_id" : "1106069985"
         }, {
           "expression" : {
             "expression" : "any_value(customer_id)"
           },
           "alias" : "customer_id",
-          "_row_id" : "1149258404"
+          "_row_id" : "1874695881"
         } ],
         "allowSelection" : true,
         "condition" : {
@@ -651,12 +692,12 @@
           "expression" : {
             "expression" : "ride_date"
           },
-          "_row_id" : "1384646286"
+          "_row_id" : "80956697"
         } ]
       },
       "ports" : {
         "inputs" : [ {
-          "id" : "H2xvdW7m",
+          "id" : "RsHFNdOV",
           "schema" : {
             "entityType" : "",
             "providerType" : "ProphecyManaged",
@@ -685,7 +726,7 @@
           "slug" : "rides_with_fare"
         } ],
         "outputs" : [ {
-          "id" : "bWKA2EZx",
+          "id" : "LFHACleL",
           "schema" : {
             "entityType" : "",
             "providerType" : "ProphecyManaged",
@@ -721,8 +762,8 @@
         "isCustomOutputSchema" : false
       }
     },
-    "total_tickets_pe##mDm4QQQO" : {
-      "id" : "total_tickets_pe##mDm4QQQO",
+    "total_tickets_pe##XBxVwSKF" : {
+      "id" : "total_tickets_pe##XBxVwSKF",
       "component" : "Aggregate",
       "metadata" : {
         "label" : "total_tickets_per_customer",
@@ -735,13 +776,13 @@
           "expression" : {
             "expression" : "customer_id"
           },
-          "_row_id" : "1290309361"
+          "_row_id" : "287850119"
         }, {
           "expression" : {
             "expression" : "COUNT(DISTINCT ticket_id)"
           },
           "alias" : "TOTAL_TICKETS",
-          "_row_id" : "516563945"
+          "_row_id" : "1192958842"
         } ],
         "allowSelection" : true,
         "condition" : {
@@ -753,12 +794,12 @@
           "expression" : {
             "expression" : "customer_id"
           },
-          "_row_id" : "807584615"
+          "_row_id" : "1883139996"
         } ]
       },
       "ports" : {
         "inputs" : [ {
-          "id" : "GWZ5skDW",
+          "id" : "s0raOsyK",
           "schema" : {
             "entityType" : "",
             "providerType" : "ProphecyManaged",
@@ -782,7 +823,7 @@
           "slug" : "support_tickets"
         } ],
         "outputs" : [ {
-          "id" : "IxL9vtJZ",
+          "id" : "DMbOseKn",
           "schema" : {
             "entityType" : "",
             "providerType" : "ProphecyManaged",
@@ -802,44 +843,133 @@
         } ],
         "isCustomOutputSchema" : false
       }
+    },
+    "customer_spend_r##IrsQJzxO" : {
+      "id" : "customer_spend_r##IrsQJzxO",
+      "component" : "Reformat",
+      "metadata" : {
+        "label" : "customer_spend_rank",
+        "x" : 440,
+        "y" : -280,
+        "phase" : 0
+      },
+      "properties" : {
+        "columnsSelector" : [ ],
+        "expressions" : [ {
+          "expression" : {
+            "expression" : "customer_id"
+          },
+          "alias" : "CUSTOMER_ID",
+          "_row_id" : "95716061"
+        }, {
+          "expression" : {
+            "expression" : "TOTAL_REVENUE"
+          },
+          "_row_id" : "1472242023"
+        }, {
+          "expression" : {
+            "expression" : "RANK() OVER (ORDER BY TOTAL_REVENUE DESC)"
+          },
+          "alias" : "SPEND_RANK",
+          "_row_id" : "43059694"
+        } ]
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "oaVCEUWu",
+          "schema" : {
+            "entityType" : "",
+            "providerType" : "ProphecyManaged",
+            "fields" : [ {
+              "name" : "customer_id",
+              "dataType" : {
+                "type" : "BigInt"
+              }
+            }, {
+              "name" : "TOTAL_REVENUE",
+              "dataType" : {
+                "type" : "Double"
+              }
+            } ]
+          },
+          "slug" : "customer_total_revenue"
+        } ],
+        "outputs" : [ {
+          "id" : "dRjj9m9l",
+          "schema" : {
+            "entityType" : "",
+            "providerType" : "ProphecyManaged",
+            "fields" : [ {
+              "name" : "CUSTOMER_ID",
+              "dataType" : {
+                "type" : "BigInt"
+              }
+            }, {
+              "name" : "TOTAL_REVENUE",
+              "dataType" : {
+                "type" : "Double"
+              }
+            }, {
+              "name" : "SPEND_RANK",
+              "dataType" : {
+                "type" : "BigInt"
+              }
+            } ]
+          },
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
     }
   },
   "connections" : [ {
-    "id" : "WWxfNFW8",
-    "source" : "rides##n9zi6AWN",
-    "sourcePort" : "GlQrU0ic",
-    "target" : "rides_with_fare##HSP0nAkr",
-    "targetPort" : "itaQCyYb"
+    "id" : "VncGGGFT",
+    "source" : "rides##BTPw9mzY",
+    "sourcePort" : "iuAJeMom",
+    "target" : "rides_with_fare##JBrIk1In",
+    "targetPort" : "fEMm03dS"
   }, {
-    "id" : "OA9Z9jF3",
-    "source" : "rides_with_fare##HSP0nAkr",
-    "sourcePort" : "VXGuhCii",
-    "target" : "rides_daily_aggr##Q3aq0FdD",
-    "targetPort" : "H2xvdW7m"
+    "id" : "PIi5lKzj",
+    "source" : "rides_with_fare##JBrIk1In",
+    "sourcePort" : "qArTHI6o",
+    "target" : "rides_daily_aggr##ZIsxZucD",
+    "targetPort" : "RsHFNdOV"
   }, {
-    "id" : "NM8g7sCb",
-    "source" : "rides_daily_aggr##Q3aq0FdD",
-    "sourcePort" : "bWKA2EZx",
-    "target" : "rides_aggregatio##ao8TIS06",
-    "targetPort" : "OWt4USt7"
+    "id" : "dfrXfRLj",
+    "source" : "rides_daily_aggr##ZIsxZucD",
+    "sourcePort" : "LFHACleL",
+    "target" : "rides_aggregatio##BBTL2tRf",
+    "targetPort" : "mW0FqvMO"
   }, {
-    "id" : "okXm0nuR",
-    "source" : "rides_aggregatio##ao8TIS06",
-    "sourcePort" : "xXcJlqOy",
-    "target" : "customer_total_r##SMty8WfY",
-    "targetPort" : "CWqfzoO8"
+    "id" : "AKdKfTkT",
+    "source" : "rides_aggregatio##BBTL2tRf",
+    "sourcePort" : "KIhSjK0H",
+    "target" : "customer_total_r##EwZ4dQle",
+    "targetPort" : "A55bgbIH"
   }, {
-    "id" : "OsvZM4bA",
-    "source" : "support_tickets##ubLR7AW4",
-    "sourcePort" : "EIo6P2z1",
-    "target" : "total_tickets_pe##mDm4QQQO",
-    "targetPort" : "GWZ5skDW"
+    "id" : "SjLvPEaQ",
+    "source" : "customer_total_r##EwZ4dQle",
+    "sourcePort" : "ad5aKTz4",
+    "target" : "customer_spend_r##IrsQJzxO",
+    "targetPort" : "oaVCEUWu"
   }, {
-    "id" : "utP42FeP",
-    "source" : "customer_total_r##SMty8WfY",
-    "sourcePort" : "KnGjVlHz",
-    "target" : "customer_spend_r##R2W8YFZw",
-    "targetPort" : "JWzGaX3U"
+    "id" : "xfleRuTV",
+    "source" : "support_tickets##LZR6hSST",
+    "sourcePort" : "siqwqedz",
+    "target" : "total_tickets_pe##XBxVwSKF",
+    "targetPort" : "s0raOsyK"
+  }, {
+    "id" : "lx9SVUqU",
+    "source" : "customer_spend_r##IrsQJzxO",
+    "sourcePort" : "dRjj9m9l",
+    "target" : "customer_tickets##BKJl97sG",
+    "targetPort" : "VhIcrf67"
+  }, {
+    "id" : "XcvSJTrO",
+    "source" : "total_tickets_pe##XBxVwSKF",
+    "sourcePort" : "DMbOseKn",
+    "target" : "customer_tickets##BKJl97sG",
+    "targetPort" : "ovfirlTo"
   } ],
   "component" : "Pipeline"
 }

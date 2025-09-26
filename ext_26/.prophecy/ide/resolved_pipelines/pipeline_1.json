@@ -32,7 +32,7 @@
       "ports" : {
         "inputs" : [ ],
         "outputs" : [ {
-          "id" : "NRDVO4jI",
+          "id" : "n3el1NGR",
           "schema" : {
             "entityType" : "",
             "providerType" : "ProphecyManaged",
@@ -148,55 +148,31 @@
         "isCustomOutputSchema" : false
       }
     },
-    "customer_spend_r##R2W8YFZw" : {
-      "id" : "customer_spend_r##R2W8YFZw",
+    "customer_tickets##BKJl97sG" : {
+      "id" : "customer_tickets##BKJl97sG",
       "component" : "Model",
       "metadata" : {
-        "label" : "pipeline_1__customer_spend_rank",
+        "label" : "pipeline_1__customer_tickets_and_spend_rank",
         "phase" : 0
       },
       "properties" : {
-        "modelName" : "pipeline_1__customer_spend_rank"
+        "modelName" : "pipeline_1__customer_tickets_and_spend_rank"
       },
       "visualMetaInfo" : {
-        "visualProcessIds" : [ "customer_spend_rank_VWF8c1UM", "customer_spend_r##R2W8YFZw", "customer_total_r##SMty8WfY", "rides_aggregatio##ao8TIS06", "rides_daily_aggr##Q3aq0FdD", "rides_with_fare##HSP0nAkr", "rides##n9zi6AWN" ],
+        "visualProcessIds" : [ "customer_tickets_and_spend_rank_p2DXC5sj", "customer_tickets##BKJl97sG", "customer_spend_r##IrsQJzxO", "total_tickets_pe##XBxVwSKF", "support_tickets##LZR6hSST", "customer_total_r##EwZ4dQle", "rides_aggregatio##BBTL2tRf", "rides_daily_aggr##ZIsxZucD", "rides_with_fare##JBrIk1In", "rides##BTPw9mzY" ],
         "type" : "ephemeral",
         "isTemporaryTable" : true
       },
       "ports" : {
         "inputs" : [ {
-          "id" : "pipeline_1__customer_spend_rank_in_0",
+          "id" : "pipeline_1__customer_tickets_and_spend_rank_in_0",
           "slug" : "in_0"
+        }, {
+          "id" : "pipeline_1__customer_tickets_and_spend_rank_in_1",
+          "slug" : "in_1"
         } ],
         "outputs" : [ {
-          "id" : "pipeline_1__customer_spend_rank_out_0",
-          "slug" : "out_0"
-        } ],
-        "isCustomOutputSchema" : false
-      }
-    },
-    "total_tickets_pe##mDm4QQQO" : {
-      "id" : "total_tickets_pe##mDm4QQQO",
-      "component" : "Model",
-      "metadata" : {
-        "label" : "pipeline_1__total_tickets_per_customer",
-        "phase" : 0
-      },
-      "properties" : {
-        "modelName" : "pipeline_1__total_tickets_per_customer"
-      },
-      "visualMetaInfo" : {
-        "visualProcessIds" : [ "total_tickets_per_customer_IxL9vtJZ", "total_tickets_pe##mDm4QQQO", "support_tickets##ubLR7AW4" ],
-        "type" : "ephemeral",
-        "isTemporaryTable" : true
-      },
-      "ports" : {
-        "inputs" : [ {
-          "id" : "pipeline_1__total_tickets_per_customer_in_0",
-          "slug" : "in_0"
-        } ],
-        "outputs" : [ {
-          "id" : "pipeline_1__total_tickets_per_customer_out_0",
+          "id" : "pipeline_1__customer_tickets_and_spend_rank_out_0",
           "slug" : "out_0"
         } ],
         "isCustomOutputSchema" : false
