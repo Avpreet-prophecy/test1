@@ -174,13 +174,19 @@
           },
           "alias" : "AVG_FARE",
           "_row_id" : "1842193564"
+        }, {
+          "expression" : {
+            "expression" : "any_value(customer_id)"
+          },
+          "alias" : "customer_id",
+          "_row_id" : "1058042184"
         } ],
         "allowSelection" : true,
         "condition" : {
           "expression" : ""
         },
         "activeTab" : "aggregate",
-        "columnsSelector" : [ ],
+        "columnsSelector" : [ "FJvRVPbo##ride_date", "FJvRVPbo##ride_id", "FJvRVPbo##fare_amount", "FJvRVPbo##customer_id" ],
         "groupBy" : [ {
           "expression" : {
             "expression" : "ride_date"
@@ -243,6 +249,11 @@
               "dataType" : {
                 "type" : "Double"
               }
+            }, {
+              "name" : "customer_id",
+              "dataType" : {
+                "type" : "BigInt"
+              }
             } ]
           },
           "slug" : "out"
@@ -294,6 +305,11 @@
               "dataType" : {
                 "type" : "Double"
               }
+            }, {
+              "name" : "customer_id",
+              "dataType" : {
+                "type" : "BigInt"
+              }
             } ]
           },
           "slug" : "rides_daily_aggregation"
@@ -322,6 +338,11 @@
               "name" : "AVG_FARE",
               "dataType" : {
                 "type" : "Double"
+              }
+            }, {
+              "name" : "customer_id",
+              "dataType" : {
+                "type" : "BigInt"
               }
             } ]
           },

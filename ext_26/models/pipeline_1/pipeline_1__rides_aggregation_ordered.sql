@@ -30,7 +30,8 @@ rides_daily_aggregation AS (
     ride_date,
     COUNT(DISTINCT ride_id) AS TOTAL_RIDES,
     SUM(fare_amount) AS TOTAL_REVENUE,
-    AVG(fare_amount) AS AVG_FARE
+    AVG(fare_amount) AS AVG_FARE,
+    any_value(customer_id) AS customer_id
   
   FROM rides_with_fare
   
